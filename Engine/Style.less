@@ -1,0 +1,93 @@
+@import "Constant.less";
+
+/* @todo: Translate to LESS */
+
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: monospace;
+}
+
+#interface
+{
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+#interface .tab
+{
+    background-color: #cfffd0;
+    width: 40%;
+    vertical-align: top;
+    border: 3px solid maroon;
+    padding: 5px;
+}
+
+#interface a
+{
+    text-decoration: none;
+    color: red;
+}
+
+#interface .menu .butn
+{
+    border: red 1px solid;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+    color: red;
+    background-color: white;
+}
+
+#interface .menu .butn:hover
+{
+    background-color: #ffe4e4;
+}
+
+#interface .menu
+{
+    background-color: #ffe2ae;
+}
+
+#interface .right,
+#interface .left
+{
+    width: 100px;
+    text-align: center;
+}
+
+#interface .top,
+#interface .bottom
+{
+    height: 50px;
+    text-align: center;
+}
+
+#interface .top
+{
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(255,203,134,1) 100%);
+}
+
+#interface .bottom
+{
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(255,203,134,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+#page
+{
+    width: 100%;
+    height: 100%;
+    background-color: @COLOR_GLOBAL_BACKGROUND;
+    color: @COLOR_GLOBAL_TEXT;
+}
+
+#page a
+{
+    color: #ff8585;
+}
