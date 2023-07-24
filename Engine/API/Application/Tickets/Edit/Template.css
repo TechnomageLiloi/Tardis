@@ -1,0 +1,16 @@
+/* @todo: translate to LESS */
+#artifacts-atoms-edit
+{
+    padding: 10px;
+}
+
+#artifacts-atoms-edit table
+{
+    width: 100%;
+}
+
+#artifacts-atoms-edit input,
+#artifacts-atoms-edit textarea
+{
+    width: 100%;
+}
