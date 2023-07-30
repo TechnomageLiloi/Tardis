@@ -22,6 +22,10 @@
 
     <?php echo $entity->parse(); ?>
 
+    <div class="user">
+        <img src="<?php echo ROOT_URL; ?>/Images/User.png" />
+    </div>
+
     <div class="wrap-tickets">
         <?php foreach($listTickets as $ticket): ?>
         <?php echo $ticket->parse(); ?>

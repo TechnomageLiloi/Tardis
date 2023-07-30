@@ -20,3 +20,9 @@
   padding: 5px;
   margin-bottom: 5px;
 }
+#application-diary-show .user {
+  text-align: center;
+}
+#application-diary-show .user img {
+  width: 100px;
+}
