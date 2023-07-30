@@ -14,9 +14,18 @@
 #application-diary-show table {
   width: 100%;
 }
+#application-diary-show .wrap-tickets {
+  text-align: center;
+}
 #application-diary-show .wrap-tickets .ticket {
   border: gray 1px solid;
   border-radius: 5px;
   padding: 5px;
   margin-bottom: 5px;
+}
+#application-diary-show .user {
+  text-align: center;
+}
+#application-diary-show .user img {
+  width: 100px;
 }

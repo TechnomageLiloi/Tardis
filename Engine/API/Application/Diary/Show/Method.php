@@ -19,12 +19,14 @@ class Method extends SuperMethod
 
         $entity = DiaryManager::load($key_day);
 
-        $listTickets = TicketsManager::loadPeriod($key_day . ' 00:00:00', $key_day . ' 23:59:59');
+        $listTicketsPast = TicketsManager::loadPeriod($key_day . ' 00:00:00', $key_day . ' ' . date('H:i:s'));
+        $listTicketsFuture = TicketsManager::loadPeriod($key_day . ' ' . date('H:i:s'), $key_day . ' 23:59:59');
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'listTickets' => $listTickets
+            'listTicketsFuture' => $listTicketsFuture,
+            'listTicketsPast' => $listTicketsPast,
         ]));
 
         return $response;

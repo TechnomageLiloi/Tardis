@@ -16,14 +16,40 @@
 
     <div class="data">
         <?php echo $entity->getData(); ?><br/>
-        <strong>Mark: <?php echo $listTickets->getMark(); ?></strong> &diam;
-        <strong>Efficiency: <?php echo $listTickets->getEfficiency(); ?></strong>
+        <strong>Mark: <?php echo $listTicketsPast->getMark(); ?></strong> &diam;
+        <strong>Efficiency: <?php echo $listTicketsPast->getEfficiency(); ?></strong>
     </div>
 
     <?php echo $entity->parse(); ?>
 
+    <hr/>
+
     <div class="wrap-tickets">
-        <?php foreach($listTickets as $ticket): ?>
+        <?php foreach($listTicketsFuture as $ticket): ?>
+        <?php echo $ticket->parse(); ?>
+        <div class="ticket">
+            <?php $link = $ticket->getLink(); ?>
+            <?php if($link): ?>
+            <a href="<?php echo $link; ?>" target="_blank">
+                <?php echo $ticket->getTitle(); ?>
+            </a>
+            <?php else: ?>
+            <?php echo $ticket->getTitle(); ?>
+            <?php endif; ?> &diam;
+            <?php echo $ticket->getStatusTitle(); ?> &diam;
+            <?php echo $ticket->getStart(); ?> &diam;
+            <a href="javascript:void(0);" onclick="navigator.clipboard.writeText('<?php echo $ticket->getTitle(); ?>');alert('Copied');">Copy</a> &diam;
+            <a href="javascript:void(0)" onclick="Interstate60.Application.Tickets.edit('<?php echo $ticket->getKey(); ?>');">Edit</a>
+        </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="user">
+        <img src="<?php echo ROOT_URL; ?>/Images/User.png" />
+    </div>
+
+    <div class="wrap-tickets">
+        <?php foreach($listTicketsPast as $ticket): ?>
         <?php echo $ticket->parse(); ?>
         <div class="ticket">
             <?php $link = $ticket->getLink(); ?>
