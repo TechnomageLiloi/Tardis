@@ -14,6 +14,9 @@
 #application-diary-show table {
   width: 100%;
 }
+#application-diary-show .wrap-tickets {
+  text-align: center;
+}
 #application-diary-show .wrap-tickets .ticket {
   border: gray 1px solid;
   border-radius: 5px;
