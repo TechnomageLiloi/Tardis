@@ -19,6 +19,7 @@ class Tree
         $manager->add(new Method('Interstate60.Application.Diary.Show', '\Liloi\I60\API\Application\Diary\Show\Method::execute'));
         $manager->add(new Method('Interstate60.Application.Diary.Edit', '\Liloi\I60\API\Application\Diary\Edit\Method::execute'));
         $manager->add(new Method('Interstate60.Application.Diary.Save', '\Liloi\I60\API\Application\Diary\Save\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Diary.Create', '\Liloi\I60\API\Application\Diary\Create\Method::execute'));
 
         self::$manager = $manager;
     }

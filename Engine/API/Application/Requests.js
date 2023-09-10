@@ -1,5 +1,26 @@
 Interstate60.Application = {
     Diary: {
+        create: function ()
+        {
+            if(!confirm('Are you sure you want to jump?'))
+            {
+                return;
+            }
+
+            if(!confirm('This day is complete?'))
+            {
+                return;
+            }
+
+            API.request('Interstate60.Application.Diary.Create', {
+
+            }, function (data) {
+                Interstate60.Application.Diary.show();
+            }, function () {
+
+            });
+        },
+
         show: function ()
         {
             API.request('Interstate60.Application.Diary.Show', {

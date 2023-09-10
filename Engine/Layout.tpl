@@ -24,6 +24,7 @@
             <tr>
                 <td class="menu top">
                     <a href="javascript:void(0)" class="butn" onclick="location.reload();">Reload</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Diary.create();">Jump to new day</a>
                 </td>
             </tr>
             <tr>

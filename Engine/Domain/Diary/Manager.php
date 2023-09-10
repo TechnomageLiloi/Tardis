@@ -54,4 +54,13 @@ class Manager extends DomainManager
 
         self::update($name, $data, sprintf('key_day="%s"', $entity->getKey()));
     }
+
+    public static function create(): void
+    {
+        self::getAdapter()->insert(self::getTableName(), [
+            'title' => 'Enter the title',
+            'program' => 'Enter the program',
+            'data' => '{}'
+        ]);
+    }
 }
