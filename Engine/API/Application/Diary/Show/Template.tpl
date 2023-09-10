@@ -15,6 +15,7 @@
     </h1>
 
     <div class="data">
+        <?php echo $entity->getID(); ?><br/>
         <?php echo $entity->getData(); ?><br/>
     </div>
 

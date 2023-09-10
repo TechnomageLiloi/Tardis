@@ -22,6 +22,21 @@ class Entity extends AbstractEntity
         return $this->getField('key_day');
     }
 
+    public function getID(): string
+    {
+        $key = (int)$this->getKey();
+
+        // @todo: increase id to 7
+        $id2 = (int)($key / 100);
+        $id1 = $key % 100;
+
+        return sprintf(
+            '00-00-00-00-00-%s-%s',
+            str_pad($id2, 2, '0', STR_PAD_LEFT),
+            str_pad($id1, 2, '0', STR_PAD_LEFT)
+        );
+    }
+
     public function parse(): string
     {
         return Parser::parseString($this->getProgram());
