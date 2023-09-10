@@ -20,11 +20,6 @@ class Tree
         $manager->add(new Method('Interstate60.Application.Diary.Edit', '\Liloi\I60\API\Application\Diary\Edit\Method::execute'));
         $manager->add(new Method('Interstate60.Application.Diary.Save', '\Liloi\I60\API\Application\Diary\Save\Method::execute'));
 
-        $manager->add(new Method('Interstate60.Application.Tickets.Collection', '\Liloi\I60\API\Application\Tickets\Collection\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Tickets.Create', '\Liloi\I60\API\Application\Tickets\Create\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Tickets.Edit', '\Liloi\I60\API\Application\Tickets\Edit\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Tickets.Save', '\Liloi\I60\API\Application\Tickets\Save\Method::execute'));
-
         self::$manager = $manager;
     }
 

@@ -39,7 +39,7 @@
         </table>
 
         <script>
-            Interstate60.Application.Diary.show('<?php echo date('Y-m-d'); ?>')
+            Interstate60.Application.Diary.show();
         </script>
     </body>
 </html>

@@ -28,16 +28,20 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-            $title = 'Day: ' . $key_day;
-            $row = [
-                'key_day' => $key_day,
-                'title' => $title,
-                'program' => '// Enter the program',
-                'data' => '{}'
-            ];
-
-            self::getAdapter()->insert($name, $row);
+            // @todo: throw exception
         }
+
+        return Entity::create($row);
+    }
+
+    public static function loadCurrent(): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s order by key_day desc limit 1;',
+            $name
+        ));
 
         return Entity::create($row);
     }

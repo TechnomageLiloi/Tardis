@@ -1,14 +1,9 @@
 Interstate60.Application = {
     Diary: {
-        show: function (key_day)
+        show: function ()
         {
-            if(typeof(key_day) === 'undefined')
-            {
-                key_day = $('#application-diary-show [name=key_day]').val();
-            }
-
             API.request('Interstate60.Application.Diary.Show', {
-                key_day: key_day
+
             }, function (data) {
                 $('#page').html(data.render);
             }, function () {

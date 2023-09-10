@@ -5,7 +5,6 @@ namespace Liloi\I60\API\Application\Diary\Show;
 use Liloi\API\Response;
 use Liloi\I60\API\Method as SuperMethod;
 use Liloi\I60\Domain\Diary\Manager as DiaryManager;
-use Liloi\I60\Domain\Tickets\Manager as TicketsManager;
 
 /**
  * Rune API: Blueprint.Blueprints.Show
@@ -15,18 +14,11 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $key_day = self::getParameter('key_day');
-
-        $entity = DiaryManager::load($key_day);
-
-        $listTicketsPast = TicketsManager::loadPeriod($key_day . ' 00:00:00', $key_day . ' ' . date('H:i:s'));
-        $listTicketsFuture = TicketsManager::loadPeriod($key_day . ' ' . date('H:i:s'), $key_day . ' 23:59:59');
+        $entity = DiaryManager::loadCurrent();
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
-            'entity' => $entity,
-            'listTicketsFuture' => $listTicketsFuture,
-            'listTicketsPast' => $listTicketsPast,
+            'entity' => $entity
         ]));
 
         return $response;
