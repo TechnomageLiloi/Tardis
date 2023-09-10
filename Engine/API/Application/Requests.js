@@ -11,15 +11,10 @@ Interstate60.Application = {
             });
         },
 
-        edit: function (key_day)
+        edit: function ()
         {
-            if(typeof(key_day) === 'undefined')
-            {
-                key_day = $('#application-diary-show [name=key_day]').val();
-            }
-
             API.request('Interstate60.Application.Diary.Edit', {
-                key_day: key_day
+
             }, function (data) {
                 const wrap = $('#page');
                 wrap.html(data.render);
@@ -29,7 +24,7 @@ Interstate60.Application = {
             });
         },
 
-        save: function (key_day)
+        save: function ()
         {
             if(!confirm('Are you sure?'))
             {
@@ -38,12 +33,11 @@ Interstate60.Application = {
 
             const jq_block = $('#application-diary-edit');
             API.request('Interstate60.Application.Diary.Save', {
-                key_day: key_day,
                 title: jq_block.find('[name=title]').val(),
                 program: jq_block.find('[name=program]').val(),
                 data: jq_block.find('[name=data]').val(),
             }, function (data) {
-                Interstate60.Application.Diary.show(key_day);
+                Interstate60.Application.Diary.show();
             }, function () {
 
             });

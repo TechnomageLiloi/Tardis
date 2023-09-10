@@ -14,9 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $key_day = self::getParameter('key_day');
-
-        $entity = DiaryManager::load($key_day);
+        $entity = DiaryManager::loadCurrent();
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

@@ -14,8 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $key_day = self::getParameter('key_day');
-        $entity = DiaryManager::load($key_day);
+        $entity = DiaryManager::loadCurrent();
 
         $entity->setTitle(self::getParameter('title'));
         $entity->setProgram(self::getParameter('program'));
