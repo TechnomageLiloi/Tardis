@@ -19,11 +19,9 @@
         <title>Interstate 60</title>
     </head>
     <body>
-
         <table id="interface">
             <tr>
                 <td class="menu top">
-                    <a href="javascript:void(0)" class="butn" onclick="location.reload();">Reload</a>
                     <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Diary.create();">Jump to new day</a>
                 </td>
             </tr>
@@ -35,10 +33,8 @@
                 </td>
             </tr>
             <tr>
-
             </tr>
         </table>
-
         <script>
             Interstate60.Application.Diary.show();
         </script>

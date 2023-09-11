@@ -3,8 +3,7 @@
 <div id="application-diary-show" class="stylo">
 
     <div class="controls">
-        <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.show();">Show</a> at
-        <input type="date" name="key_day" value="<?php echo $entity->getKey(); ?>">
+        <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.show();">Show</a> &diams;
         <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.edit();">Edit</a>
     </div>
 
