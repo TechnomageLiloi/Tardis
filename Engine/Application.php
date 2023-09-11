@@ -3,10 +3,10 @@
 namespace Liloi\I60;
 
 use Liloi\Config\Pool;
-use Rune\Application\Conceptual as ConceptualApplication;
+use Liloi\I60\API\Method;
 use Liloi\I60\API\Tree;
 use Liloi\I60\Domain\Manager;
-use Liloi\I60\API\Method;
+use Rune\Application\Conceptual as ConceptualApplication;
 
 /**
  * @inheritDoc

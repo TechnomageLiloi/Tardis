@@ -36,7 +36,6 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    // @todo: rise this method to more abstract level.
     public static function create(Entity $entity): void
     {
         $name = self::getTableName();
@@ -45,11 +44,6 @@ class Manager extends DomainManager
             'title' => $entity->getTitle(),
             'data' => $entity->getData()
         ]);
-
-//        self::getAdapter()->insert($name, [
-//            'title' => $entity->getTitle(),
-//            'data' => $entity->getData()
-//        ]);
     }
 
     public static function load(string $key_log): Entity

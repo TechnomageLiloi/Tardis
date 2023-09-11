@@ -16,5 +16,6 @@ CREATE TABLE `I60_diary` (
     `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
     `program` text COLLATE utf8mb4_unicode_ci NOT NULL,
     `data` json NOT NULL,
+    `status` tinyint unsigned not null default 1,
     PRIMARY KEY (`key_day`)
 );
