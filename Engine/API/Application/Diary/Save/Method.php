@@ -7,8 +7,7 @@ use Liloi\I60\API\Method as SuperMethod;
 use Liloi\I60\Domain\Diary\Manager as DiaryManager;
 
 /**
- * Rune API: Blueprint.Blueprints.Show
- * @package Liloi\Librarium\API\Blueprints\Show
+ * Rune API: Interstate60.Application.Diary.Save
  */
 class Method extends SuperMethod
 {

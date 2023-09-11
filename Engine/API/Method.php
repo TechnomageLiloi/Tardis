@@ -15,6 +15,9 @@ abstract class Method
      */
     static private Pool $config;
 
+    /**
+     * @return Response
+     */
     abstract static public function execute(): Response;
 
     /**
@@ -45,6 +48,13 @@ abstract class Method
         return $_POST['parameters'];
     }
 
+    /**
+     * Render template.
+     *
+     * @param string $template
+     * @param array $data
+     * @return string
+     */
     protected static function render(string $template, array $data = []): string
     {
         // @todo: assert filename
