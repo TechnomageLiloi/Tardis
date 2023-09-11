@@ -1,6 +1,6 @@
 <?php
 
-namespace Rune;
+namespace Liloi\I60;
 
 use PHPUnit\Framework\TestCase;
 
