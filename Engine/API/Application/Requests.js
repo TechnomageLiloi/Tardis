@@ -57,6 +57,7 @@ Interstate60.Application = {
                 title: jq_block.find('[name=title]').val(),
                 program: jq_block.find('[name=program]').val(),
                 data: jq_block.find('[name=data]').val(),
+                status: jq_block.find('[name=status]').val()
             }, function (data) {
                 Interstate60.Application.Diary.show();
             }, function () {
