@@ -19,6 +19,7 @@ class Method extends SuperMethod
         $entity->setProgram(self::getParameter('program'));
         $entity->setData(self::getParameter('data'));
         $entity->setStatus(self::getParameter('status'));
+        $entity->setFinish(date('Y-m-d H:i:s'));
 
         $entity->save();
 

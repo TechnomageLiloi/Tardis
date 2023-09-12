@@ -15,7 +15,9 @@
 
     <div class="data">
         <?php echo $entity->getID(); ?><br/>
-        <?php echo $entity->getStatusTitle(); ?> &diams; <?php echo $entity->getData(); ?><br/>
+        <?php echo $entity->getPeriod(); ?> Quarters &diams;
+        <?php echo $entity->getStatusTitle(); ?> &diams;
+        <?php echo $entity->getData(); ?><br/>
     </div>
 
     <?php echo $entity->parse(); ?>

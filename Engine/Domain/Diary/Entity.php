@@ -60,4 +60,12 @@ class Entity extends AbstractEntity
     {
         return Statuses::$list[$this->getStatus()];
     }
+
+    public function getPeriod(): int
+    {
+        $unixStart = strtotime($this->getStart());
+        $unixFinish = strtotime($this->getFinish());
+
+        return (int)(($unixFinish - $unixStart) / 900);
+    }
 }
