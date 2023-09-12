@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Tests</title>
+    <title>Tests Manager</title>
 
     <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Jquery.min.js"></script>
     <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Underscore.min.js"></script>
