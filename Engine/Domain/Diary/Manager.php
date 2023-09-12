@@ -60,7 +60,10 @@ class Manager extends DomainManager
         self::getAdapter()->insert(self::getTableName(), [
             'title' => 'Enter the title',
             'program' => 'Enter the program',
-            'data' => '{}'
+            'data' => '{}',
+            'status' => Statuses::TODO,
+            'start' => date('Y-m-d H:i:s'),
+            'finish' => date('Y-m-d H:i:s')
         ]);
     }
 }
