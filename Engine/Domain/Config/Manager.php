@@ -17,6 +17,12 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'config';
     }
 
+    /**
+     * Load config by key.
+     *
+     * @param string $key_config
+     * @return Entity
+     */
     public static function load(string $key_config): Entity
     {
         $name = self::getTableName();
@@ -38,6 +44,12 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    /**
+     * `true` is config by key exist; `false` otherwise.
+     *
+     * @param string $key_config
+     * @return bool
+     */
     public static function exist(string $key_config): bool
     {
         $name = self::getTableName();
@@ -50,6 +62,11 @@ class Manager extends DomainManager
         return (bool)$row;
     }
 
+    /**
+     * Save config.
+     *
+     * @param Entity $entity
+     */
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();

@@ -17,6 +17,11 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'logs';
     }
 
+    /**
+     * Load log collection.
+     *
+     * @return Collection
+     */
     public static function loadCollection(): Collection
     {
         $name = self::getTableName();
@@ -36,6 +41,11 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    /**
+     * Create new log.
+     *
+     * @param Entity $entity
+     */
     public static function create(Entity $entity): void
     {
         $name = self::getTableName();
@@ -46,6 +56,12 @@ class Manager extends DomainManager
         ]);
     }
 
+    /**
+     * Load log by key.
+     *
+     * @param string $key_log
+     * @return Entity
+     */
     public static function load(string $key_log): Entity
     {
         $name = self::getTableName();
@@ -59,6 +75,11 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    /**
+     * Save log.
+     *
+     * @param Entity $entity
+     */
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();

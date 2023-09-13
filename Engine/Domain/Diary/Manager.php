@@ -2,7 +2,6 @@
 
 namespace Liloi\I60\Domain\Diary;
 
-use Liloi\API\Errors\Exception;
 use Liloi\I60\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
@@ -17,6 +16,12 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'diary';
     }
 
+    /**
+     * Load day by key.
+     *
+     * @param string $key_day
+     * @return Entity
+     */
     public static function load(string $key_day): Entity
     {
         $name = self::getTableName();
@@ -34,6 +39,11 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    /**
+     * Load current day.
+     *
+     * @return Entity
+     */
     public static function loadCurrent(): Entity
     {
         $name = self::getTableName();
@@ -46,6 +56,11 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    /**
+     * Save day.
+     *
+     * @param Entity $entity
+     */
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();
@@ -55,11 +70,14 @@ class Manager extends DomainManager
         self::update($name, $data, sprintf('key_day="%s"', $entity->getKey()));
     }
 
+    /**
+     * Create new day.
+     */
     public static function create(): void
     {
         self::getAdapter()->insert(self::getTableName(), [
             'title' => 'Enter the title',
-            'program' => 'Enter the program',
+            'program' => '-',
             'data' => '{}',
             'status' => Statuses::TODO,
             'start' => date('Y-m-d H:i:s'),
