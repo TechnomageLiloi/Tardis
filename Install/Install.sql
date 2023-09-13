@@ -17,5 +17,7 @@ CREATE TABLE `I60_diary` (
     `program` text COLLATE utf8mb4_unicode_ci NOT NULL,
     `data` json NOT NULL,
     `status` tinyint unsigned not null default 1,
+    `start` timestamp not null,
+    `finish` timestamp not null,
     PRIMARY KEY (`key_day`)
 );

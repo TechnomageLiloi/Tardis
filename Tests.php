@@ -9,13 +9,13 @@
     <script src="/vendor/technomage-liloi/rune-framework/Frontside/Library/Backbone.min.js"></script>
     <script src="/vendor/technomage-liloi/rune-api/Client/API.js"></script>
 
-    <link rel="shortcut icon" type="image/png" href="/Libraries/Jasmine/jasmine_favicon.png">
-    <link rel="stylesheet" href="/Libraries/Jasmine/jasmine.css">
+    <link rel="shortcut icon" type="image/png" href="/Tests/Jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" href="/Tests/Jasmine/jasmine.css">
 
-    <script src="/Libraries/Jasmine/jasmine.js"></script>
-    <script src="/Libraries/Jasmine/jasmine-html.js"></script>
-    <script src="/Libraries/Jasmine/boot0.js"></script>
-    <script src="/Libraries/Jasmine/boot1.js"></script>
+    <script src="/Tests/Jasmine/jasmine.js"></script>
+    <script src="/Tests/Jasmine/jasmine-html.js"></script>
+    <script src="/Tests/Jasmine/boot0.js"></script>
+    <script src="/Tests/Jasmine/boot1.js"></script>
 
     <!-- include spec files here... -->
     <script src="/Tests/CheckTest.js"></script>
