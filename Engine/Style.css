@@ -1,4 +1,3 @@
-/* @todo: Translate to LESS */
 html,
 body {
   margin: 0;
@@ -22,6 +21,9 @@ body {
   text-decoration: none;
   color: red;
 }
+#interface .menu {
+  background-color: #ffe2ae;
+}
 #interface .menu .butn {
   border: red 1px solid;
   padding: 5px;
@@ -33,26 +35,19 @@ body {
 #interface .menu .butn:hover {
   background-color: #ffe4e4;
 }
-#interface .menu {
-  background-color: #ffe2ae;
-}
 #interface .right,
 #interface .left {
   width: 100px;
   text-align: center;
 }
-#interface .top,
-#interface .bottom {
+#interface .top {
+  background-color: #ffdda2;
   height: 50px;
   text-align: center;
 }
-#interface .top {
-  background: #020024;
-  background: linear-gradient(0deg, #020024 0%, #ffffff 0%, #ffcb86 100%);
-}
 #interface .bottom {
-  background: #020024;
-  background: linear-gradient(0deg, #020024 0%, #ffcb86 0%, #ffffff 100%);
+  height: 50px;
+  text-align: center;
 }
 #page {
   width: 100%;
