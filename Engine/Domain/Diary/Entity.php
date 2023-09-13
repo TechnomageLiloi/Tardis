@@ -33,16 +33,17 @@ class Entity extends AbstractEntity
 
     public function getID(): string
     {
-        $key = (int)$this->getKey();
-
-        // @todo: increase id to 7
-        $id2 = (int)($key / 100);
-        $id1 = $key % 100;
+        $key = str_pad($this->getKey(), 14, '0', STR_PAD_LEFT);
 
         return sprintf(
-            '00-00-00-00-00-%s-%s',
-            str_pad($id2, 2, '0', STR_PAD_LEFT),
-            str_pad($id1, 2, '0', STR_PAD_LEFT)
+            '%s-%s-%s-%s-%s-%s-%s',
+            $key[0] . $key[1],
+            $key[2] . $key[3],
+            $key[4] . $key[5],
+            $key[6] . $key[7],
+            $key[8] . $key[9],
+            $key[10] . $key[11],
+            $key[12] . $key[13]
         );
     }
 
