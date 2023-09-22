@@ -19,7 +19,11 @@
     <table>
         <tr>
             <td style="width: 10%;">
-                <img src="<?php echo ROOT_URL; ?>/Images/Teacher.gif"> <!-- Thanks in README.md -->
+                <?php if(file_exists(ROOT_DIR . '/Images/Real.jpg')): ?>
+                    <img src="<?php echo ROOT_URL; ?>/Images/Real.jpg" width="170">
+                <?php else: ?>
+                    <img src="<?php echo ROOT_URL; ?>/Images/Teacher.gif"> <!-- Thanks in README.md -->
+                <?php endif; ?>
             </td>
             <td>
                 <h1 class="wrap-title">
