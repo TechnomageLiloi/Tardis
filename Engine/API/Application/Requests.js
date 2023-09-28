@@ -82,7 +82,7 @@ Interstate60.Application = {
             API.request('Interstate60.Application.Plans.Create', {
 
             }, function (data) {
-                Interstate60.Application.Diary.show();
+                Interstate60.Application.Plans.getCollection();
             }, function () {
 
             });
@@ -123,21 +123,20 @@ Interstate60.Application = {
             API.request('Interstate60.Application.Plans.Save', {
                 title: jq_block.find('[name=title]').val(),
                 program: jq_block.find('[name=program]').val(),
-                data: jq_block.find('[name=data]').val(),
                 status: jq_block.find('[name=status]').val()
             }, function (data) {
-                Interstate60.Application.Diary.show();
+                Interstate60.Application.Plans.getCollection();
             }, function () {
 
             });
         },
 
-        getCollection: function (wrap)
+        getCollection: function ()
         {
             API.request('Interstate60.Application.Plans.Collection', {
 
             }, function (data) {
-                wrap.html(data.render);
+                $('#page').html(data.render);
             }, function () {
 
             });
