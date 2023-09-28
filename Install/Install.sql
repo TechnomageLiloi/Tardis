@@ -21,3 +21,13 @@ CREATE TABLE `I60_diary` (
     `finish` timestamp not null,
     PRIMARY KEY (`key_day`)
 );
+
+create table I60_plans
+(
+    key_plan tinyint unsigned auto_increment,
+    title varchar(100) COLLATE utf8mb4_unicode_ci not null,
+    program mediumtext COLLATE utf8mb4_unicode_ci not null,
+    status tinyint unsigned default 1 not null,
+    constraint I60_plans_pk
+        primary key (key_plan)
+);
