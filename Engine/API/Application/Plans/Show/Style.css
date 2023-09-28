@@ -1,0 +1,39 @@
+#application-diary-show {
+  padding: 10px;
+}
+#application-diary-show .wrap-title {
+  text-align: left;
+}
+#application-diary-show .data {
+  text-align: center;
+  margin-bottom: 5px;
+}
+#application-diary-show .controls {
+  text-align: center;
+}
+#application-diary-show table {
+  width: 100%;
+}
+#application-diary-show table tr {
+  vertical-align: top;
+}
+#application-diary-show table tr h1 {
+  background-color: #ddffdd;
+  border-left: 6px solid #04AA6D;
+  padding: 10px;
+}
+#application-diary-show .wrap-tickets {
+  text-align: center;
+}
+#application-diary-show .wrap-tickets .ticket {
+  border: gray 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+#application-diary-show .user {
+  text-align: center;
+}
+#application-diary-show .user img {
+  width: 100px;
+}
