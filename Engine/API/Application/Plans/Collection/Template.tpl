@@ -18,8 +18,7 @@
                 </td>
                 <td>
                     <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.show('<?php echo $entity->getKey(); ?>');">Show</a> &diams;
-                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.edit('<?php echo $entity->getKey(); ?>');">Edit</a> &diams;
-                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.remove('<?php echo $entity->getKey(); ?>');">Remove</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
                 </td>
             </tr>
         <?php endforeach; ?>

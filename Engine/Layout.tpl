@@ -23,7 +23,7 @@
             <tr>
                 <td class="menu top">
                     <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Diary.create();">Jump to new day</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.getCollection();">Plan</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.getCollection();">Plans</a>
                 </td>
             </tr>
             <tr>

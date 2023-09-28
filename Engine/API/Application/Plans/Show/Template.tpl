@@ -2,38 +2,13 @@
 
 <div id="application-diary-show" class="stylo">
 
-    <div class="controls">
-        <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.show();">Show</a> &diams;
-        <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.edit();">Edit</a>
-    </div>
-
-    <div class="data">
-        <?php echo $entity->getID(); ?><br/>
-        <?php echo $entity->getPeriod(); ?> Quarters &diams;
-        <?php echo $entity->getStatusTitle(); ?> &diams;
-        <?php echo $entity->getData(); ?><br/>
-    </div>
+    <h1 class="wrap-title">
+        <?php echo $entity->getTitle(); ?>
+    </h1>
+    <?php echo $entity->getStatusTitle(); ?><br/>
+    <a href="javascript:void(0)" onclick="Interstate60.Application.Plans.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
 
     <hr/>
 
-    <table>
-        <tr>
-            <td style="width: 10%;">
-                <?php if(file_exists(ROOT_DIR . '/Images/Real.jpg')): ?>
-                    <img src="<?php echo ROOT_URL; ?>/Images/Real.jpg" width="170">
-                <?php else: ?>
-                    <img src="<?php echo ROOT_URL; ?>/Images/Teacher.gif"> <!-- Thanks in README.md -->
-                <?php endif; ?>
-            </td>
-            <td>
-                <h1 class="wrap-title">
-                    <?php echo $entity->getTitle(); ?>
-                </h1>
-
-                <?php echo $entity->parse(); ?>
-            </td>
-        </tr>
-    </table>
-
-    <hr/>
+    <?php echo $entity->parse(); ?>
 </div>
