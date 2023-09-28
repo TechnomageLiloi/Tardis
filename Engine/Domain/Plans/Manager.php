@@ -16,6 +16,25 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'plans';
     }
 
+    public static function loadCollection(): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s order by key_plan desc;',
+            $name
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     /**
      * Load day by key.
      *
