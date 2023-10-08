@@ -13,7 +13,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $entity = DiaryManager::loadCurrent();
+        $key = self::getParameter('key_plan');
+        $entity = DiaryManager::load($key);
 
         $entity->setTitle(self::getParameter('title'));
         $entity->setProgram(self::getParameter('program'));

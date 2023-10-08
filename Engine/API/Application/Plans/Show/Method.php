@@ -13,7 +13,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $entity = DiaryManager::loadCurrent();
+        $key = self::getParameter('key_plan');
+        $entity = DiaryManager::load($key);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

@@ -88,10 +88,10 @@ Interstate60.Application = {
             });
         },
 
-        show: function ()
+        show: function (key_phan)
         {
             API.request('Interstate60.Application.Plans.Show', {
-
+                key_plan: key_phan
             }, function (data) {
                 $('#page').html(data.render);
             }, function () {
@@ -99,10 +99,10 @@ Interstate60.Application = {
             });
         },
 
-        edit: function ()
+        edit: function (key_phan)
         {
             API.request('Interstate60.Application.Plans.Edit', {
-
+                key_plan: key_phan
             }, function (data) {
                 const wrap = $('#page');
                 wrap.html(data.render);
@@ -112,7 +112,7 @@ Interstate60.Application = {
             });
         },
 
-        save: function ()
+        save: function (key_phan)
         {
             if(!confirm('Are you sure?'))
             {
@@ -121,6 +121,7 @@ Interstate60.Application = {
 
             const jq_block = $('#application-diary-edit');
             API.request('Interstate60.Application.Plans.Save', {
+                key_plan: key_phan,
                 title: jq_block.find('[name=title]').val(),
                 program: jq_block.find('[name=program]').val(),
                 status: jq_block.find('[name=status]').val()
