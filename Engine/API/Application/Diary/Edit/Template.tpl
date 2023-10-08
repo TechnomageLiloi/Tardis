@@ -2,7 +2,7 @@
 
 <div id="application-diary-edit">
     <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.getShow('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
     <hr/>
     <table>
         <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>" /></td></tr>
@@ -18,5 +18,5 @@
     </table>
     <hr/>
     <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.save('<?php echo $entity->getKey(); ?>');">Save</a>
-    <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.getShow('<?php echo $entity->getKey(); ?>');">Cancel</a>
+    <a href="javascript:void(0)" onclick="Interstate60.Application.Diary.show('<?php echo $entity->getKey(); ?>');">Cancel</a>
 </div>
