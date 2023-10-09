@@ -30,6 +30,18 @@ class Database
 
     protected function resetDatabase(): self
     {
+        Manager::getAdapter()->request('SET foreign_key_checks = 0');
+
+        if ($result = Manager::getAdapter()->request("SHOW TABLES"))
+        {
+            while ($row = $result->fetch_array(MYSQLI_NUM))
+            {
+                Manager::getAdapter()->request('DROP TABLE IF EXISTS ' . $row[0]);
+            }
+        }
+
+        Manager::getAdapter()->request('SET foreign_key_checks = 1');
+
         $list_sql = explode(';', file_get_contents(__DIR__ . '/../Install/Install.sql'));
 
         foreach ($list_sql as $sql)
