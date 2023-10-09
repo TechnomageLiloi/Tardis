@@ -30,4 +30,4 @@ create table I60_plans
     status tinyint unsigned default 1 not null,
     constraint I60_plans_pk
         primary key (key_plan)
-);
+)

@@ -2,6 +2,7 @@
 
 use Liloi\I60\API\Method;
 use Liloi\I60\Domain\Manager;
+use Liloi\Config\Pool;
 
 class Database
 {
@@ -12,16 +13,30 @@ class Database
         if(self::$instance === null)
         {
             self::$instance = new self();
-            self::$instance->setConfig();
+            self::$instance->setConfig()->resetDatabase();
         }
 
         return self::$instance;
     }
 
-    private function setConfig(): void
+    protected function setConfig(): self
     {
-        $config = include __DIR__ . '/../Config/Test.php';
-        Manager::setConfig($config);
-        Method::setConfig($config);
+        include __DIR__ . '/../Config/Test.php';
+        $pool = Pool::getSingleton();
+        Manager::setConfig($pool);
+        Method::setConfig($pool);
+        return $this;
+    }
+
+    protected function resetDatabase(): self
+    {
+        $list_sql = explode(';', file_get_contents(__DIR__ . '/../Install/Install.sql'));
+
+        foreach ($list_sql as $sql)
+        {
+            Manager::getAdapter()->request($sql);
+        }
+
+        return $this;
     }
 }
