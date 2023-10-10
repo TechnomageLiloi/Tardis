@@ -54,10 +54,11 @@ Interstate60.Application = {
 
             const jq_block = $('#application-diary-edit');
             API.request('Interstate60.Application.Diary.Save', {
-                title: jq_block.find('[name=title]').val(),
-                program: jq_block.find('[name=program]').val(),
                 data: jq_block.find('[name=data]').val(),
-                status: jq_block.find('[name=status]').val()
+                program: jq_block.find('[name=program]').val(),
+                status: jq_block.find('[name=status]').val(),
+                title: jq_block.find('[name=title]').val(),
+                type: jq_block.find('[name=type]').val()
             }, function (data) {
                 Interstate60.Application.Diary.show();
             }, function () {

@@ -6,6 +6,7 @@ use Liloi\API\Response;
 use Liloi\I60\API\Method as SuperMethod;
 use Liloi\I60\Domain\Diary\Manager as DiaryManager;
 use Liloi\I60\Domain\Diary\Statuses as DiaryStatuses;
+use Liloi\I60\Domain\Diary\Types as DiaryTypes;
 
 /**
  * Rune API: Interstate60.Application.Diary.Edit
@@ -20,6 +21,7 @@ class Method extends SuperMethod
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
             'statuses' => DiaryStatuses::$list,
+            'types' => DiaryTypes::$list,
         ]));
 
         return $response;

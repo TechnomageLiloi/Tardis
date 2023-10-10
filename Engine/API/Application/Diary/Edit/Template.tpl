@@ -13,6 +13,13 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
+        <tr><td>Types</td><td>
+            <select name="type">
+                <?php foreach($types as $key => $value): ?>
+                <option value="<?php echo $key; ?>" <?php if($entity->getType() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
         <tr><td>Program</td><td><textarea name="program"><?php echo $entity->getProgram(); ?></textarea></td></tr>
         <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>
     </table>

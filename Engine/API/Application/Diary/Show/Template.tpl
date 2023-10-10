@@ -11,6 +11,7 @@
         <?php echo $entity->getID(); ?><br/>
         <?php echo $entity->getPeriod(); ?> Quarters &diams;
         <?php echo $entity->getStatusTitle(); ?> &diams;
+        <?php echo $entity->getTypeTitle(); ?> &diams;
         <?php echo $entity->getData(); ?><br/>
     </div>
 

@@ -15,11 +15,12 @@ class Method extends SuperMethod
     {
         $entity = DiaryManager::loadCurrent();
 
-        $entity->setTitle(self::getParameter('title'));
-        $entity->setProgram(self::getParameter('program'));
         $entity->setData(self::getParameter('data'));
-        $entity->setStatus(self::getParameter('status'));
         $entity->setFinish(date('Y-m-d H:i:s'));
+        $entity->setProgram(self::getParameter('program'));
+        $entity->setStatus(self::getParameter('status'));
+        $entity->setTitle(self::getParameter('title'));
+        $entity->setType(self::getParameter('type'));
 
         $entity->save();
 

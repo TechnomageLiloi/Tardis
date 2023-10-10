@@ -8,14 +8,14 @@ namespace Liloi\I60\Domain\Diary;
 class Types
 {
     public const BIOTECH = 1;
-    public const ARTIFACTS = 2;
-    public const TICKETS = 3;
+    public const PROJECTS = 2;
+    public const ARTIFACTS = 3;
 
     // @ToDo: To more abstract level with redefine.
     static public array $list = [
         self::BIOTECH => 'Biotech',
+        self::PROJECTS => 'Projects',
         self::ARTIFACTS => 'Artifacts',
-        self::TICKETS => 'Tickets',
     ];
 
     // @todo: move this method to more abstract level.
