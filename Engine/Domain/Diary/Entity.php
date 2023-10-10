@@ -23,6 +23,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getFinish()
  * @method void setFinish(string $value)
+ *
+ * @method string getType()
+ * @method void setType(string $value)
  */
 class Entity extends AbstractEntity
 {
@@ -60,6 +63,11 @@ class Entity extends AbstractEntity
     public function getStatusTitle(): string
     {
         return Statuses::$list[$this->getStatus()];
+    }
+
+    public function getTypeTitle(): string
+    {
+        return Types::$list[$this->getType()];
     }
 
     public function getPeriod(): int

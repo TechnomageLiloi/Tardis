@@ -80,6 +80,7 @@ class Manager extends DomainManager
             'program' => '-',
             'data' => '{}',
             'status' => Statuses::TODO,
+            'type' => Types::BIOTECH,
             'start' => date('Y-m-d H:i:s'),
             'finish' => date('Y-m-d H:i:s')
         ]);
