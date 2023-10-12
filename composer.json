@@ -1,5 +1,5 @@
 {
-    "name": "technomage-liloi/interstate-60",
+    "name": "technomage-liloi/tardis",
     "keywords": [
     ],
     "minimum-stability": "dev",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Liloi\\I60\\": "Engine"
+            "Liloi\\Tardis\\": "Engine"
         }
     }
 }
