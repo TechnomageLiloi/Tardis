@@ -23,8 +23,8 @@
             <tr>
                 <td class="menu top">
                     <a href="javascript:void(0)" class="butn" onclick="window.location.reload();">Reload</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Diary.create();">Jump to new day</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Interstate60.Application.Plans.getCollection();">Plans</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.create();">Jump to new day</a>
+                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Plans.getCollection();">Plans</a>
                 </td>
             </tr>
             <tr>
@@ -38,7 +38,7 @@
             </tr>
         </table>
         <script>
-            Interstate60.Application.Diary.show();
+            Tardis.Application.Diary.show();
         </script>
     </body>
 </html>

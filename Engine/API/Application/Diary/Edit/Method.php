@@ -9,7 +9,7 @@ use Liloi\Tardis\Domain\Diary\Statuses as DiaryStatuses;
 use Liloi\Tardis\Domain\Diary\Types as DiaryTypes;
 
 /**
- * Rune API: Interstate60.Application.Diary.Edit
+ * Rune API: Tardis.Application.Diary.Edit
  */
 class Method extends SuperMethod
 {

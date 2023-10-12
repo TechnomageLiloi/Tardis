@@ -1,4 +1,4 @@
-Interstate60.Application = {
+Tardis.Application = {
     Diary: {
         create: function ()
         {
@@ -12,10 +12,10 @@ Interstate60.Application = {
                 return;
             }
 
-            API.request('Interstate60.Application.Diary.Create', {
+            API.request('Tardis.Application.Diary.Create', {
 
             }, function (data) {
-                Interstate60.Application.Diary.show();
+                Tardis.Application.Diary.show();
             }, function () {
 
             });
@@ -23,7 +23,7 @@ Interstate60.Application = {
 
         show: function ()
         {
-            API.request('Interstate60.Application.Diary.Show', {
+            API.request('Tardis.Application.Diary.Show', {
 
             }, function (data) {
                 $('#page').html(data.render);
@@ -34,7 +34,7 @@ Interstate60.Application = {
 
         edit: function ()
         {
-            API.request('Interstate60.Application.Diary.Edit', {
+            API.request('Tardis.Application.Diary.Edit', {
 
             }, function (data) {
                 const wrap = $('#page');
@@ -53,14 +53,14 @@ Interstate60.Application = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('Interstate60.Application.Diary.Save', {
+            API.request('Tardis.Application.Diary.Save', {
                 data: jq_block.find('[name=data]').val(),
                 program: jq_block.find('[name=program]').val(),
                 status: jq_block.find('[name=status]').val(),
                 title: jq_block.find('[name=title]').val(),
                 type: jq_block.find('[name=type]').val()
             }, function (data) {
-                Interstate60.Application.Diary.show();
+                Tardis.Application.Diary.show();
             }, function () {
 
             });
@@ -80,10 +80,10 @@ Interstate60.Application = {
                 return;
             }
 
-            API.request('Interstate60.Application.Plans.Create', {
+            API.request('Tardis.Application.Plans.Create', {
 
             }, function (data) {
-                Interstate60.Application.Plans.getCollection();
+                Tardis.Application.Plans.getCollection();
             }, function () {
 
             });
@@ -91,7 +91,7 @@ Interstate60.Application = {
 
         show: function (key_phan)
         {
-            API.request('Interstate60.Application.Plans.Show', {
+            API.request('Tardis.Application.Plans.Show', {
                 key_plan: key_phan
             }, function (data) {
                 $('#page').html(data.render);
@@ -102,7 +102,7 @@ Interstate60.Application = {
 
         edit: function (key_phan)
         {
-            API.request('Interstate60.Application.Plans.Edit', {
+            API.request('Tardis.Application.Plans.Edit', {
                 key_plan: key_phan
             }, function (data) {
                 const wrap = $('#page');
@@ -121,13 +121,13 @@ Interstate60.Application = {
             }
 
             const jq_block = $('#application-diary-edit');
-            API.request('Interstate60.Application.Plans.Save', {
+            API.request('Tardis.Application.Plans.Save', {
                 key_plan: key_phan,
                 title: jq_block.find('[name=title]').val(),
                 program: jq_block.find('[name=program]').val(),
                 status: jq_block.find('[name=status]').val()
             }, function (data) {
-                Interstate60.Application.Plans.getCollection();
+                Tardis.Application.Plans.getCollection();
             }, function () {
 
             });
@@ -135,7 +135,7 @@ Interstate60.Application = {
 
         getCollection: function ()
         {
-            API.request('Interstate60.Application.Plans.Collection', {
+            API.request('Tardis.Application.Plans.Collection', {
 
             }, function (data) {
                 $('#page').html(data.render);

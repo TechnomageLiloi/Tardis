@@ -6,7 +6,7 @@
         <?php echo $entity->getTitle(); ?>
     </h1>
     <?php echo $entity->getStatusTitle(); ?><br/>
-    <a href="javascript:void(0)" onclick="Interstate60.Application.Plans.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
+    <a href="javascript:void(0)" onclick="Tardis.Application.Plans.edit('<?php echo $entity->getKey(); ?>');">Edit</a>
 
     <hr/>
 

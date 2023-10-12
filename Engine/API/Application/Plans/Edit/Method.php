@@ -8,7 +8,7 @@ use Liloi\Tardis\Domain\Plans\Manager as DiaryManager;
 use Liloi\Tardis\Domain\Plans\Statuses as DiaryStatuses;
 
 /**
- * Rune API: Interstate60.Application.Diary.Edit
+ * Rune API: Tardis.Application.Diary.Edit
  */
 class Method extends SuperMethod
 {
