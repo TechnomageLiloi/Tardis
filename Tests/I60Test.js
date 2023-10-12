@@ -1,6 +1,6 @@
-describe('Interstate60 object', function() {
-  it('Interstate60 sub-objects', function() {
-    expect(Interstate60 instanceof Object).toBeTruthy();
+describe('Tardis object', function() {
+  it('Tardis sub-objects', function() {
+    expect(Tardis instanceof Object).toBeTruthy();
     expect(Tardis.Application instanceof Object).toBeTruthy();
     expect(Tardis.Application.Diary instanceof Object).toBeTruthy();
   });
