@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\I60\API\Application\Plans\Collection;
+namespace Liloi\Tardis\API\Application\Plans\Collection;
 
 use Liloi\API\Response;
-use Liloi\I60\API\Method as SuperMethod;
-use Liloi\I60\Domain\Plans\Manager as PlansManager;
+use Liloi\Tardis\API\Method as SuperMethod;
+use Liloi\Tardis\Domain\Plans\Manager as PlansManager;
 
 /**
  * Rune API: Blueprint.Blueprints.Show

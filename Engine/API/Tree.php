@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\API;
+namespace Liloi\Tardis\API;
 
 use Liloi\API\Manager;
 use Liloi\API\Method;
@@ -19,16 +19,16 @@ class Tree
     {
         $manager = new Manager();
 
-        $manager->add(new Method('Interstate60.Application.Plans.Collection', '\Liloi\I60\API\Application\Plans\Collection\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Plans.Show', '\Liloi\I60\API\Application\Plans\Show\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Plans.Edit', '\Liloi\I60\API\Application\Plans\Edit\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Plans.Save', '\Liloi\I60\API\Application\Plans\Save\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Plans.Create', '\Liloi\I60\API\Application\Plans\Create\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Plans.Collection', '\Liloi\Tardis\API\Application\Plans\Collection\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Plans.Show', '\Liloi\Tardis\API\Application\Plans\Show\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Plans.Edit', '\Liloi\Tardis\API\Application\Plans\Edit\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Plans.Save', '\Liloi\Tardis\API\Application\Plans\Save\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Plans.Create', '\Liloi\Tardis\API\Application\Plans\Create\Method::execute'));
 
-        $manager->add(new Method('Interstate60.Application.Diary.Show', '\Liloi\I60\API\Application\Diary\Show\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Diary.Edit', '\Liloi\I60\API\Application\Diary\Edit\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Diary.Save', '\Liloi\I60\API\Application\Diary\Save\Method::execute'));
-        $manager->add(new Method('Interstate60.Application.Diary.Create', '\Liloi\I60\API\Application\Diary\Create\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Diary.Show', '\Liloi\Tardis\API\Application\Diary\Show\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Diary.Edit', '\Liloi\Tardis\API\Application\Diary\Edit\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Diary.Save', '\Liloi\Tardis\API\Application\Diary\Save\Method::execute'));
+        $manager->add(new Method('Interstate60.Application.Diary.Create', '\Liloi\Tardis\API\Application\Diary\Create\Method::execute'));
 
         self::$manager = $manager;
     }

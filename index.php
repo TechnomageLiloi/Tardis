@@ -7,7 +7,7 @@ include_once __DIR__ . '/vendor/autoload.php';
 
 use Liloi\Judex\Log;
 use Liloi\Judex\LogData;
-use Liloi\I60\Domain\Logs\Entity;
+use Liloi\Tardis\Domain\Logs\Entity;
 use Liloi\Judex\Exceptions\JudexException;
 
 Log::set('log', function (LogData $data) {
@@ -20,7 +20,7 @@ Log::set('log', function (LogData $data) {
 
 try {
     $config = include __DIR__ . '/Config/Block.php';
-    echo (new Liloi\I60\Application($config))->compile();
+    echo (new Liloi\Tardis\Application($config))->compile();
 }
 catch (JudexException $exp)
 {

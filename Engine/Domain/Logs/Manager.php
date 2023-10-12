@@ -1,9 +1,9 @@
 <?php
 
-namespace Liloi\I60\Domain\Logs;
+namespace Liloi\Tardis\Domain\Logs;
 
 use Liloi\Judex\Assert;
-use Liloi\I60\Domain\Manager as DomainManager;
+use Liloi\Tardis\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {

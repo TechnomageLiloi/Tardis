@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\I60\API\Application\Plans\Save;
+namespace Liloi\Tardis\API\Application\Plans\Save;
 
 use Liloi\API\Response;
-use Liloi\I60\API\Method as SuperMethod;
-use Liloi\I60\Domain\Plans\Manager as DiaryManager;
+use Liloi\Tardis\API\Method as SuperMethod;
+use Liloi\Tardis\Domain\Plans\Manager as DiaryManager;
 
 /**
  * Rune API: Interstate60.Application.Diary.Save

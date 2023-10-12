@@ -1,7 +1,7 @@
 <?php
 
-use Liloi\I60\API\Method;
-use Liloi\I60\Domain\Manager;
+use Liloi\Tardis\API\Method;
+use Liloi\Tardis\Domain\Manager;
 use Liloi\Config\Pool;
 
 class Database

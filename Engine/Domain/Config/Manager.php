@@ -1,9 +1,9 @@
 <?php
 
-namespace Liloi\I60\Domain\Config;
+namespace Liloi\Tardis\Domain\Config;
 
 use Liloi\API\Errors\Exception;
-use Liloi\I60\Domain\Manager as DomainManager;
+use Liloi\Tardis\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {

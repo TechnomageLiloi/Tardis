@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\API;
+namespace Liloi\Tardis\API;
 
 use Liloi\Config\Pool;
 use Liloi\Judex\Assert;

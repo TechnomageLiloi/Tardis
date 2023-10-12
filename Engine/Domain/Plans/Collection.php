@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\Domain\Plans;
+namespace Liloi\Tardis\Domain\Plans;
 
 use Liloi\Tools\Collection as AbstractCollection;
 

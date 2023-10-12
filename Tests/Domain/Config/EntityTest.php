@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\I60\Domain\Config;
+namespace Liloi\Tardis\Domain\Config;
 
 use PHPUnit\Framework\TestCase;
 

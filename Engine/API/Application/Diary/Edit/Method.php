@@ -1,12 +1,12 @@
 <?php
 
-namespace Liloi\I60\API\Application\Diary\Edit;
+namespace Liloi\Tardis\API\Application\Diary\Edit;
 
 use Liloi\API\Response;
-use Liloi\I60\API\Method as SuperMethod;
-use Liloi\I60\Domain\Diary\Manager as DiaryManager;
-use Liloi\I60\Domain\Diary\Statuses as DiaryStatuses;
-use Liloi\I60\Domain\Diary\Types as DiaryTypes;
+use Liloi\Tardis\API\Method as SuperMethod;
+use Liloi\Tardis\Domain\Diary\Manager as DiaryManager;
+use Liloi\Tardis\Domain\Diary\Statuses as DiaryStatuses;
+use Liloi\Tardis\Domain\Diary\Types as DiaryTypes;
 
 /**
  * Rune API: Interstate60.Application.Diary.Edit

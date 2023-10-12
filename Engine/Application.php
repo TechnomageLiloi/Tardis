@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\I60;
+namespace Liloi\Tardis;
 
 use Liloi\Config\Pool;
-use Liloi\I60\API\Method;
-use Liloi\I60\API\Tree;
-use Liloi\I60\Domain\Manager;
+use Liloi\Tardis\API\Method;
+use Liloi\Tardis\API\Tree;
+use Liloi\Tardis\Domain\Manager;
 use Rune\Application\Conceptual as ConceptualApplication;
 
 /**

@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\I60\API\Application\Diary\Create;
+namespace Liloi\Tardis\API\Application\Diary\Create;
 
 use Liloi\API\Response;
-use Liloi\I60\API\Method as SuperMethod;
-use Liloi\I60\Domain\Diary\Manager as DiaryManager;
+use Liloi\Tardis\API\Method as SuperMethod;
+use Liloi\Tardis\Domain\Diary\Manager as DiaryManager;
 
 /**
  * Rune API: Interstate60.Application.Diary.Create
