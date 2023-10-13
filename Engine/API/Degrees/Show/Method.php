@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Tardis\API\Degrees\Save;
+namespace Liloi\Tardis\API\Degrees\Show;
 
 use Liloi\API\Response;
 use Liloi\Tardis\API\Method as SuperMethod;

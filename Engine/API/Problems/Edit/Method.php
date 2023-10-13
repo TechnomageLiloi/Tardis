@@ -1,11 +1,11 @@
 <?php
 
-namespace Liloi\Blueprint\API\Problems\Edit;
+namespace Liloi\Tardis\API\Problems\Edit;
 
 use Liloi\API\Response;
-use Liloi\Blueprint\API\Method as SuperMethod;
-use Liloi\Blueprint\Engine\Domain\Problems\Manager;
-use Liloi\Blueprint\Engine\Domain\Problems\Types;
+use Liloi\Tardis\API\Method as SuperMethod;
+use Liloi\Tardis\Domain\Problems\Manager;
+use Liloi\Tardis\Domain\Problems\Types;
 
 /**
  * Rune API: Blueprint.Blueprints.Edit
