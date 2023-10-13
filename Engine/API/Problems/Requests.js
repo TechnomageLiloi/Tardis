@@ -1,7 +1,7 @@
 Tardis.Problems = {
     collection: function (uid)
     {
-        API.request('Blueprint.Problems.Collection', {
+        API.request('Tardis.Problems.Collection', {
             'uid': uid
         }, function (data) {
             $('#page').html(data.render);
@@ -12,7 +12,7 @@ Tardis.Problems = {
 
     show: function (key_problem)
     {
-        API.request('Blueprint.Problems.Show', {
+        API.request('Tardis.Problems.Show', {
             'key_problem': key_problem
         }, function (data) {
             $('#page').html(data.render);
@@ -28,7 +28,7 @@ Tardis.Problems = {
             return;
         }
 
-        API.request('Blueprint.Problems.Create', {
+        API.request('Tardis.Problems.Create', {
             'key_blueprint': key_blueprint,
             'id_type': id_type
         }, function (data) {
@@ -45,7 +45,7 @@ Tardis.Problems = {
             return;
         }
 
-        API.request('Blueprint.Problems.Remove', {
+        API.request('Tardis.Problems.Remove', {
             'key_problem': key_problem
         }, function (data) {
             Tardis.Problems.collection(uid);
@@ -56,7 +56,7 @@ Tardis.Problems = {
 
     edit: function (key_problem, uid)
     {
-        API.request('Blueprint.Problems.Edit', {
+        API.request('Tardis.Problems.Edit', {
             'key_problem': key_problem,
             'uid': uid
         }, function (data) {
@@ -74,7 +74,7 @@ Tardis.Problems = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Blueprint.Problems.Save', {
+        API.request('Tardis.Problems.Save', {
             'key_problem': key_problem,
             'title': jq_block.find('[name="title"]').val(),
             'mark': jq_block.find('[name="mark"]').val(),
