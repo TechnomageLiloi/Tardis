@@ -1,15 +1,10 @@
-/**
- * Blueprints request function list.
- *
- * @type {{edit: API.Blueprints.edit, show: API.Blueprints.show, save: (function(*=): (undefined)), create: (function(*=): (undefined)), remove: (function(*=): (undefined))}}
- */
-API.Blueprints = {
+Tardis.Degrees = {
     show: function (uid)
     {
-        API.request('Blueprint.Blueprints.Show', {
+        API.request('Tardis.Degrees.Show', {
             'uid': uid
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -22,7 +17,7 @@ API.Blueprints = {
             return;
         }
 
-        API.request('Blueprint.Blueprints.Create', {
+        API.request('Tardis.Degrees.Create', {
             'uid': uid
         }, function (data) {
             API.Blueprints.show('root');
@@ -38,7 +33,7 @@ API.Blueprints = {
             return;
         }
 
-        API.request('Blueprint.Blueprints.Remove', {
+        API.request('Tardis.Degrees.Remove', {
             'uid': uid
         }, function (data) {
             API.Blueprints.show('root');
@@ -49,10 +44,10 @@ API.Blueprints = {
 
     edit: function (uid)
     {
-        API.request('Blueprint.Blueprints.Edit', {
+        API.request('Tardis.Degrees.Edit', {
             'uid': uid
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -66,14 +61,14 @@ API.Blueprints = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Blueprint.Blueprints.Save', {
+        API.request('Tardis.Degrees.Save', {
             'key': key,
             'uid': jq_block.find('[name="uid"]').val(),
             'title': jq_block.find('[name="title"]').val(),
             'program': jq_block.find('[name="program"]').val(),
             'status': jq_block.find('[name="status"]').val()
         }, function (data) {
-            API.Blueprints.show(jq_block.find('[name="uid"]').val());
+            Tardis.Degrees.show(jq_block.find('[name="uid"]').val());
         }, function () {
 
         });

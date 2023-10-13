@@ -1,15 +1,10 @@
-/**
- * Blueprints request function list.
- *
- * @type {{edit: API.Blueprints.edit, show: API.Blueprints.show, save: (function(*=): (undefined)), create: (function(*=): (undefined)), remove: (function(*=): (undefined))}}
- */
-API.Lessons = {
+Tardis.Lessons = {
     schedule: function (date_now)
     {
-        API.request('Blueprint.Lessons.Schedule', {
+        API.request('Tardis.Lessons.Schedule', {
             'date_now': date_now
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -17,10 +12,10 @@ API.Lessons = {
 
     collection: function (key_problem)
     {
-        API.request('Blueprint.Lessons.Collection', {
+        API.request('Tardis.Lessons.Collection', {
             'key_problem': key_problem
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -28,10 +23,10 @@ API.Lessons = {
 
     show: function (uid)
     {
-        API.request('Blueprint.Blueprints.Show', {
+        API.request('Tardis.Blueprints.Show', {
             'uid': uid
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -44,10 +39,10 @@ API.Lessons = {
             return;
         }
 
-        API.request('Blueprint.Lessons.Create', {
+        API.request('Tardis.Lessons.Create', {
             'key_problem': key_problem
         }, function (data) {
-            API.Lessons.collection(key_problem);
+            Tardis.Lessons.collection(key_problem);
         }, function () {
 
         });
@@ -60,10 +55,10 @@ API.Lessons = {
             return;
         }
 
-        API.request('Blueprint.Lessons.Remove', {
+        API.request('Tardis.Lessons.Remove', {
             'key_lesson': key_lesson
         }, function (data) {
-            API.Lessons.collection(key_problem);
+            Tardis.Lessons.collection(key_problem);
         }, function () {
 
         });
@@ -71,10 +66,10 @@ API.Lessons = {
 
     edit: function (key_lesson)
     {
-        API.request('Blueprint.Lessons.Edit', {
+        API.request('Tardis.Lessons.Edit', {
             'key_lesson': key_lesson
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -88,7 +83,7 @@ API.Lessons = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Blueprint.Lessons.Save', {
+        API.request('Tardis.Lessons.Save', {
             'key_lesson': key_lesson,
             'comment': jq_block.find('[name="comment"]').val(),
             'mark': jq_block.find('[name="mark"]').val(),
@@ -97,7 +92,7 @@ API.Lessons = {
             'finish': jq_block.find('[name="finish"]').val(),
             'data': jq_block.find('[name="data"]').val()
         }, function (data) {
-            API.Lessons.collection(key_problem);
+            Tardis.Lessons.collection(key_problem);
         }, function () {
 
         });

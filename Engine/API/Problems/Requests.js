@@ -1,15 +1,10 @@
-/**
- * Blueprints request function list.
- *
- * @type {{edit: API.Blueprints.edit, show: API.Blueprints.show, save: (function(*=): (undefined)), create: (function(*=): (undefined)), remove: (function(*=): (undefined))}}
- */
-API.Problems = {
+Tardis.Problems = {
     collection: function (uid)
     {
         API.request('Blueprint.Problems.Collection', {
             'uid': uid
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -20,7 +15,7 @@ API.Problems = {
         API.request('Blueprint.Problems.Show', {
             'key_problem': key_problem
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -37,7 +32,7 @@ API.Problems = {
             'key_blueprint': key_blueprint,
             'id_type': id_type
         }, function (data) {
-            API.Problems.collection(uid);
+            Tardis.Problems.collection(uid);
         }, function () {
 
         });
@@ -53,7 +48,7 @@ API.Problems = {
         API.request('Blueprint.Problems.Remove', {
             'key_problem': key_problem
         }, function (data) {
-            API.Problems.collection(uid);
+            Tardis.Problems.collection(uid);
         }, function () {
 
         });
@@ -65,7 +60,7 @@ API.Problems = {
             'key_problem': key_problem,
             'uid': uid
         }, function (data) {
-            $('#map').html(data.render);
+            $('#page').html(data.render);
         }, function () {
 
         });
@@ -86,7 +81,7 @@ API.Problems = {
             'program': jq_block.find('[name="program"]').val(),
             'type': jq_block.find('[name="type"]').val()
         }, function (data) {
-            API.Problems.collection(uid);
+            Tardis.Problems.collection(uid);
         }, function () {
 
         });
