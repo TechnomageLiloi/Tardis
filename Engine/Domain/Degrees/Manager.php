@@ -35,13 +35,31 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function load(string $uid): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where uid="%s"',
+            $name,
+            $uid
+        ));
+
+        if(!$row)
+        {
+
+        }
+
+        return Entity::create($row);
+    }
+
     /**
      * Load day by key.
      *
      * @param string $keyPlan
      * @return Entity
      */
-    public static function load(string $keyPlan): Entity
+    public static function loadByKey(string $keyPlan): Entity
     {
         $name = self::getTableName();
 

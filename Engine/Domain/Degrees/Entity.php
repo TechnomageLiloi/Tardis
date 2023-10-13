@@ -35,6 +35,12 @@ class Entity extends AbstractEntity
         Manager::save($this);
     }
 
+    public function remove(): void
+    {
+        $this->setStatus(Statuses::TODO);
+        $this->save();
+    }
+
     public function getStatusCaption(): string
     {
         return Statuses::$list[$this->getStatus()];
