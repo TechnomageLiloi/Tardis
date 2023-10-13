@@ -1,4 +1,15 @@
 Tardis.Degrees = {
+    getCollection: function ()
+    {
+        API.request('Tardis.Degrees.Collection', {
+
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
+    },
+
     show: function (uid)
     {
         API.request('Tardis.Degrees.Show', {

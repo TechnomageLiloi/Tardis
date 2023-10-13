@@ -30,6 +30,7 @@ class Tree
         $manager->add(new Method('Tardis.Application.Diary.Save', '\Liloi\Tardis\API\Application\Diary\Save\Method::execute'));
         $manager->add(new Method('Tardis.Application.Diary.Create', '\Liloi\Tardis\API\Application\Diary\Create\Method::execute'));
 
+        $manager->add(new Method('Tardis.Degrees.Collection', '\Liloi\Tardis\API\Degrees\Collection\Method::execute'));
         $manager->add(new Method('Tardis.Degrees.Show', '\Liloi\Tardis\API\Degrees\Show\Method::execute'));
         $manager->add(new Method('Tardis.Degrees.Create', '\Liloi\Tardis\API\Degrees\Create\Method::execute'));
         $manager->add(new Method('Tardis.Degrees.Remove', '\Liloi\Tardis\API\Degrees\Remove\Method::execute'));
