@@ -1,4 +1,4 @@
-<a href="javascript:void(0)" onclick="API.Blueprints.edit('<?php echo $entity->getUid(); ?>')">Edit</a>
+<a href="javascript:void(0)" onclick="Tardis.Lessons.edit('<?php echo $entity->getUid(); ?>')">Edit</a>
 <div id="blueprint-show">
     <h1><?php echo $entity->getTitle(); ?></h1>
     <hr/>

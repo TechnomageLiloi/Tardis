@@ -53,7 +53,7 @@
             <td>
                 <?php foreach($schedule[$day][$hour] as $entity): ?>
                 <div class="lesson">
-                    <a href="javascript:void(0)" onclick="API.Lessons.collection('<?php echo $entity->getKeyProblem(); ?>')">
+                    <a href="javascript:void(0)" onclick="Tardis.Lessons.collection('<?php echo $entity->getKeyProblem(); ?>')">
                         <?php echo $entity->getComment(); ?>
                     </a>
                 </div>

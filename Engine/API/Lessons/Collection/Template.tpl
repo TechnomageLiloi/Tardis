@@ -17,7 +17,7 @@
 </style>
 <div id="problem-group">
     
-        <a href="javascript:void(0)" onclick="API.Lessons.create('<?php echo $key_problem; ?>')">Create</a>
+        <a href="javascript:void(0)" onclick="Tardis.Lessons.create('<?php echo $key_problem; ?>')">Create</a>
         <table>
             <tr>
                 <th>Comment</th>
@@ -33,9 +33,9 @@
                 <td><?php echo $statuses[$entity->getStatus()]; ?></td>
                 <td><?php echo $entity->getMark(); ?></td>
                 <td style="text-align: right;">
-                    <a href="javascript:void(0)" onclick="API.Lessons.edit('<?php echo $key_lesson; ?>', '<?php echo $key_problem; ?>')">Edit</a>
+                    <a href="javascript:void(0)" onclick="Tardis.Lessons.edit('<?php echo $key_lesson; ?>', '<?php echo $key_problem; ?>')">Edit</a>
                     &diams;
-                    <a href="javascript:void(0)" onclick="API.Lessons.remove('<?php echo $key_lesson; ?>', '<?php echo $key_problem; ?>')">Remove</a>
+                    <a href="javascript:void(0)" onclick="Tardis.Lessons.remove('<?php echo $key_lesson; ?>', '<?php echo $key_problem; ?>')">Remove</a>
                 </td>
             </tr>
             <?php endforeach; ?>

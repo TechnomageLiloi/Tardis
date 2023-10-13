@@ -12,7 +12,7 @@
     }
 </style>
 <div id="blueprint-edit">
-    <a href="javascript:void(0)" onclick="API.Lessons.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyProblem(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Tardis.Lessons.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyProblem(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -41,5 +41,5 @@
         <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" onclick="API.Lessons.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyProblem(); ?>');">Save</a>
+    <a href="javascript:void(0)" onclick="Tardis.Lessons.save('<?php echo $entity->getKey(); ?>', '<?php echo $entity->getKeyProblem(); ?>');">Save</a>
 </div>
