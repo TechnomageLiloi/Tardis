@@ -21,7 +21,7 @@ Tardis.Degrees = {
         });
     },
 
-    create: function (uid)
+    create: function ()
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,9 +29,9 @@ Tardis.Degrees = {
         }
 
         API.request('Tardis.Degrees.Create', {
-            'uid': uid
+
         }, function (data) {
-            API.Blueprints.show('root');
+            Tardis.Degrees.getCollection();
         }, function () {
 
         });
