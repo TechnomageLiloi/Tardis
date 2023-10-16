@@ -19,12 +19,6 @@ class Tree
     {
         $manager = new Manager();
 
-        $manager->add(new Method('Tardis.Application.Plans.Collection', '\Liloi\Tardis\API\Application\Plans\Collection\Method::execute'));
-        $manager->add(new Method('Tardis.Application.Plans.Show', '\Liloi\Tardis\API\Application\Plans\Show\Method::execute'));
-        $manager->add(new Method('Tardis.Application.Plans.Edit', '\Liloi\Tardis\API\Application\Plans\Edit\Method::execute'));
-        $manager->add(new Method('Tardis.Application.Plans.Save', '\Liloi\Tardis\API\Application\Plans\Save\Method::execute'));
-        $manager->add(new Method('Tardis.Application.Plans.Create', '\Liloi\Tardis\API\Application\Plans\Create\Method::execute'));
-
         $manager->add(new Method('Tardis.Application.Diary.Show', '\Liloi\Tardis\API\Application\Diary\Show\Method::execute'));
         $manager->add(new Method('Tardis.Application.Diary.Edit', '\Liloi\Tardis\API\Application\Diary\Edit\Method::execute'));
         $manager->add(new Method('Tardis.Application.Diary.Save', '\Liloi\Tardis\API\Application\Diary\Save\Method::execute'));

@@ -23,16 +23,6 @@ CREATE TABLE `I60_diary` (
     PRIMARY KEY (`key_day`)
 );
 
-create table I60_plans
-(
-    key_plan tinyint unsigned auto_increment,
-    title varchar(100) COLLATE utf8mb4_unicode_ci not null,
-    program mediumtext COLLATE utf8mb4_unicode_ci not null,
-    status tinyint unsigned default 1 not null,
-    constraint I60_plans_pk
-        primary key (key_plan)
-);
-
 create table I60_degrees
 (
     key_degree bigint unsigned auto_increment,
@@ -47,7 +37,7 @@ create table I60_degrees
 create unique index I60_degrees_uid_uindex
     on I60_degrees (uid);
 
-insert into I60_degrees(uid, title, program, status) values("protos", "Protos", "// content", 1);
+insert into I60_degrees(uid, title, program, status) values("protos", "Protos", "-", 1);
 
 create table I60_problems
 (
