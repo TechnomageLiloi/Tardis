@@ -12,6 +12,7 @@
     }
 </style>
 <div id="blueprint-edit">
+    <a href="javascript:void(0)" onclick="Tardis.Degrees.getCollection();">&blacktriangleleft; Back</a> &diams;
     <a href="javascript:void(0)" onclick="Tardis.Degrees.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
@@ -31,5 +32,6 @@
         </td></tr>
     </table>
     <hr/>
+    <a href="javascript:void(0)" onclick="Tardis.Degrees.getCollection();">&blacktriangleleft; Back</a> &diams;
     <a href="javascript:void(0)" onclick="Tardis.Degrees.save('<?php echo $entity->getKey(); ?>');">Save</a>
 </div>
