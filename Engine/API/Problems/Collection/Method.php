@@ -15,7 +15,7 @@ class Method extends SuperMethod
     {
         $uid = self::getParameter('uid');
 
-        $milestone = DegreesManager::load($uid);
+        $degree = DegreesManager::load($uid);
 
         $collection = Manager::loadCollection($uid);
 
@@ -35,7 +35,7 @@ class Method extends SuperMethod
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'group' => $group,
             'types' => Types::$list,
-            'milestone' => $milestone,
+            'degree' => $degree,
             'uid' => $uid
         ]));
 

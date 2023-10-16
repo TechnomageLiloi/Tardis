@@ -16,9 +16,10 @@
 
 </style>
 <div id="problem-group">
+    <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.show('<?php echo $uid; ?>');">Show degree</a>
     <?php foreach($group as $id_type => $collection): ?>
         <h1><?php echo $types[$id_type]; ?></h1>
-        <a href="javascript:void(0)" onclick="Tardis.Problems.create('<?php echo $milestone->getKey(); ?>', '<?php echo $id_type; ?>', '<?php echo $uid; ?>')">Create</a>
+        <a href="javascript:void(0)" onclick="Tardis.Problems.create('<?php echo $degree->getKey(); ?>', '<?php echo $id_type; ?>', '<?php echo $uid; ?>')">Create</a>
         <table>
             <?php foreach($collection as $key_problem => $entity): ?>
             <tr>

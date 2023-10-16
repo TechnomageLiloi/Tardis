@@ -18,9 +18,15 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'problems';
     }
 
-    public static function loadCollection(string $uid): Collection
+    /**
+     * Load collection of problems by degree uid.
+     *
+     * @param string $uidDegree
+     * @return Collection
+     */
+    public static function loadCollection(string $uidDegree): Collection
     {
-        $milestone = DegreesManager::load($uid);
+        $milestone = DegreesManager::load($uidDegree);
 
         $name = self::getTableName();
 
@@ -39,6 +45,13 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    /**
+     * Load problem from database.
+     *
+     * @param string $key_problem
+     * @return Entity
+     * @throws Exception
+     */
     public static function load(string $key_problem): Entity
     {
         $name = self::getTableName();
@@ -57,6 +70,11 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    /**
+     * Save problem to database.
+     *
+     * @param Entity $entity
+     */
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();
@@ -73,6 +91,11 @@ class Manager extends DomainManager
         );
     }
 
+    /**
+     * Remove problem from database.
+     *
+     * @param Entity $entity
+     */
     public static function remove(Entity $entity): void
     {
         $name = self::getTableName();
@@ -84,16 +107,21 @@ class Manager extends DomainManager
         );
     }
 
-    // @todo: rise this method to more abstract level.
+    /**
+     * Create problem in database.
+     *
+     * @param $key_degree
+     * @param $id_type
+     */
     public static function create($key_degree, $id_type): void
     {
         $name = self::getTableName();
         $data = [
             'key_degree' => $key_degree,
-            'title' => 'Enter the title: ' . gmdate('Y-m-d-H-i-s'),
+            'mark' => '0',
             'program' => '// comment',
+            'title' => 'Enter the title: ' . gmdate('Y-m-d-H-i-s'),
             'type' => $id_type,
-            'mark' => '0'
         ];
         self::getAdapter()->insert($name, $data);
     }

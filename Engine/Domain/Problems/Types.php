@@ -2,6 +2,11 @@
 
 namespace Liloi\Tardis\Domain\Problems;
 
+/**
+ * Types of problems.
+ *
+ * @package Liloi\Tardis\Domain\Problems
+ */
 class Types
 {
     public const ADVENTURE = 1;

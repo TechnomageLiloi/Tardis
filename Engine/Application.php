@@ -55,8 +55,6 @@ class Application extends ConceptualApplication
             return Tree::execute();
         }
 
-        return $this->render(__DIR__ . '/Layout.tpl', [
-
-        ]);
+        return $this->render(__DIR__ . '/Layout.tpl');
     }
 }

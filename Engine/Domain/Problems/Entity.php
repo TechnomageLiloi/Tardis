@@ -6,6 +6,8 @@ use Liloi\Tools\Entity as AbstractEntity;
 use Liloi\Stylo\Parser;
 
 /**
+ * Problems entity.
+ *
  * @method string getTitle()
  * @method void setTitle(string $value)
  * @method string getProgram()
@@ -17,21 +19,37 @@ use Liloi\Stylo\Parser;
  */
 class Entity extends AbstractEntity
 {
+    /**
+     * Get problem key.
+     *
+     * @return string
+     */
     public function getKey(): string
     {
         return $this->getField('key_problem');
     }
 
+    /**
+     * Get problem program Stylo parse.
+     *
+     * @return string
+     */
     public function getParse(): string
     {
         return Parser::parseString($this->getProgram());
     }
 
+    /**
+     * Save problem to database.
+     */
     public function save(): void
     {
         Manager::save($this);
     }
 
+    /**
+     * Remove problem from database.
+     */
     public function remove(): void
     {
         Manager::remove($this);
