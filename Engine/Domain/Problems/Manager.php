@@ -120,7 +120,7 @@ class Manager extends DomainManager
             'key_degree' => $key_degree,
             'mark' => '0',
             'program' => '// comment',
-            'title' => 'Enter the title: ' . gmdate('Y-m-d-H-i-s'),
+            'title' => 'Enter the title: ' . date('Y-m-d-H-i-s'),
             'type' => $id_type,
         ];
         self::getAdapter()->insert($name, $data);

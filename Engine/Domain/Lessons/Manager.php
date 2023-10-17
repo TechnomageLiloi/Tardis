@@ -122,8 +122,8 @@ class Manager extends DomainManager
             'comment' => 'Enter the comment',
             'mark' => '0',
             'status' => Status::TODO,
-            'start' => gmdate('Y-m-d H:i:s'),
-            'finish' => gmdate('Y-m-d H:i:s'),
+            'start' => date('Y-m-d H:i:s'),
+            'finish' => date('Y-m-d H:i:s'),
             'data' => '{}'
         ];
         self::getAdapter()->insert($name, $data);
