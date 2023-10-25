@@ -79,7 +79,8 @@ Tardis.Problems = {
             'title': jq_block.find('[name="title"]').val(),
             'mark': jq_block.find('[name="mark"]').val(),
             'program': jq_block.find('[name="program"]').val(),
-            'type': jq_block.find('[name="type"]').val()
+            'type': jq_block.find('[name="type"]').val(),
+            'status': jq_block.find('[name="status"]').val()
         }, function (data) {
             Tardis.Problems.collection(uid);
         }, function () {
