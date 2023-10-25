@@ -60,4 +60,9 @@ class Entity extends AbstractEntity
     {
         Manager::remove($this);
     }
+
+    public function getStatusTitle(): string
+    {
+        return Statuses::$list[$this->getStatus()];
+    }
 }

@@ -31,7 +31,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_degree=%s order by key_problem desc;',
+            'select * from %s where key_degree=%s and status!=3 order by key_problem desc;',
             $name, $milestone->getKey()
         ));
 

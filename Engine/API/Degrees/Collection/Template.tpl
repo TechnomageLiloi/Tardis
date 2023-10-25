@@ -18,6 +18,7 @@
                         <?php echo $entity->getStatusCaption(); ?>
                     </td>
                     <td>
+                        <a href="javascript:void(0)" onclick="Tardis.Problems.collection('<?php echo $entity->getUid(); ?>')">Problems list</a> &diams;
                         <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.show('<?php echo $entity->getUid(); ?>');">Show</a> &diams;
                         <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.edit('<?php echo $entity->getUid(); ?>');">Edit</a>
                     </td>
