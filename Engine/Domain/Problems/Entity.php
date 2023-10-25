@@ -10,12 +10,18 @@ use Liloi\Stylo\Parser;
  *
  * @method string getTitle()
  * @method void setTitle(string $value)
+ *
  * @method string getProgram()
  * @method void setProgram(string $value)
+ *
  * @method string getType()
  * @method void setType(string $value)
+ *
  * @method string getMark()
  * @method void setMark(string $value)
+ *
+ * @method string getStatus()
+ * @method void setStatus(string $value)
  */
 class Entity extends AbstractEntity
 {
