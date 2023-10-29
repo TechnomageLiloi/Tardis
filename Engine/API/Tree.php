@@ -38,6 +38,7 @@ class Tree
         $manager->add(new Method('Tardis.Lessons.Remove', '\Liloi\Tardis\API\Lessons\Remove\Method::execute'));
         $manager->add(new Method('Tardis.Lessons.Schedule', '\Liloi\Tardis\API\Lessons\Schedule\Method::execute'));
         $manager->add(new Method('Tardis.Lessons.Timetable', '\Liloi\Tardis\API\Lessons\Timetable\Method::execute'));
+        $manager->add(new Method('Tardis.Lessons.Update', '\Liloi\Tardis\API\Lessons\Update\Method::execute'));
 
         $manager->add(new Method('Tardis.Problems.Collection', '\Liloi\Tardis\API\Problems\Collection\Method::execute'));
         $manager->add(new Method('Tardis.Problems.Create', '\Liloi\Tardis\API\Problems\Create\Method::execute'));

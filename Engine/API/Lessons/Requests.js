@@ -10,6 +10,17 @@ Tardis.Lessons = {
         });
     },
 
+    update: function (key_lesson)
+    {
+        API.request('Tardis.Lessons.Update', {
+            'key_lesson': key_lesson
+        }, function (data) {
+            Tardis.Lessons.timetable();
+        }, function () {
+
+        });
+    },
+
     schedule: function (date_now)
     {
         API.request('Tardis.Lessons.Schedule', {

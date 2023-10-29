@@ -31,7 +31,7 @@
             <td><?php echo $statuses[$entity->getStatus()]; ?></td>
             <td><?php echo $entity->getMark(); ?></td>
             <td style="text-align: right;">
-
+                <a href="javascript:void(0)" onclick="Tardis.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
             </td>
         </tr>
         <?php endforeach; ?>
