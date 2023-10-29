@@ -1,4 +1,15 @@
 Tardis.Lessons = {
+    timetable: function ()
+    {
+        API.request('Tardis.Lessons.Timetable', {
+
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
+    },
+
     schedule: function (date_now)
     {
         API.request('Tardis.Lessons.Schedule', {

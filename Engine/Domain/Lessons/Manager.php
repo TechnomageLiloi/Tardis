@@ -73,7 +73,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start in (1, 2) order by start desc;',
+            'select * from %s where status in (1, 2) order by start desc;',
             $name
         ));
 
