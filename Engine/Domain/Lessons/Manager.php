@@ -68,6 +68,25 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadTimetable(): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where start in (1, 2) order by start desc;',
+            $name
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[$row['key_lesson']] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     public static function load(string $key): Entity
     {
         $name = self::getTableName();
