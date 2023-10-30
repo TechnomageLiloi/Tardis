@@ -27,14 +27,16 @@
                 <?php endif; ?>
             </td>
             <td>
-                <h1 class="wrap-title">
-                    <?php echo $entity->getTitle(); ?>
-                </h1>
-
-                <?php echo $entity->parse(); ?>
+                <?php echo $lesson->getComment(); ?>
             </td>
         </tr>
     </table>
 
     <hr/>
+
+    <h1 class="wrap-title">
+        <?php echo $entity->getTitle(); ?>
+    </h1>
+
+    <?php echo $entity->parse(); ?>
 </div>

@@ -105,6 +105,23 @@ class Manager extends DomainManager
         return Entity::create($row);
     }
 
+    public static function loadCurrent(): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s order by start desc limit 1',
+            $name
+        ));
+
+        if(!$row)
+        {
+            throw new Exception('Unknown key.');
+        }
+
+        return Entity::create($row);
+    }
+
     public static function save(Entity $entity): void
     {
         $name = self::getTableName();
