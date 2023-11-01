@@ -80,15 +80,16 @@ class Manager extends DomainManager
      */
     public static function create(): array
     {
+        $key = date('Y-m-d');
         $data = [
-            'key_day' => date('Y-m-d'),
-            'title' => 'Enter the title',
+            'key_day' => $key,
+            'title' => 'Date key: ' . $key,
             'program' => '-',
             'data' => '{}',
             'status' => Statuses::TODO,
             'type' => Types::BIOTECH,
-            'start' => date('Y-m-d H:i:s'),
-            'finish' => date('Y-m-d H:i:s')
+            'start' => date('Y-m-d 00:00:00'),
+            'finish' => date('Y-m-d 23:59:59')
         ];
 
         self::getAdapter()->insert(self::getTableName(), $data);
