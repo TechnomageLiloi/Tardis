@@ -53,6 +53,11 @@ class Manager extends DomainManager
             $name
         ));
 
+        if(!$row)
+        {
+            $row = self::create();
+        }
+
         return Entity::create($row);
     }
 
@@ -73,9 +78,10 @@ class Manager extends DomainManager
     /**
      * Create new day.
      */
-    public static function create(): void
+    public static function create(): array
     {
-        self::getAdapter()->insert(self::getTableName(), [
+        $data = [
+            'key_day' => date('Y-m-d'),
             'title' => 'Enter the title',
             'program' => '-',
             'data' => '{}',
@@ -83,6 +89,10 @@ class Manager extends DomainManager
             'type' => Types::BIOTECH,
             'start' => date('Y-m-d H:i:s'),
             'finish' => date('Y-m-d H:i:s')
-        ]);
+        ];
+
+        self::getAdapter()->insert(self::getTableName(), $data);
+
+        return $data;
     }
 }

@@ -26,7 +26,6 @@
             <tr>
                 <td class="menu top">
                     <a href="javascript:void(0)" class="butn" onclick="window.location.reload();">Reload</a>
-                    <a href="javascript:void(0)" class="butn" onclick="Tardis.Application.Diary.create();">Jump to new day</a>
                     <a href="javascript:void(0)" class="butn" onclick="Tardis.Degrees.getCollection();">Degrees</a>
                     <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
                     <a href="javascript:void(0)" class="butn" onclick="Tardis.Lessons.timetable();">Timetable</a>
