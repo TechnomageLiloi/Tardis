@@ -36,18 +36,7 @@ class Entity extends AbstractEntity
 
     public function getID(): string
     {
-        $key = str_pad($this->getKey(), 14, '0', STR_PAD_LEFT);
-
-        return sprintf(
-            '%s-%s-%s-%s-%s-%s-%s',
-            $key[0] . $key[1],
-            $key[2] . $key[3],
-            $key[4] . $key[5],
-            $key[6] . $key[7],
-            $key[8] . $key[9],
-            $key[10] . $key[11],
-            $key[12] . $key[13]
-        );
+        return date('Y-W-N', strtotime($this->getKey()));
     }
 
     public function parse(): string
