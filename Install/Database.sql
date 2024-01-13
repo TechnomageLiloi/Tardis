@@ -17,7 +17,7 @@ insert into tardis_degrees(uid, title, program, status) values("protos", "Protos
 create table tardis_lessons
 (
     key_lesson bigint unsigned auto_increment,
-    comment varchar(250) not null,
+    comment text not null,
     mark tinyint unsigned default 0 not null,
     status tinyint unsigned default 1 not null,
     start date not null,
