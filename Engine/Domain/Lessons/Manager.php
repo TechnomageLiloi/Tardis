@@ -4,7 +4,7 @@ namespace Liloi\TARDIS\Domain\Lessons;
 
 use Liloi\API\Errors\Exception;
 use Liloi\TARDIS\Domain\Manager as DomainManager;
-use Liloi\TARDIS\Domain\Problems\Types as ProblemsTypes;
+use Liloi\TARDIS\Domain\Lessons\Types as ProblemsTypes;
 
 /**
  * Lessons manager.

@@ -27,7 +27,7 @@
             <tr>
                 <th>Comment</th>
                 <th>Status</th>
-                <th>Karma</th>
+                <th>Mark</th>
                 <th style="text-align: right;">Actions</th>
             </tr>
             <?php foreach($lessons[$key] as $key_lesson => $entity): ?>

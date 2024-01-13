@@ -24,10 +24,12 @@
     <body>
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Degrees.getCollection();">Degrees</a>
+            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
+            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.timetable();">Timetable</a>
         </div>
         <div id="page">
             <script>
-
+                TARDIS.Lessons.timetable();
             </script>
         </div>
     </body>
