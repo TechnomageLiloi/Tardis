@@ -15,16 +15,13 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
-        $uid = self::getParameter('uid');
         $key_problem = self::getParameter('key_problem');
         $entity = Manager::load($key_problem);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'statuses' => Statuses::$list,
-            'uid' => $uid
+            'statuses' => Statuses::$list
         ]));
 
         return $response;

@@ -54,11 +54,10 @@ TARDIS.Problems = {
         });
     },
 
-    edit: function (key_problem, uid)
+    edit: function (key_problem)
     {
         API.request('TARDIS.Problems.Edit', {
-            'key_problem': key_problem,
-            'uid': uid
+            'key_problem': key_problem
         }, function (data) {
             $('#page').html(data.render);
         }, function () {

@@ -20,6 +20,7 @@
         <?php echo date('Y-m-d (H:i:s)'); ?>
     </h1>
     <?php foreach($lessons as $type => $entity): ?>
+        <?php $key = $entity->getKey(); ?>
         <h3 style="text-align: center;">
             Lesson <?php echo $type; ?>: <?php echo $entity->getTypeTitle(); ?>
         </h3>
@@ -38,8 +39,23 @@
                     <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a>
                 </td>
             </tr>
-            <?php //foreach($lessons[$key] as $key_lesson => $entity): ?>
-            <?php //endforeach; ?>
+            <?php foreach($problems as $problem): ?>
+                <?php if($key != $problem->getKeyLesson()) continue; ?>
+                <tr>
+                    <td style="width: 80%;">
+                        <input type="checkbox"> <?php echo $problem->getStart(); ?> / <?php echo $problem->getTitle(); ?>
+                    </td>
+                    <td>
+                        <?php echo $statuses[$entity->getStatus()]; ?>
+                    </td>
+                    <td style="width: 5%;">
+
+                    </td>
+                    <td style="width: 5%;text-align: right;">
+                        <a href="javascript:void(0)" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
         </table>
     <?php endforeach; ?>
 </div>

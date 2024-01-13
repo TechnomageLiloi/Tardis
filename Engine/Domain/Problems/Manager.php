@@ -18,6 +18,25 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'problems';
     }
 
+    public static function loadByLessonKeys(array $keysLessons): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_lesson in (%s) order by start asc',
+            $name, implode(', ', $keysLessons)
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     /**
      * Load problem from database.
      *
