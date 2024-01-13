@@ -25,8 +25,8 @@ class Manager extends DomainManager
 
     public static function schedule(string $date_now): array
     {
-        $ts_start = date('Y-m-d 00:00:00', strtotime('monday this week'));
-        $ts_finish = date('Y-m-d 23:59:59', strtotime('sunday this week'));
+        $ts_start = date('Y-m-d', strtotime('monday this week'));
+        $ts_finish = date('Y-m-d', strtotime('sunday this week'));
 
         $name = self::getTableName();
 
@@ -100,23 +100,6 @@ class Manager extends DomainManager
         return (int)self::getAdapter()->getSingle(sprintf(
             'select sum(mark) from %s where status=%s and start between "%s" and "%s";',
             $name, Status::COMPLETE, $dt . ' 00:00:00', $dt . ' 23:59:59'
-        ));
-    }
-
-    /**
-     * Gets karma for period.
-     *
-     * @param string $dtFrom Start timestamp of period (inclusively).
-     * @param string $dtTo Finish timestamp of period (inclusively).
-     * @return int Result karma.
-     */
-    public static function loadKarmaForPeriod(string $dtFrom, string $dtTo): int
-    {
-        $name = self::getTableName();
-
-        return (int)self::getAdapter()->getSingle(sprintf(
-            'select sum(mark) from %s where status=%s and start between "%s" and "%s";',
-            $name, Status::COMPLETE, $dtFrom, $dtTo
         ));
     }
 
@@ -195,7 +178,6 @@ class Manager extends DomainManager
             'mark' => '0',
             'status' => Status::TODO,
             'start' => date('Y-m-d H:i:s'),
-            'finish' => date('Y-m-d H:i:s'),
             'data' => '{}'
         ];
         self::getAdapter()->insert($name, $data);

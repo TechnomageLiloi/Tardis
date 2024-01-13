@@ -18,9 +18,6 @@ use Liloi\Stylo\Parser;
  * @method string getStart()
  * @method void setStart(string $value)
  *
- * @method string getFinish()
- * @method void setFinish(string $value)
- *
  * @method string getData()
  * @method void setData(string $value)
  *
@@ -49,15 +46,7 @@ class Entity extends AbstractEntity
 
     public function getTitle(): string
     {
-        $tags = $this->getTags();
-
-        if(empty($tags))
-        {
-            return $this->getComment();
-        }
-
-        $listTags = explode(' ', $tags);
-        return '[' . implode('][', $listTags) . '] ' . $this->getComment();
+        return $this->getComment();
     }
 
     public function save(): void

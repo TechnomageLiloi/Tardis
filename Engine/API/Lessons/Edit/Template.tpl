@@ -26,21 +26,14 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
-        <tr><td>Tags</td><td><input type="text" name="tags" value="<?php echo $entity->getTags(); ?>" /></td></tr>
         <tr><td>Comment</td><td><input type="text" name="comment" value="<?php echo $entity->getComment(); ?>"/></td></tr>
         <tr><td>Karma</td><td><input type="text" name="mark" value="<?php echo $entity->getMark(); ?>"/></td></tr>
 
         <tr><td>Start</td><td>
             <input type="text" name="start" value="<?php echo $entity->getStart(); ?>"/>
-            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('0000-00-00 00:00:00');">Later</a>
+            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('0000-00-00');">Later</a>
             <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a>
-            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d 00:00:00'); ?>');">Today</a>
 
-        </td></tr>
-        <tr><td>Finish</td><td>
-            <input type="text" name="finish" value="<?php echo $entity->getFinish(); ?>"/>
-            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('0000-00-00 00:00:00');">Later</a>
-            <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a>
         </td></tr>
 
         <tr><td>Status</td><td>

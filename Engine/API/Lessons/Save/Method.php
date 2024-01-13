@@ -21,11 +21,9 @@ class Method extends SuperMethod
         $entity->setComment(self::getParameter('comment'));
         $entity->setMark(self::getParameter('mark'));
         $entity->setStart(self::getParameter('start'));
-        $entity->setFinish(self::getParameter('finish'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setData(self::getParameter('data'));
         $entity->setType(self::getParameter('type'));
-        $entity->setTags(self::getParameter('tags'));
 
         $entity->save();
 

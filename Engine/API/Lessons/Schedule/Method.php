@@ -14,12 +14,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $tsStart = date('Y-m-d 00:00:00', strtotime('monday this week'));
-        $tsFinish = date('Y-m-d 23:59:59', strtotime('sunday this week'));
-
         $date_now = self::getParameter('date_now');
         $schedule = LessonsManager::schedule($date_now);
-        $karma = LessonsManager::loadKarmaForPeriod($tsStart, $tsFinish);
 
         $days = [
             1 => 'Monday',
@@ -34,7 +30,7 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'days' => $days,
-            'karma' => $karma,
+            'karma' => 0,
             'schedule' => $schedule,
         ]));
 

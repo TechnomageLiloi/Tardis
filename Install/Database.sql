@@ -20,11 +20,9 @@ create table tardis_lessons
     comment varchar(250) not null,
     mark tinyint unsigned default 0 not null,
     status tinyint unsigned default 1 not null,
-    start timestamp not null,
-    finish timestamp not null,
+    start date not null,
     data json not null,
     type tinyint unsigned default 1 not null,
-    tags varchar(100) default '' not null,
     constraint tardis_lessons_pk
         primary key (key_lesson)
 );

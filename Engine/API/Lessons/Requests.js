@@ -111,12 +111,10 @@ TARDIS.Lessons = {
             'mark': jq_block.find('[name="mark"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'start': jq_block.find('[name="start"]').val(),
-            'finish': jq_block.find('[name="finish"]').val(),
             'type': jq_block.find('[name="type"]').val(),
-            'tags': jq_block.find('[name="tags"]').val(),
             'data': jq_block.find('[name="data"]').val()
         }, function (data) {
-            TARDIS.Application.Diary.show('now');
+            TARDIS.Lessons.timetable();
         }, function () {
 
         });
