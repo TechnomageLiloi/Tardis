@@ -107,7 +107,6 @@ TARDIS.Lessons = {
         const jq_block = $('#blueprint-edit');
         API.request('TARDIS.Lessons.Save', {
             'key_lesson': key_lesson,
-            'key_atom': jq_block.find('[name="key_atom"]').val(),
             'comment': jq_block.find('[name="comment"]').val(),
             'mark': jq_block.find('[name="mark"]').val(),
             'status': jq_block.find('[name="status"]').val(),

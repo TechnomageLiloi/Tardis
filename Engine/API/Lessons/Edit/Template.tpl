@@ -52,7 +52,6 @@
         </td></tr>
 
         <tr><td>Data</td><td><textarea name="data"><?php echo $entity->getData(); ?></textarea></td></tr>
-        <tr><td>Atom</td><td><input type="text" name="key_atom" value="<?php echo $entity->getKeyAtom(); ?>" /></td></tr>
     </table>
     <hr/>
     <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.save('<?php echo $entity->getKey(); ?>');">Save</a>

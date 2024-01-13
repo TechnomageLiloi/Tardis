@@ -6,8 +6,7 @@ use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
 use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
 use Liloi\TARDIS\Domain\Lessons\Status;
-use Liloi\TARDIS\Domain\Problems\Types as ProblemsTypes;
-use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
+use Liloi\TARDIS\Domain\Lessons\Types as ProblemsTypes;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show
@@ -18,7 +17,6 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         $timetableLessons = LessonsManager::loadTimetable();
-        $timetableProblems = ProblemsManager::loadTimetable();
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [

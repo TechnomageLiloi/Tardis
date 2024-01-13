@@ -19,78 +19,31 @@
     {
         background-color: #ffffbd;
     }
-
 </style>
 <div id="problem-group">
-
     <?php foreach($types as $key => $value): ?>
         <h1><?php echo $value; ?></h1>
-        <table>
+        <table class="inner-table">
             <tr>
-                <th style="border-right: silver 1px dashed; width: 50%;">
-                    <h3>Problems</h3>
-                </th>
-                <th>
-                    <h3>Lessons</h3>
-                </th>
+                <th>Comment</th>
+                <th>Status</th>
+                <th>Karma</th>
+                <th style="text-align: right;">Actions</th>
             </tr>
+            <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
             <tr>
-                <td style="border-right: silver 1px dashed;vertical-align: top;">
-
-                    <table class="inner-table">
-                        <tr>
-                            <th>Problem</th>
-                            <th>Status</th>
-                            <th>Percent</th>
-                            <th style="text-align: right;">Actions</th>
-                        </tr>
-                        <?php foreach($problems[$key] as $key_problem => $entity): ?>
-                        <tr>
-                            <td>
-                                <a style="color: black;" href="javascript:void(0)" onclick="TARDIS.Problems.show('<?php echo $key_problem; ?>')">
-                                    <?php echo $entity->getTitle(); ?>
-                                </a>
-                            </td>
-                            <td style="width: 100px;"><?php echo $entity->getStatusTitle(); ?></td>
-                            <td style="width: 100px;"><?php echo $entity->getMark(); ?>%</td>
-                            <td style="text-align: right; width: 300px;">
-                                <a href="javascript:void(0)" onclick="TARDIS.Problems.edit('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Edit</a>
-                                &diams;
-                                <a href="javascript:void(0)" onclick="TARDIS.Problems.remove('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Remove</a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-
+                <td>
+                    <?php echo $entity->getTitle(); ?>
                 </td>
-                <td style="vertical-align: top;">
-
-                    <table class="inner-table">
-                        <tr>
-                            <th>Comment</th>
-                            <th>Status</th>
-                            <th>Karma</th>
-                            <th style="text-align: right;">Actions</th>
-                        </tr>
-                        <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
-                        <tr>
-                            <td>
-                                <?php echo $entity->getTitle(); ?>
-                            </td>
-                            <td><?php echo $statuses[$entity->getStatus()]; ?></td>
-                            <td><?php echo $entity->getMark(); ?></td>
-                            <td style="text-align: right;">
-                                <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
-                                <a href="javascript:void(0)" onclick="TARDIS.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
-                                <a href="javascript:void(0)" onclick="TARDIS.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-
+                <td><?php echo $statuses[$entity->getStatus()]; ?></td>
+                <td><?php echo $entity->getMark(); ?></td>
+                <td style="text-align: right;">
+                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
+                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
+                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
                 </td>
             </tr>
+            <?php endforeach; ?>
         </table>
     <?php endforeach; ?>
-
 </div>

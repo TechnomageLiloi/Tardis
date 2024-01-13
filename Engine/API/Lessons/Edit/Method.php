@@ -6,7 +6,7 @@ use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
 use Liloi\TARDIS\Domain\Lessons\Manager;
 use Liloi\TARDIS\Domain\Lessons\Status;
-use Liloi\TARDIS\Domain\Problems\Types;
+use Liloi\TARDIS\Domain\Lessons\Types;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit

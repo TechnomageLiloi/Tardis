@@ -93,25 +93,6 @@ class Manager extends DomainManager
         return $collection;
     }
 
-    public static function loadByAtom(string $keyAtom): Collection
-    {
-        $name = self::getTableName();
-
-        $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_atom = "%s" and status in (1, 2) order by start asc;',
-            $name,  $keyAtom
-        ));
-
-        $collection = new Collection();
-
-        foreach($rows as $row)
-        {
-            $collection[$row['key_lesson']] = Entity::create($row);
-        }
-
-        return $collection;
-    }
-
     public static function loadKarma(string $dt): int
     {
         $name = self::getTableName();
@@ -206,11 +187,10 @@ class Manager extends DomainManager
     }
 
     // @todo: rise this method to more abstract level.
-    public static function create(string $keyAtom): void
+    public static function create(): void
     {
         $name = self::getTableName();
         $data = [
-            'key_atom' => $keyAtom,
             'comment' => 'Enter the comment',
             'mark' => '0',
             'status' => Status::TODO,
