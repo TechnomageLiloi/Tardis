@@ -26,12 +26,16 @@
         <table class="inner-table">
             <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
             <tr>
-                <td>
+                <td style="width: 80%;">
                     <?php echo $entity->getTitle(); ?>
                 </td>
-                <td><?php echo $statuses[$entity->getStatus()]; ?></td>
-                <td><?php echo $entity->getMark(); ?></td>
-                <td style="text-align: right;">
+                <td>
+                    <?php echo $statuses[$entity->getStatus()]; ?>
+                </td>
+                <td style="width: 5%;">
+                    <?php echo $entity->getMark(); ?>
+                </td>
+                <td style="width: 5%;text-align: right;">
                     <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a>
                 </td>
             </tr>
