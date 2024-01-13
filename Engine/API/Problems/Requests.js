@@ -21,7 +21,7 @@ TARDIS.Problems = {
         });
     },
 
-    create: function (key_blueprint, id_type, uid)
+    create: function (keyLesson)
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,10 +29,9 @@ TARDIS.Problems = {
         }
 
         API.request('TARDIS.Problems.Create', {
-            'key_blueprint': key_blueprint,
-            'id_type': id_type
+            'key_lesson': keyLesson
         }, function (data) {
-            TARDIS.Problems.collection(uid);
+            TARDIS.Lessons.timetable();
         }, function () {
 
         });

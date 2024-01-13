@@ -24,6 +24,9 @@
         <h3 style="text-align: center;">
             Lesson <?php echo $type; ?>: <?php echo $entity->getTypeTitle(); ?>
         </h3>
+        <div style="text-align: center;">
+            <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $key; ?>')" class="butn">Create problem</a>
+        </div>
         <table class="inner-table">
             <tr>
                 <td style="width: 80%;">
