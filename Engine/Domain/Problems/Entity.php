@@ -58,4 +58,9 @@ class Entity extends AbstractEntity
     {
         return Statuses::$list[$this->getStatus()];
     }
+
+    public function isDone(): bool
+    {
+        return $this->getStatus() == Statuses::COMPLETE;
+    }
 }

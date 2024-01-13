@@ -65,7 +65,7 @@ TARDIS.Problems = {
         });
     },
 
-    save: function (key_problem, uid)
+    save: function (key_problem)
     {
         if(!confirm('Are you sure?'))
         {
@@ -79,7 +79,7 @@ TARDIS.Problems = {
             'start': jq_block.find('[name="start"]').val(),
             'status': jq_block.find('[name="status"]').val()
         }, function (data) {
-            TARDIS.Problems.collection(uid);
+            TARDIS.Lessons.timetable();
         }, function () {
 
         });
