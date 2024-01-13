@@ -186,7 +186,7 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = [
-            'comment' => 'Enter the comment',
+            'comment' => '-',
             'mark' => '0',
             'status' => Status::TODO,
             'start' => date('Y-m-d'),
