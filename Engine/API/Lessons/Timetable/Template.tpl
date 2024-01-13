@@ -10,26 +10,20 @@
         text-align: left;
     }
 
-    #problem-group table.inner-table td
-    {
-        border-bottom: silver 1px dashed;
-    }
-
     #problem-group table.inner-table tr:hover
     {
         background-color: #ffffbd;
     }
 </style>
 <div id="problem-group">
+    <h1 style="text-align: center;">
+        <?php echo date('Y-m-d (H:i:s)'); ?>
+    </h1>
     <?php foreach($types as $key => $value): ?>
-        <h1><?php echo $value; ?></h1>
+        <h3 style="text-align: center;">
+            Lesson <?php echo $key; ?>: <?php echo $value; ?>
+        </h3>
         <table class="inner-table">
-            <tr>
-                <th>Comment</th>
-                <th>Status</th>
-                <th>Mark</th>
-                <th style="text-align: right;">Actions</th>
-            </tr>
             <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
             <tr>
                 <td>
@@ -38,9 +32,7 @@
                 <td><?php echo $statuses[$entity->getStatus()]; ?></td>
                 <td><?php echo $entity->getMark(); ?></td>
                 <td style="text-align: right;">
-                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
-                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
-                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
+                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a>
                 </td>
             </tr>
             <?php endforeach; ?>

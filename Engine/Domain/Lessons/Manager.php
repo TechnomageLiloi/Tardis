@@ -57,18 +57,31 @@ class Manager extends DomainManager
 
     public static function loadTimetable(): array
     {
-        $timetable = array_combine(array_keys(ProblemsTypes::$list), [[],[],[],[],[],[],[]]);
+        $dt = date('Y-m-d');
+        $keysTypes = array_keys(ProblemsTypes::$list);
+        $timetable = array_combine($keysTypes, [[],[],[],[],[],[],[]]);
 
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where status in (1, 2) order by start desc;',
-            $name
+            'select * from %s where start="%s";',
+            $name, $dt
         ));
 
         foreach($rows as $row)
         {
             $timetable[$row['type']][$row['key_lesson']] = Entity::create($row);
+        }
+
+        foreach($keysTypes as $type)
+        {
+            if(!empty($timetable[$type]))
+            {
+                continue;
+            }
+
+            $entity = self::create($type);
+            $timetable[$type][$entity->getKey()] = $entity;
         }
 
         return $timetable;
@@ -169,17 +182,19 @@ class Manager extends DomainManager
         );
     }
 
-    // @todo: rise this method to more abstract level.
-    public static function create(): void
+    public static function create(int $type = Types::FREEDOM): Entity
     {
         $name = self::getTableName();
         $data = [
             'comment' => 'Enter the comment',
             'mark' => '0',
             'status' => Status::TODO,
-            'start' => date('Y-m-d H:i:s'),
-            'data' => '{}'
+            'start' => date('Y-m-d'),
+            'data' => '{}',
+            'type' => $type
         ];
         self::getAdapter()->insert($name, $data);
+        $data['key_lesson'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());
+        return Entity::create($data);
     }
 }
