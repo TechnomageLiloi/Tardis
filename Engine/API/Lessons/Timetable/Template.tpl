@@ -47,16 +47,16 @@
                         <?php foreach($problems[$key] as $key_problem => $entity): ?>
                         <tr>
                             <td>
-                                <a style="color: black;" href="javascript:void(0)" onclick="Rune.Problems.show('<?php echo $key_problem; ?>')">
+                                <a style="color: black;" href="javascript:void(0)" onclick="TARDIS.Problems.show('<?php echo $key_problem; ?>')">
                                     <?php echo $entity->getTitle(); ?>
                                 </a>
                             </td>
                             <td style="width: 100px;"><?php echo $entity->getStatusTitle(); ?></td>
                             <td style="width: 100px;"><?php echo $entity->getMark(); ?>%</td>
                             <td style="text-align: right; width: 300px;">
-                                <a href="javascript:void(0)" onclick="Rune.Problems.edit('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Edit</a>
+                                <a href="javascript:void(0)" onclick="TARDIS.Problems.edit('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Edit</a>
                                 &diams;
-                                <a href="javascript:void(0)" onclick="Rune.Problems.remove('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Remove</a>
+                                <a href="javascript:void(0)" onclick="TARDIS.Problems.remove('<?php echo $key_problem; ?>', '<?php echo $uid; ?>')">Remove</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
@@ -80,9 +80,9 @@
                             <td><?php echo $statuses[$entity->getStatus()]; ?></td>
                             <td><?php echo $entity->getMark(); ?></td>
                             <td style="text-align: right;">
-                                <a href="javascript:void(0)" onclick="Rune.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
-                                <a href="javascript:void(0)" onclick="Rune.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
-                                <a href="javascript:void(0)" onclick="Rune.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
+                                <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a> &diams;
+                                <a href="javascript:void(0)" onclick="TARDIS.Lessons.remove('<?php echo $key_lesson; ?>')">Remove</a> &diams;
+                                <a href="javascript:void(0)" onclick="TARDIS.Lessons.update('<?php echo $entity->getKey(); ?>');">Enable</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

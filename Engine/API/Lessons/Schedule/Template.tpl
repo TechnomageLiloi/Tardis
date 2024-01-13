@@ -56,7 +56,7 @@
             <td>
                 <?php foreach($schedule[$day][$hour] as $entity): ?>
                 <div class="lesson">
-                    <a href="javascript:void(0)" onclick="Rune.Lessons.edit('<?php echo $entity->getKey(); ?>')">
+                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">
                         <?php echo $entity->getComment(); ?>
                     </a>
                 </div>

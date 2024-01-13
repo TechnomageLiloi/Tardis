@@ -14,13 +14,16 @@
         <link href="<?php echo ROOT_URL; ?>/Engine/API/Style.css" rel="stylesheet" />
 
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Degrees/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Lessons/Requests.js"></script>
+
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
         <title>TARDIS</title>
     </head>
     <body>
         <div id="head">
-
+            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Degrees.getCollection();">Degrees</a>
         </div>
         <div id="page">
             <script>

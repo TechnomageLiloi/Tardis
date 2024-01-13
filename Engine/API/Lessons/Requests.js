@@ -1,7 +1,7 @@
-Rune.Lessons = {
+TARDIS.Lessons = {
     timetable: function ()
     {
-        API.request('Rune.Lessons.Timetable', {
+        API.request('TARDIS.Lessons.Timetable', {
 
         }, function (data) {
             $('#page').html(data.render);
@@ -12,10 +12,10 @@ Rune.Lessons = {
 
     update: function (key_lesson)
     {
-        API.request('Rune.Lessons.Update', {
+        API.request('TARDIS.Lessons.Update', {
             'key_lesson': key_lesson
         }, function (data) {
-            Rune.Lessons.timetable();
+            TARDIS.Lessons.timetable();
         }, function () {
 
         });
@@ -23,7 +23,7 @@ Rune.Lessons = {
 
     schedule: function (date_now)
     {
-        API.request('Rune.Lessons.Schedule', {
+        API.request('TARDIS.Lessons.Schedule', {
             'date_now': date_now
         }, function (data) {
             $('#page').html(data.render);
@@ -34,7 +34,7 @@ Rune.Lessons = {
 
     collection: function (key_problem)
     {
-        API.request('Rune.Lessons.Collection', {
+        API.request('TARDIS.Lessons.Collection', {
             'key_problem': key_problem
         }, function (data) {
             $('#page').html(data.render);
@@ -45,7 +45,7 @@ Rune.Lessons = {
 
     show: function (uid)
     {
-        API.request('Rune.Blueprints.Show', {
+        API.request('TARDIS.Blueprints.Show', {
             'uid': uid
         }, function (data) {
             $('#page').html(data.render);
@@ -61,10 +61,10 @@ Rune.Lessons = {
             return;
         }
 
-        API.request('Rune.Lessons.Create', {
+        API.request('TARDIS.Lessons.Create', {
 
         }, function (data) {
-            Rune.Application.Diary.show('now');
+            TARDIS.Application.Diary.show('now');
         }, function () {
 
         });
@@ -77,10 +77,10 @@ Rune.Lessons = {
             return;
         }
 
-        API.request('Rune.Lessons.Remove', {
+        API.request('TARDIS.Lessons.Remove', {
             'key_lesson': key_lesson
         }, function (data) {
-            Rune.Lessons.collection(key_problem);
+            TARDIS.Lessons.collection(key_problem);
         }, function () {
 
         });
@@ -88,7 +88,7 @@ Rune.Lessons = {
 
     edit: function (key_lesson)
     {
-        API.request('Rune.Lessons.Edit', {
+        API.request('TARDIS.Lessons.Edit', {
             'key_lesson': key_lesson
         }, function (data) {
             $('#page').html(data.render);
@@ -105,7 +105,7 @@ Rune.Lessons = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Rune.Lessons.Save', {
+        API.request('TARDIS.Lessons.Save', {
             'key_lesson': key_lesson,
             'key_atom': jq_block.find('[name="key_atom"]').val(),
             'comment': jq_block.find('[name="comment"]').val(),
@@ -117,7 +117,7 @@ Rune.Lessons = {
             'tags': jq_block.find('[name="tags"]').val(),
             'data': jq_block.find('[name="data"]').val()
         }, function (data) {
-            Rune.Application.Diary.show('now');
+            TARDIS.Application.Diary.show('now');
         }, function () {
 
         });

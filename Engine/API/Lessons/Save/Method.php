@@ -1,13 +1,13 @@
 <?php
 
-namespace Liloi\Rune\API\Lessons\Save;
+namespace Liloi\TARDIS\API\Lessons\Save;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Lessons\Manager;
 
 /**
- * Rune API: Blueprint.Blueprints.Save
+ * TARDIS API: Blueprint.Blueprints.Save
  * @package Liloi\Blueprint\API\Blueprints\Save
  */
 class Method extends SuperMethod

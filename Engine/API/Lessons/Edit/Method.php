@@ -1,15 +1,15 @@
 <?php
 
-namespace Liloi\Rune\API\Lessons\Edit;
+namespace Liloi\TARDIS\API\Lessons\Edit;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager;
-use Liloi\Rune\Domain\Lessons\Status;
-use Liloi\Rune\Domain\Problems\Types;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Lessons\Manager;
+use Liloi\TARDIS\Domain\Lessons\Status;
+use Liloi\TARDIS\Domain\Problems\Types;
 
 /**
- * Rune API: Blueprint.Blueprints.Edit
+ * TARDIS API: Blueprint.Blueprints.Edit
  * @package Liloi\Blueprint\API\Blueprints\Edit
  */
 class Method extends SuperMethod

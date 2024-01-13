@@ -1,13 +1,13 @@
 <?php
 
-namespace Liloi\Rune\API\Lessons\Remove;
+namespace Liloi\TARDIS\API\Lessons\Remove;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Lessons\Manager;
 
 /**
- * Rune API: Blueprint.Blueprints.Remove
+ * TARDIS API: Blueprint.Blueprints.Remove
  * @package Liloi\Blueprint\API\Blueprints\Remove
  */
 class Method extends SuperMethod

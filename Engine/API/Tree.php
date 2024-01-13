@@ -4,7 +4,7 @@ namespace Liloi\TARDIS\API;
 
 use Liloi\API\Manager;
 use Liloi\API\Method;
-use Liloi\Rune\API\Method as RuneMethod;
+use Liloi\TARDIS\API\Method as TARDISMethod;
 
 /**
  * @inheritDoc
@@ -31,6 +31,21 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('TARDIS.Degrees.Collection', '\Liloi\TARDIS\API\Degrees\Collection\Method::execute'));
+            $manager->add(new Method('TARDIS.Degrees.Show', '\Liloi\TARDIS\API\Degrees\Show\Method::execute'));
+            $manager->add(new Method('TARDIS.Degrees.Create', '\Liloi\TARDIS\API\Degrees\Create\Method::execute'));
+            $manager->add(new Method('TARDIS.Degrees.Remove', '\Liloi\TARDIS\API\Degrees\Remove\Method::execute'));
+            $manager->add(new Method('TARDIS.Degrees.Edit', '\Liloi\TARDIS\API\Degrees\Edit\Method::execute'));
+            $manager->add(new Method('TARDIS.Degrees.Save', '\Liloi\TARDIS\API\Degrees\Save\Method::execute'));
+
+            $manager->add(new Method('TARDIS.Lessons.Create', '\Liloi\TARDIS\API\Lessons\Create\Method::execute'));
+            $manager->add(new Method('TARDIS.Lessons.Edit', '\Liloi\TARDIS\API\Lessons\Edit\Method::execute'));
+            $manager->add(new Method('TARDIS.Lessons.Save', '\Liloi\TARDIS\API\Lessons\Save\Method::execute'));
+            $manager->add(new Method('TARDIS.Lessons.Remove', '\Liloi\TARDIS\API\Lessons\Remove\Method::execute'));
+            $manager->add(new Method('TARDIS.Lessons.Schedule', '\Liloi\TARDIS\API\Lessons\Schedule\Method::execute'));
+            $manager->add(new Method('TARDIS.Lessons.Timetable', '\Liloi\TARDIS\API\Lessons\Timetable\Method::execute'));
+            $manager->add(new Method('TARDIS.Lessons.Update', '\Liloi\TARDIS\API\Lessons\Update\Method::execute'));
+
             self::$instance = new self($manager);
         }
 
@@ -39,18 +54,6 @@ class Tree
 
     public function execute(): string
     {
-        // @todo: optimize
-
-        if(strpos($_POST['method'], 'Rune.User.') !== false)
-        {
-            return $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? [])->asJson();
-        }
-
-        if(strpos($_POST['method'], 'Rune.Security.') === false)
-        {
-            RuneMethod::accessCheck();
-        }
-
         // @todo: add dynamic API search (by namespace).
         $response = $this->manager->search($_POST['method'])->execute($_POST['parameters'] ?? []);
         return $response->asJson();

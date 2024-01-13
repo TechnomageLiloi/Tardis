@@ -1,6 +1,6 @@
 <?php
 
-namespace Liloi\Rune\Domain\Degrees;
+namespace Liloi\TARDIS\Domain\Degrees;
 
 use Liloi\Tools\Collection as AbstractCollection;
 

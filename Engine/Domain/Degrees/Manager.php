@@ -1,8 +1,8 @@
 <?php
 
-namespace Liloi\Rune\Domain\Degrees;
+namespace Liloi\TARDIS\Domain\Degrees;
 
-use Liloi\Rune\Domain\Manager as DomainManager;
+use Liloi\TARDIS\Domain\Manager as DomainManager;
 
 class Manager extends DomainManager
 {

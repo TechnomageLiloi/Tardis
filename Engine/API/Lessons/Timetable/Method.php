@@ -1,16 +1,16 @@
 <?php
 
-namespace Liloi\Rune\API\Lessons\Timetable;
+namespace Liloi\TARDIS\API\Lessons\Timetable;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager as LessonsManager;
-use Liloi\Rune\Domain\Lessons\Status;
-use Liloi\Rune\Domain\Problems\Types as ProblemsTypes;
-use Liloi\Rune\Domain\Problems\Manager as ProblemsManager;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
+use Liloi\TARDIS\Domain\Lessons\Status;
+use Liloi\TARDIS\Domain\Problems\Types as ProblemsTypes;
+use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
 
 /**
- * Rune API: Blueprint.Blueprints.Show
+ * TARDIS API: Blueprint.Blueprints.Show
  * @package Liloi\Blueprint\API\Blueprints\Show
  */
 class Method extends SuperMethod

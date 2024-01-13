@@ -1,7 +1,7 @@
-Rune.Degrees = {
+TARDIS.Degrees = {
     getCollection: function ()
     {
-        API.request('Rune.Degrees.Collection', {
+        API.request('TARDIS.Degrees.Collection', {
 
         }, function (data) {
             $('#page').html(data.render);
@@ -12,7 +12,7 @@ Rune.Degrees = {
 
     show: function (uid)
     {
-        API.request('Rune.Degrees.Show', {
+        API.request('TARDIS.Degrees.Show', {
             'uid': uid
         }, function (data) {
             $('#page').html(data.render);
@@ -28,10 +28,10 @@ Rune.Degrees = {
             return;
         }
 
-        API.request('Rune.Degrees.Create', {
+        API.request('TARDIS.Degrees.Create', {
 
         }, function (data) {
-            Rune.Degrees.getCollection();
+            TARDIS.Degrees.getCollection();
         }, function () {
 
         });
@@ -44,7 +44,7 @@ Rune.Degrees = {
             return;
         }
 
-        API.request('Rune.Degrees.Remove', {
+        API.request('TARDIS.Degrees.Remove', {
             'uid': uid
         }, function (data) {
             API.Blueprints.show('root');
@@ -55,7 +55,7 @@ Rune.Degrees = {
 
     edit: function (uid)
     {
-        API.request('Rune.Degrees.Edit', {
+        API.request('TARDIS.Degrees.Edit', {
             'uid': uid
         }, function (data) {
             $('#page').html(data.render);
@@ -77,7 +77,7 @@ Rune.Degrees = {
         }
 
         const jq_block = $('#blueprint-edit');
-        API.request('Rune.Degrees.Save', {
+        API.request('TARDIS.Degrees.Save', {
             'key': key,
             'uid': jq_block.find('[name="uid"]').val(),
             'title': jq_block.find('[name="title"]').val(),
@@ -86,7 +86,7 @@ Rune.Degrees = {
         }, function (data) {
             if(!apply)
             {
-                Rune.Degrees.show(jq_block.find('[name="uid"]').val());
+                TARDIS.Degrees.show(jq_block.find('[name="uid"]').val());
                 return;
             }
 

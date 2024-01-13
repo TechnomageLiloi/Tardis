@@ -1,13 +1,13 @@
 <?php
 
-namespace Liloi\Rune\API\Lessons\Show;
+namespace Liloi\TARDIS\API\Lessons\Show;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Lessons\Manager;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Lessons\Manager;
 
 /**
- * Rune API: Blueprint.Blueprints.Show
+ * TARDIS API: Blueprint.Blueprints.Show
  * @package Liloi\Blueprint\API\Blueprints\Show
  */
 class Method extends SuperMethod

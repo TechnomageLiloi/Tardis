@@ -1,15 +1,15 @@
 <?php
 
-namespace Liloi\Rune\Domain\Lessons;
+namespace Liloi\TARDIS\Domain\Lessons;
 
 use Liloi\API\Errors\Exception;
-use Liloi\Rune\Domain\Manager as DomainManager;
-use Liloi\Rune\Domain\Problems\Types as ProblemsTypes;
+use Liloi\TARDIS\Domain\Manager as DomainManager;
+use Liloi\TARDIS\Domain\Problems\Types as ProblemsTypes;
 
 /**
  * Lessons manager.
  *
- * @package Liloi\Rune\Domain\Lessons
+ * @package Liloi\TARDIS\Domain\Lessons
  */
 class Manager extends DomainManager
 {

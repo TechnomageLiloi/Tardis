@@ -12,7 +12,7 @@
     }
 </style>
 <div id="blueprint-edit">
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.save('<?php echo $entity->getKey(); ?>');">Save</a>
     <hr/>
     <table style="width: 100%;">
         <tr>
@@ -55,5 +55,5 @@
         <tr><td>Atom</td><td><input type="text" name="key_atom" value="<?php echo $entity->getKeyAtom(); ?>" /></td></tr>
     </table>
     <hr/>
-    <a href="javascript:void(0)" class="butn" onclick="Rune.Lessons.save('<?php echo $entity->getKey(); ?>');">Save</a>
+    <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.save('<?php echo $entity->getKey(); ?>');">Save</a>
 </div>

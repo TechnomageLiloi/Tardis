@@ -1,13 +1,13 @@
 <?php
 
-namespace Liloi\Rune\API\Degrees\Collection;
+namespace Liloi\TARDIS\API\Degrees\Collection;
 
 use Liloi\API\Response;
-use Liloi\Rune\API\Method as SuperMethod;
-use Liloi\Rune\Domain\Degrees\Manager as DegreesManager;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Degrees\Manager as DegreesManager;
 
 /**
- * Rune API: Blueprint.Blueprints.Show
+ * TARDIS API: Blueprint.Blueprints.Show
  * @package Liloi\Librarium\API\Blueprints\Show
  */
 class Method extends SuperMethod
