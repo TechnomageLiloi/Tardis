@@ -19,12 +19,11 @@
     <h1 style="text-align: center;">
         <?php echo date('Y-m-d (H:i:s)'); ?>
     </h1>
-    <?php foreach($types as $key => $value): ?>
+    <?php foreach($lessons as $type => $entity): ?>
         <h3 style="text-align: center;">
-            Lesson <?php echo $key; ?>: <?php echo $value; ?>
+            Lesson <?php echo $type; ?>: <?php echo $entity->getTypeTitle(); ?>
         </h3>
         <table class="inner-table">
-            <?php foreach($lessons[$key] as $key_lesson => $entity): ?>
             <tr>
                 <td style="width: 80%;">
                     <?php echo $entity->getTitle(); ?>
@@ -39,7 +38,8 @@
                     <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">Edit</a>
                 </td>
             </tr>
-            <?php endforeach; ?>
+            <?php //foreach($lessons[$key] as $key_lesson => $entity): ?>
+            <?php //endforeach; ?>
         </table>
     <?php endforeach; ?>
 </div>

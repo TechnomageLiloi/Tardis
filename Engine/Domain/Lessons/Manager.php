@@ -64,13 +64,13 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start="%s";',
+            'select * from %s where start="%s" order by type asc;',
             $name, $dt
         ));
 
         foreach($rows as $row)
         {
-            $timetable[$row['type']][$row['key_lesson']] = Entity::create($row);
+            $timetable[$row['type']] = Entity::create($row);
         }
 
         foreach($keysTypes as $type)
@@ -81,7 +81,7 @@ class Manager extends DomainManager
             }
 
             $entity = self::create($type);
-            $timetable[$type][$entity->getKey()] = $entity;
+            $timetable[$type] = $entity;
         }
 
         return $timetable;

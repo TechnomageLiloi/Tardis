@@ -23,9 +23,6 @@ use Liloi\Stylo\Parser;
  *
  * @method string getType()
  * @method void setType(string $value)
- *
- * @method string getTags()
- * @method void setTags(string $value)
  */
 class Entity extends AbstractEntity
 {
@@ -57,5 +54,10 @@ class Entity extends AbstractEntity
     public function remove(): void
     {
         Manager::remove($this);
+    }
+
+    public function getTypeTitle(): string
+    {
+        return Types::$list[$this->getType()];
     }
 }
