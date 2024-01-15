@@ -39,12 +39,19 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
 
-        $keys = self::getAdapter()->getColumn(sprintf(
-            'select key_degree from %s where status in (%s, %s) order by key_degree asc;',
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select key_degree, uid from %s where status in (%s, %s) order by key_degree asc;',
             $name, Statuses::IN_HAND, Statuses::DEFENDED
         ));
 
-        return $keys;
+        $listDegrees = [];
+
+        foreach($rows as $row)
+        {
+            $listDegrees[$row['key_degree']] = ucfirst($row['uid']);
+        }
+
+        return $listDegrees;
     }
 
     public static function load(string $uid): Entity

@@ -25,15 +25,15 @@
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
-        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total mark for today: <?php echo $total; ?>
+        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total mark for today: <?php echo $total; ?>%
     </h1>
-    <?php foreach($lessons as $type => $entity): ?>
+    <?php foreach($lessons as $keyDegree => $entity): ?>
         <div class="lesson">
             <?php $key = $entity->getKey(); ?>
             <h3 style="text-align: center;">
-                Lesson <?php echo $type; ?>: <?php echo $entity->getTypeTitle(); ?> /
+                Lesson <?php echo $degrees[$keyDegree]; ?> /
                 Status: <?php echo $statuses[$entity->getStatus()]; ?> /
-                Mark: <?php echo $entity->getMark(); ?>
+                Mark: <?php echo $entity->getMark(); ?>%
             </h3>
             <div style="text-align: center;">
                 <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')" class="butn">Edit lesson</a>

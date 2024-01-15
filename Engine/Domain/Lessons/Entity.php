@@ -31,6 +31,11 @@ class Entity extends AbstractEntity
         return $this->getField('key_lesson');
     }
 
+    public function getKeyDegree(): string
+    {
+        return $this->getField('key_lesson');
+    }
+
     public function getDateNumber(): int
     {
         return (int)date('N', strtotime($this->getStart()));

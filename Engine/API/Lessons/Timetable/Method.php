@@ -19,8 +19,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $listKeyDegreeActive = DegreeManager::loadActiveKeyList();
-        $timetableLessons = LessonsManager::loadTimetable($listKeyDegreeActive);
+        $listDegreeActive = DegreeManager::loadActiveKeyList();
+        $timetableLessons = LessonsManager::loadTimetable(array_keys($listDegreeActive));
 
         $keysLessons = [];
         $markSum = 0;
@@ -36,6 +36,7 @@ class Method extends SuperMethod
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
+            'degrees' => $listDegreeActive,
             'lessons' => $timetableLessons,
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
