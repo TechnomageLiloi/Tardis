@@ -9,6 +9,7 @@ use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
 use Liloi\TARDIS\Domain\Lessons\Status as LessonsStatus;
 use Liloi\TARDIS\Domain\Lessons\Types as LessonsTypes;
 use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
+use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show
@@ -18,7 +19,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $timetableLessons = LessonsManager::loadTimetable();
+        $listKeyDegreeActive = DegreeManager::loadActiveKeyList();
+        $timetableLessons = LessonsManager::loadTimetable($listKeyDegreeActive);
 
         $keysLessons = [];
         $markSum = 0;

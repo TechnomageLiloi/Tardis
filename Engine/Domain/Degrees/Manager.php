@@ -35,6 +35,18 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadActiveKeyList(): array
+    {
+        $name = self::getTableName();
+
+        $keys = self::getAdapter()->getColumn(sprintf(
+            'select key_degree from %s where status in (%s, %s) order by key_degree asc;',
+            $name, Statuses::IN_HAND, Statuses::DEFENDED
+        ));
+
+        return $keys;
+    }
+
     public static function load(string $uid): Entity
     {
         $name = self::getTableName();
