@@ -23,7 +23,7 @@
         <title>TARDIS</title>
     </head>
     <body>
-        <div id="head">
+        <div id="head" style="font-size: x-large;">
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Degrees.getCollection();">Degrees</a>
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.timetable();">Timetable</a>

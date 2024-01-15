@@ -21,11 +21,13 @@ class Method extends SuperMethod
         $timetableLessons = LessonsManager::loadTimetable();
 
         $keysLessons = [];
+        $markSum = 0;
 
         /** @var LessonsEntity $entity */
         foreach ($timetableLessons as $entity)
         {
             $keysLessons[] = $entity->getKey();
+            $markSum += (int)$entity->getMark();
         }
 
         $collectionProblems = ProblemsManager::loadByLessonKeys($keysLessons);
@@ -36,6 +38,7 @@ class Method extends SuperMethod
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
             'types' => LessonsTypes::$list,
+            'total' => round($markSum / 7, 3, PHP_ROUND_HALF_DOWN)
         ]));
 
         return $response;
