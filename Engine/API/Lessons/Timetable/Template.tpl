@@ -61,7 +61,7 @@
                             <?php echo $statuses[$problem->getStatus()]; ?>
                         </td>
                         <td style="width: 5%;text-align: right;">
-                            <a href="javascript:void(0)" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
+                            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
