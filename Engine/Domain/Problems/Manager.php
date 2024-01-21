@@ -112,7 +112,7 @@ class Manager extends DomainManager
         $data = [
             'key_lesson' => $keyLesson,
             'title' => '-',
-            'start' => date('H:i:s'),
+            'start' => '00:00:00',
             'status' => Statuses::TODO
         ];
         self::getAdapter()->insert($name, $data);
