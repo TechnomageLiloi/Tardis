@@ -99,6 +99,7 @@ class Manager extends DomainManager
             'finish' => '00:00:00',
             'power' => self::POWER
         ];
+
         self::getAdapter()->insert($name, $data);
     }
 }
