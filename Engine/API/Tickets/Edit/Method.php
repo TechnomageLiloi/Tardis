@@ -1,11 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Problems\Edit;
+namespace Liloi\TARDIS\API\Tickets\Edit;
 
 use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Problems\Manager;
-use Liloi\TARDIS\Domain\Problems\Statuses;
+use Liloi\TARDIS\Domain\Tickets\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit
@@ -21,7 +20,6 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'statuses' => Statuses::$list
         ]));
 
         return $response;

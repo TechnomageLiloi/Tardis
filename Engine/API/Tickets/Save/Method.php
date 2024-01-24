@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Problems\Save;
+namespace Liloi\TARDIS\API\Tickets\Save;
 
 use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Problems\Manager;
+use Liloi\TARDIS\Domain\Tickets\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Save
@@ -18,8 +18,9 @@ class Method extends SuperMethod
         $entity = Manager::load($key_problem);
 
         $entity->setTitle(self::getParameter('title'));
-        $entity->setStatus(self::getParameter('status'));
+        $entity->setPower(self::getParameter('power'));
         $entity->setStart(self::getParameter('start'));
+        $entity->setFinish(self::getParameter('finish'));
 
         $entity->save();
 

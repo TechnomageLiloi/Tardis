@@ -51,6 +51,11 @@ class Tree
             $manager->add(new Method('TARDIS.Problems.Edit', '\Liloi\TARDIS\API\Problems\Edit\Method::execute'));
             $manager->add(new Method('TARDIS.Problems.Save', '\Liloi\TARDIS\API\Problems\Save\Method::execute'));
 
+            $manager->add(new Method('TARDIS.Tickets.Create', '\Liloi\TARDIS\API\Tickets\Create\Method::execute'));
+            $manager->add(new Method('TARDIS.Tickets.Remove', '\Liloi\TARDIS\API\Tickets\Remove\Method::execute'));
+            $manager->add(new Method('TARDIS.Tickets.Edit', '\Liloi\TARDIS\API\Tickets\Edit\Method::execute'));
+            $manager->add(new Method('TARDIS.Tickets.Save', '\Liloi\TARDIS\API\Tickets\Save\Method::execute'));
+
             self::$instance = new self($manager);
         }
 

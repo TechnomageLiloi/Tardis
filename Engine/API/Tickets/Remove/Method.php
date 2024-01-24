@@ -1,10 +1,10 @@
 <?php
 
-namespace Liloi\TARDIS\API\Problems\Remove;
+namespace Liloi\TARDIS\API\Tickets\Remove;
 
 use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Problems\Manager;
+use Liloi\TARDIS\Domain\Tickets\Manager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Remove

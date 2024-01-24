@@ -31,12 +31,17 @@
             </td>
         </tr>
 
-        <tr><td>Status</td><td>
-            <select name="status">
-                <?php foreach($statuses as $key => $value): ?>
-                <option value="<?php echo $key; ?>" <?php if($entity->getStatus() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
-                <?php endforeach; ?>
-            </select>
+        <tr>
+            <td>Finish</td>
+            <td>
+                <input type="time" name="finish" value="<?php echo $entity->getFinish(); ?>"/>
+                <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('00:00:00');">ToDo</a>
+                <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=finish]').val('<?php echo date('H:i:s'); ?>');">Now</a>
+            </td>
+        </tr>
+
+        <tr><td>Power</td><td>
+            <input type="text" name="power" value="<?php echo $entity->getPower(); ?>"/>
         </td></tr>
     </table>
     <hr/>
