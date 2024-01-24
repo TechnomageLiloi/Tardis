@@ -17,6 +17,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Degrees/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Lessons/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Problems/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Tickets/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
