@@ -14,8 +14,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $keyLesson = self::getParameter('key_lesson');
-        Manager::create($keyLesson);
+        $keyDegree = self::getParameter('key_degree');
+        Manager::create($keyDegree);
         return new Response();
     }
 }

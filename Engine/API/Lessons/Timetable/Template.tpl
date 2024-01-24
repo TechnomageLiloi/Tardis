@@ -37,7 +37,7 @@
             </h3>
             <div style="text-align: center;">
                 <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')" class="butn">Edit lesson</a>
-                <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $key; ?>')" class="butn">Create problem</a>
+                <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $keyDegree; ?>')" class="butn">Create problem</a>
                 <a href="javascript:void(0)" onclick="TARDIS.Tickets.create('<?php echo $key; ?>')" class="butn">Create ticket</a>
             </div>
             <table class="inner-table">

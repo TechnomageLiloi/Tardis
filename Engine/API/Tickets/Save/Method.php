@@ -14,8 +14,8 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $key_problem = self::getParameter('key_problem');
-        $entity = Manager::load($key_problem);
+        $keyTicket = self::getParameter('key_ticket');
+        $entity = Manager::load($keyTicket);
 
         $entity->setTitle(self::getParameter('title'));
         $entity->setPower(self::getParameter('power'));

@@ -21,7 +21,7 @@ TARDIS.Problems = {
         });
     },
 
-    create: function (keyLesson)
+    create: function (keyDegree)
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,7 +29,7 @@ TARDIS.Problems = {
         }
 
         API.request('TARDIS.Problems.Create', {
-            'key_lesson': keyLesson
+            'key_degree': keyDegree
         }, function (data) {
             TARDIS.Lessons.timetable();
         }, function () {
