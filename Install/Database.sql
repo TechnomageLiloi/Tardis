@@ -48,3 +48,18 @@ alter table tardis_lessons
     add constraint tardis_lessons_tardis_degrees_key_degree_fk
         foreign key (key_degree) references tardis_degrees (key_degree)
             on update cascade on delete cascade;
+
+create table tardis_tickets
+(
+    key_ticket bigint unsigned auto_increment,
+    key_lesson bigint unsigned not null,
+    title varchar(250) not null,
+    start time not null,
+    finish time not null,
+    power tinyint unsigned default 1 not null,
+    constraint tardis_tickets_pk
+        primary key (key_ticket),
+    constraint tardis_tickets_tardis_lessons_key_lesson_fk
+        foreign key (key_lesson) references tardis_lessons (key_lesson)
+            on update cascade on delete cascade
+);
