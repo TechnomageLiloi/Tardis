@@ -9,6 +9,7 @@ use Liloi\Judex\Assert;
 class Manager extends DomainManager
 {
     public const POWER = '1';
+    public const TIME_TODO = '00:00:00';
 
     /**
      * Get table name.
@@ -87,7 +88,7 @@ class Manager extends DomainManager
      *
      * @param string $keyLesson
      */
-    public static function create(string $keyLesson): void
+    public static function create(string $keyLesson): Entity
     {
         Assert::notEmpty($keyLesson, 'Ticket key is empty.');
 
@@ -95,11 +96,33 @@ class Manager extends DomainManager
         $data = [
             'key_lesson' => $keyLesson,
             'title' => '-',
-            'start' => '00:00:00',
-            'finish' => '00:00:00',
+            'start' => self::TIME_TODO,
+            'finish' => self::TIME_TODO,
             'power' => self::POWER
         ];
 
         self::getAdapter()->insert($name, $data);
+
+        $data['key_ticket'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());
+        return Entity::create($data);
+    }
+
+    public static function loadByLessonKeys(array $keysLessons): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where key_lesson in (%s) order by start asc',
+            $name, implode(', ', $keysLessons)
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
     }
 }

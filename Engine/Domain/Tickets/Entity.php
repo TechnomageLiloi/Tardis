@@ -56,4 +56,27 @@ class Entity extends AbstractEntity
     {
         Manager::remove($this);
     }
+
+    public function getStatus(): int
+    {
+        $start = $this->getStart();
+        $finish = $this->getFinish();
+
+        if($start === Manager::TIME_TODO && $finish === Manager::TIME_TODO)
+        {
+            return Statuses::TODO;
+        }
+
+        if($start !== Manager::TIME_TODO && $finish === Manager::TIME_TODO)
+        {
+            return Statuses::IN_HAND;
+        }
+
+        return Statuses::COMPLETE;
+    }
+
+    public function getStatusTitle(): string
+    {
+        return Statuses::$list[$this->getStatus()];
+    }
 }

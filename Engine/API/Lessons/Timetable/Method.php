@@ -9,6 +9,7 @@ use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
 use Liloi\TARDIS\Domain\Lessons\Status as LessonsStatus;
 use Liloi\TARDIS\Domain\Lessons\Types as LessonsTypes;
 use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
+use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
 use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
 
 /**
@@ -33,11 +34,13 @@ class Method extends SuperMethod
         }
 
         $collectionProblems = ProblemsManager::loadByLessonKeys($keysLessons);
+        $collectionTickets = TicketsManager::loadByLessonKeys($keysLessons);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'degrees' => $listDegreeActive,
             'lessons' => $timetableLessons,
+            'tickets' => $collectionTickets,
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
             'types' => LessonsTypes::$list,

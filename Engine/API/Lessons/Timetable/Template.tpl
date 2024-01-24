@@ -37,12 +37,24 @@
             </h3>
             <div style="text-align: center;">
                 <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')" class="butn">Edit lesson</a>
+                <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $key; ?>')" class="butn">Create problem</a>
                 <a href="javascript:void(0)" onclick="TARDIS.Tickets.create('<?php echo $key; ?>')" class="butn">Create ticket</a>
             </div>
             <table class="inner-table">
                 <tr style="font-weight: bold;">
                     <td style="width: 80%;">
                         <?php echo $entity->getTitle(); ?>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td style="width: 5%;text-align: right;">
+
+                    </td>
+                </tr>
+                <tr style="font-weight: bold;">
+                    <td style="width: 80%;">
+                        Problems
                     </td>
                     <td>
 
@@ -62,6 +74,31 @@
                         </td>
                         <td style="width: 5%;text-align: right;">
                             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                <tr style="font-weight: bold;">
+                    <td style="width: 80%;">
+                        Tickets
+                    </td>
+                    <td>
+
+                    </td>
+                    <td style="width: 5%;text-align: right;">
+
+                    </td>
+                </tr>
+                <?php foreach($tickets as $ticket): ?>
+                    <?php if($key != $ticket->getKeyLesson()) continue; ?>
+                    <tr>
+                        <td style="width: 80%;">
+                            <?php echo $ticket->getStart(); ?> - <?php echo $ticket->getFinish(); ?> / <?php echo $ticket->getTitle(); ?>
+                        </td>
+                        <td>
+                            <?php echo $ticket->getStatusTitle(); ?>
+                        </td>
+                        <td style="width: 5%;text-align: right;">
+                            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Tickets.edit('<?php echo $ticket->getKey(); ?>')">Edit</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
