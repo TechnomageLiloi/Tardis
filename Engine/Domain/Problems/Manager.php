@@ -18,13 +18,13 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'problems';
     }
 
-    public static function loadByLessonKeys(array $keysLessons): Collection
+    public static function loadByDegreeKeys(array $keysDegrees): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_lesson in (%s) order by start asc',
-            $name, implode(', ', $keysLessons)
+            'select * from %s where key_degree in (%s) order by title asc',
+            $name, implode(', ', $keysDegrees)
         ));
 
         $collection = new Collection();
@@ -102,17 +102,17 @@ class Manager extends DomainManager
     /**
      * Create problem in database.
      *
-     * @param string $keyLesson
+     * @param string $keyDegree
      */
-    public static function create(string $keyLesson): void
+    public static function create(string $keyDegree): void
     {
-        Assert::notEmpty($keyLesson, 'Lesson key is empty');
+        Assert::notEmpty($keyDegree, 'Degree key is empty');
 
         $name = self::getTableName();
         $data = [
-            'key_lesson' => $keyLesson,
+            'key_degree' => $keyDegree,
             'title' => '-',
-            'start' => '00:00:00',
+            'summary' => '-',
             'status' => Statuses::TODO
         ];
         self::getAdapter()->insert($name, $data);

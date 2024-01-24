@@ -64,10 +64,10 @@
                     </td>
                 </tr>
                 <?php foreach($problems as $problem): ?>
-                    <?php if($key != $problem->getKeyLesson()) continue; ?>
+                    <?php if($keyDegree != $problem->getKeyDegree()) continue; ?>
                     <tr>
                         <td style="width: 80%;">
-                            <input type="checkbox" disabled <?php if($problem->isDone()): ?>checked="checked"<?php endif; ?>> <?php echo $problem->getStart(); ?> / <?php echo $problem->getTitle(); ?>
+                            <input type="checkbox" disabled <?php if($problem->isDone()): ?>checked="checked"<?php endif; ?>> / <?php echo $problem->getTitle(); ?>
                         </td>
                         <td>
                             <?php echo $statuses[$problem->getStatus()]; ?>

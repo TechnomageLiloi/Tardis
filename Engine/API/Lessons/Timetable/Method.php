@@ -33,7 +33,7 @@ class Method extends SuperMethod
             $markSum += (int)$entity->getMark();
         }
 
-        $collectionProblems = ProblemsManager::loadByLessonKeys($keysLessons);
+        $collectionProblems = ProblemsManager::loadByDegreeKeys(array_keys($listDegreeActive));
         $collectionTickets = TicketsManager::loadByLessonKeys($keysLessons);
 
         $response = new Response();

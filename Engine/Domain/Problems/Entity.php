@@ -10,8 +10,8 @@ use Liloi\Tools\Entity as AbstractEntity;
  * @method string getTitle()
  * @method void setTitle(string $value)
  *
- * @method string getStart()
- * @method void setStart(string $value)
+ * @method string getSummary()
+ * @method void setSummary(string $value)
  *
  * @method string getStatus()
  * @method void setStatus(string $value)
@@ -33,9 +33,9 @@ class Entity extends AbstractEntity
      *
      * @return string
      */
-    public function getKeyLesson(): string
+    public function getKeyDegree(): string
     {
-        return $this->getField('key_lesson');
+        return $this->getField('key_degree');
     }
 
     /**

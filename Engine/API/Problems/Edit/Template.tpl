@@ -22,15 +22,6 @@
 
         <tr><td>Title</td><td><input type="text" name="title" value="<?php echo $entity->getTitle(); ?>"/></td></tr>
 
-        <tr>
-            <td>Start</td>
-            <td>
-                <input type="time" name="start" value="<?php echo $entity->getStart(); ?>"/>
-                <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('00:00:00');">ToDo</a>
-                <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('H:i:s'); ?>');">Now</a>
-            </td>
-        </tr>
-
         <tr><td>Status</td><td>
             <select name="status">
                 <?php foreach($statuses as $key => $value): ?>
