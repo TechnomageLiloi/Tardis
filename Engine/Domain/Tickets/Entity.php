@@ -82,6 +82,23 @@ class Entity extends AbstractEntity
 
     public function getKarma(): string
     {
+        $timeStart = $this->getStart();
+        $timeFinish = $this->getFinish();
+
+        if($timeStart !== Manager::TIME_TODO && $timeFinish !== Manager::TIME_TODO)
+        {
+            $delta = strtotime($timeFinish) - strtotime($timeStart);
+
+            $deltaQuaters = (int)($delta / (60 * 15));
+
+            if(!$deltaQuaters) // Time was < 15 minutes.
+            {
+                $deltaQuaters = 1;
+            }
+
+            return $deltaQuaters ** $this->getPower();
+        }
+
         return '-';
     }
 }
