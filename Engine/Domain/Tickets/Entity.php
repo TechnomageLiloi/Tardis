@@ -79,4 +79,9 @@ class Entity extends AbstractEntity
     {
         return Statuses::$list[$this->getStatus()];
     }
+
+    public function getKarma(): string
+    {
+        return '-';
+    }
 }

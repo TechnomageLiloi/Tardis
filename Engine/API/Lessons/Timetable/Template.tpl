@@ -95,7 +95,7 @@
                             <?php echo $ticket->getStart(); ?> - <?php echo $ticket->getFinish(); ?> / <?php echo $ticket->getTitle(); ?>
                         </td>
                         <td>
-                            <?php echo $ticket->getStatusTitle(); ?>
+                            <?php echo $ticket->getStatusTitle(); ?> / <?php echo $ticket->getKarma(); ?>
                         </td>
                         <td style="width: 5%;text-align: right;">
                             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Tickets.edit('<?php echo $ticket->getKey(); ?>')">Edit</a>
