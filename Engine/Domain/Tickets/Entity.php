@@ -21,6 +21,8 @@ use Liloi\Tools\Entity as AbstractEntity;
  */
 class Entity extends AbstractEntity
 {
+    private ?string $karma = null;
+
     /**
      * Get problem key.
      *
@@ -82,6 +84,11 @@ class Entity extends AbstractEntity
 
     public function getKarma(): string
     {
+        if($this->karma !== null)
+        {
+            return $this->karma;
+        }
+
         $timeStart = $this->getStart();
         $timeFinish = $this->getFinish();
 
@@ -96,9 +103,13 @@ class Entity extends AbstractEntity
                 $deltaQuaters = 1;
             }
 
-            return $deltaQuaters ** $this->getPower();
+            $this->karma = $deltaQuaters ** $this->getPower();
+        }
+        else
+        {
+            $this->karma = '-';
         }
 
-        return '-';
+        return $this->karma;
     }
 }
