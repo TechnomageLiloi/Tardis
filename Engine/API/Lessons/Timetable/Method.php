@@ -44,7 +44,7 @@ class Method extends SuperMethod
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
             'types' => LessonsTypes::$list,
-            'total' => round($markSum / 7, 3, PHP_ROUND_HALF_DOWN)
+            'total' => $markSum
         ]));
 
         return $response;

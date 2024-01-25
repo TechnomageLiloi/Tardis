@@ -70,10 +70,10 @@ TARDIS.Lessons = {
         });
     },
 
-    calculate: function (keyTicket)
+    calculate: function (keyLesson)
     {
         API.request('TARDIS.Lessons.Calculate', {
-            key_ticket: keyTicket
+            'key_lesson': keyLesson
         }, function (data) {
             TARDIS.Lessons.timetable();
         }, function () {

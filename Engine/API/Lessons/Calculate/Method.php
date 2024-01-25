@@ -4,13 +4,30 @@ namespace Liloi\TARDIS\API\Lessons\Calculate;
 
 use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
-use Liloi\TARDIS\Domain\Lessons\Manager;
+use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
+use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
+use Liloi\TARDIS\Domain\Tickets\Entity as TicketsEntity;
 
 // @obsolete: Should remove in the next version.
 class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        $keyLesson = self::getParameter('key_lesson');
+
+        $collectionTickets = TicketsManager::loadByLessonKeys([$keyLesson]);
+
+        $karmaTotal = 0;
+
+        /** @var TicketsEntity $ticket */
+        foreach($collectionTickets as $ticket)
+        {
+            $karmaTotal += (int)$ticket->getKarma();
+        }
+
+        $lesson = LessonsManager::load($keyLesson);
+        $lesson->setMark($karmaTotal);
+        $lesson->save();
 
         return new Response();
     }

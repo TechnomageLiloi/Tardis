@@ -25,7 +25,7 @@
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
-        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total mark for today: <?php echo $total; ?>%
+        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total karma for today: <?php echo $total; ?>
     </h1>
     <?php foreach($lessons as $keyDegree => $entity): ?>
         <div class="lesson">
