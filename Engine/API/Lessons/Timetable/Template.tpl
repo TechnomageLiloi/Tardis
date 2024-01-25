@@ -33,12 +33,13 @@
             <h3 style="text-align: center;">
                 Lesson <?php echo $degrees[$keyDegree]; ?> /
                 Status: <?php echo $statuses[$entity->getStatus()]; ?> /
-                Mark: <?php echo $entity->getMark(); ?>%
+                Karma: <?php echo $entity->getMark(); ?>
             </h3>
             <div style="text-align: center;">
-                <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')" class="butn">Edit lesson</a>
-                <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $keyDegree; ?>')" class="butn">Create problem</a>
-                <a href="javascript:void(0)" onclick="TARDIS.Tickets.create('<?php echo $key; ?>')" class="butn">Create ticket</a>
+                <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit lesson</a>
+                <a href="javascript:void(0)" onclick="TARDIS.Lessons.calculate('<?php echo $key; ?>');" class="butn">Recalculate</a>
+                <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $keyDegree; ?>');" class="butn">Create problem</a>
+                <a href="javascript:void(0)" onclick="TARDIS.Tickets.create('<?php echo $key; ?>');" class="butn">Create ticket</a>
             </div>
             <table class="inner-table">
                 <tr style="font-weight: bold;">

@@ -70,6 +70,17 @@ TARDIS.Lessons = {
         });
     },
 
+    calculate: function (keyTicket)
+    {
+        API.request('TARDIS.Lessons.Calculate', {
+            key_ticket: keyTicket
+        }, function (data) {
+            TARDIS.Lessons.timetable();
+        }, function () {
+
+        });
+    },
+
     remove: function (key_lesson, key_problem)
     {
         if(!confirm('Are you sure?'))
