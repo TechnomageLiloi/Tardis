@@ -71,7 +71,7 @@
                             <input type="checkbox" disabled <?php if($problem->isDone()): ?>checked="checked"<?php endif; ?>> / <?php echo $problem->getTitle(); ?>
                         </td>
                         <td>
-                            <?php echo $statuses[$problem->getStatus()]; ?>
+                            <?php echo $problemStatuses[$problem->getStatus()]; ?>
                         </td>
                         <td style="width: 5%;text-align: right;">
                             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>

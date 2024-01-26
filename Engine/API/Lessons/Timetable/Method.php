@@ -9,6 +9,7 @@ use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
 use Liloi\TARDIS\Domain\Lessons\Status as LessonsStatus;
 use Liloi\TARDIS\Domain\Lessons\Types as LessonsTypes;
 use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
+use Liloi\TARDIS\Domain\Problems\Statuses as ProblemsStatuses;
 use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
 use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
 
@@ -43,6 +44,7 @@ class Method extends SuperMethod
             'tickets' => $collectionTickets,
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
+            'problemStatuses' => ProblemsStatuses::$list,
             'types' => LessonsTypes::$list,
             'total' => $markSum
         ]));

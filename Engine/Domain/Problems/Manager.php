@@ -23,8 +23,8 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_degree in (%s) order by title asc',
-            $name, implode(', ', $keysDegrees)
+            'select * from %s where key_degree in (%s) and status != "%s" order by title asc',
+            $name, implode(', ', $keysDegrees), Statuses::ARCHIVE
         ));
 
         $collection = new Collection();
