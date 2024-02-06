@@ -25,7 +25,16 @@
 
     #problem-group .problem
     {
-        background-color: #ffffbd;
+        background-color: #ffe3e3;
+        padding: 5px;
+        border: gray 1px solid;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    #problem-group .ticket
+    {
+        background-color: #cbffbd;
         padding: 5px;
         border: gray 1px solid;
         border-radius: 5px;
@@ -42,6 +51,14 @@
         <div class="problem">
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
             <?php echo $problem->getTitle(); ?>
+        </div>
+    <?php endforeach; ?>
+
+    <?php foreach($tickets as $ticket): ?>
+        <?php if(!$ticket->isInHand()) continue; ?>
+        <div class="ticket">
+            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Tickets.edit('<?php echo $ticket->getKey(); ?>')">Edit</a>
+            <?php echo $ticket->getTitle(); ?>
         </div>
     <?php endforeach; ?>
 

@@ -112,4 +112,14 @@ class Entity extends AbstractEntity
 
         return $this->karma;
     }
+
+    /**
+     * Is problem in hand?
+     *
+     * @return bool `true` if so, `false` otherwise.
+     */
+    public function isInHand(): bool
+    {
+        return $this->getStatus() === Statuses::IN_HAND;
+    }
 }
