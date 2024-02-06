@@ -25,7 +25,7 @@
 
     #problem-group .problem
     {
-        background-color: #ffe3e3;
+        background-color: #e3f0ff;
         padding: 5px;
         border: gray 1px solid;
         border-radius: 5px;
@@ -43,10 +43,21 @@
 
     #problem-group .flag
     {
-        background-color: red;
-        color: yellow;
+        background-color: #04ffea;
+        border: gray 1px solid;
+        color: #000000;
         margin-right: 3px;
         padding: 1px;
+    }
+
+    #problem-group .parasite
+    {
+        background-color: red;
+        color: yellow;
+        padding: 5px;
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: x-large;
     }
 </style>
 <div id="problem-group">
@@ -54,8 +65,11 @@
         Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total karma for today: <?php echo $total; ?>
     </h1>
 
+    <?php $active = 0; ?>
+
     <?php foreach($problems as $problem): ?>
         <?php if(!$problem->isInHand()) continue; ?>
+        <?php ++$active; ?>
         <div class="problem">
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
             <?php echo $problem->getTitle(); ?>
@@ -64,11 +78,18 @@
 
     <?php foreach($tickets as $ticket): ?>
         <?php if(!$ticket->isInHand()) continue; ?>
+        <?php ++$active; ?>
         <div class="ticket">
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Tickets.edit('<?php echo $ticket->getKey(); ?>')">Edit</a>
             <?php echo $ticket->getTitleWithFlags(); ?>
         </div>
     <?php endforeach; ?>
+
+    <?php if(!$active): ?>
+        <div class="parasite">
+            You have a time parasite now! What a shame!
+        </div>
+    <?php endif; ?>
 
     <?php foreach($lessons as $keyDegree => $entity): ?>
         <div class="lesson">
