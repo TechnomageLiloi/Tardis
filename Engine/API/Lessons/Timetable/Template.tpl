@@ -40,6 +40,14 @@
         border-radius: 5px;
         margin-bottom: 5px;
     }
+
+    #problem-group .flag
+    {
+        background-color: red;
+        color: yellow;
+        margin-right: 3px;
+        padding: 1px;
+    }
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
@@ -58,7 +66,7 @@
         <?php if(!$ticket->isInHand()) continue; ?>
         <div class="ticket">
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Tickets.edit('<?php echo $ticket->getKey(); ?>')">Edit</a>
-            <?php echo $ticket->getTitle(); ?>
+            <?php echo $ticket->getTitleWithFlags(); ?>
         </div>
     <?php endforeach; ?>
 
@@ -128,7 +136,7 @@
                     <?php if($key != $ticket->getKeyLesson()) continue; ?>
                     <tr>
                         <td style="width: 80%;">
-                            <?php echo $ticket->getStart(); ?> - <?php echo $ticket->getFinish(); ?> / <?php echo $ticket->getTitle(); ?>
+                            <?php echo $ticket->getStart(); ?> - <?php echo $ticket->getFinish(); ?> / <?php echo $ticket->getTitleWithFlags(); ?>
                         </td>
                         <td>
                             <?php echo $ticket->getStatusTitle(); ?> / <?php echo $ticket->getKarma(); ?>

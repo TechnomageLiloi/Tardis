@@ -82,6 +82,11 @@ class Entity extends AbstractEntity
         return Statuses::$list[$this->getStatus()];
     }
 
+    /**
+     * Gets ticket karma.
+     *
+     * @return string
+     */
     public function getKarma(): string
     {
         if($this->karma !== null)
@@ -121,5 +126,32 @@ class Entity extends AbstractEntity
     public function isInHand(): bool
     {
         return $this->getStatus() === Statuses::IN_HAND;
+    }
+
+    /**
+     * Gets title with flags.
+     *
+     * @return string
+     */
+    public function getTitleWithFlags(): string
+    {
+        $title = $this->getTitle();
+
+        if($title[0] !== '[')
+        {
+            return $title;
+        }
+
+        $flags = substr($title, 1, strpos($title, ']') - 1);
+        $listFlags = [];
+
+        foreach (explode(' ', $flags) as $flag)
+        {
+            $listFlags[] = '<span class="flag">' . $flag . '</span>';
+        }
+
+        $title = str_replace(substr($title, 0, strpos($title, ']') + 1), '', $title);
+
+        return implode('', $listFlags) . $title;
     }
 }
