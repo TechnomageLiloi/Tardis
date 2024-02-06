@@ -22,11 +22,29 @@
     {
         background-color: #ffffbd;
     }
+
+    #problem-group .problem
+    {
+        background-color: #ffffbd;
+        padding: 5px;
+        border: gray 1px solid;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
         Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total karma for today: <?php echo $total; ?>
     </h1>
+
+    <?php foreach($problems as $problem): ?>
+        <?php if(!$problem->isInHand()) continue; ?>
+        <div class="problem">
+            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Problems.edit('<?php echo $problem->getKey(); ?>')">Edit</a>
+            <?php echo $problem->getTitle(); ?>
+        </div>
+    <?php endforeach; ?>
+
     <?php foreach($lessons as $keyDegree => $entity): ?>
         <div class="lesson">
             <?php $key = $entity->getKey(); ?>

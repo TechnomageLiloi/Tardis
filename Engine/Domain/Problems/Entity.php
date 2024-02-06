@@ -63,4 +63,14 @@ class Entity extends AbstractEntity
     {
         return $this->getStatus() == Statuses::COMPLETE;
     }
+
+    /**
+     * Is problem in hand?
+     *
+     * @return bool `true` if so, `false` otherwise.
+     */
+    public function isInHand(): bool
+    {
+        return $this->getStatus() == Statuses::IN_HAND;
+    }
 }
