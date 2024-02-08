@@ -16,13 +16,13 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'degrees';
     }
 
-    public static function loadCollection(): Collection
+    public static function loadCollection(string $order = 'key_degree desc'): Collection
     {
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s order by key_degree desc;',
-            $name
+            'select * from %s order by %s;',
+            $name, $order
         ));
 
         $collection = new Collection();

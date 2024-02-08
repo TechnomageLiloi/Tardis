@@ -14,7 +14,6 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
         $collection = DegreesManager::loadCollection();
 
         $response = new Response();

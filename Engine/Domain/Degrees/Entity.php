@@ -25,7 +25,16 @@ class Entity extends AbstractEntity
         return $this->getField('key_degree');
     }
 
+    /**
+     * @obsolete
+     * @return string
+     */
     public function getParse(): string
+    {
+        return Parser::parseString($this->getProgram());
+    }
+
+    public function parseProgram(): string
     {
         return Parser::parseString($this->getProgram());
     }
