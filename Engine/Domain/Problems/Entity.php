@@ -2,6 +2,7 @@
 
 namespace Liloi\TARDIS\Domain\Problems;
 
+use Liloi\Stylo\Parser;
 use Liloi\Tools\Entity as AbstractEntity;
 
 /**
@@ -72,5 +73,15 @@ class Entity extends AbstractEntity
     public function isInHand(): bool
     {
         return $this->getStatus() == Statuses::IN_HAND;
+    }
+
+    /**
+     * Stylo parse of summary.
+     *
+     * @return string
+     */
+    public function parseSummary(): string
+    {
+        return Parser::parseString($this->getSummary());
     }
 }
