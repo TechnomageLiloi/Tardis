@@ -18,6 +18,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Lessons/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Problems/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Tickets/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
@@ -25,6 +26,7 @@
     </head>
     <body>
         <div id="head" style="font-size: x-large;">
+            <a href="javascript:void(0)" class="butn" onclick="TARDIS.Plan.show();">Dissertation</a>
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Degrees.getCollection();">Degrees</a>
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.schedule('<?php echo gmdate('Y-m-d'); ?>');">Schedule</a>
             <a href="javascript:void(0)" class="butn" onclick="TARDIS.Lessons.timetable();">Timetable</a>

@@ -31,6 +31,8 @@ class Tree
         {
             $manager = new Manager();
 
+            $manager->add(new Method('TARDIS.Plan.Show', '\Liloi\TARDIS\API\Plan\Show\Method::execute'));
+
             $manager->add(new Method('TARDIS.Degrees.Collection', '\Liloi\TARDIS\API\Degrees\Collection\Method::execute'));
             $manager->add(new Method('TARDIS.Degrees.Show', '\Liloi\TARDIS\API\Degrees\Show\Method::execute'));
             $manager->add(new Method('TARDIS.Degrees.Create', '\Liloi\TARDIS\API\Degrees\Create\Method::execute'));
