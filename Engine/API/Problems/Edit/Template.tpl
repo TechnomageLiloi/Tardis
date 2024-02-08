@@ -29,6 +29,8 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
+
+        <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>
     </table>
     <hr/>
     <a href="javascript:void(0)" onclick="TARDIS.Problems.save('<?php echo $entity->getKey(); ?>');">Save</a>

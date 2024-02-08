@@ -75,6 +75,7 @@ TARDIS.Problems = {
         API.request('TARDIS.Problems.Save', {
             'key_problem': key_problem,
             'title': jq_block.find('[name="title"]').val(),
+            'summary': jq_block.find('[name="summary"]').val(),
             'status': jq_block.find('[name="status"]').val()
         }, function (data) {
             TARDIS.Lessons.timetable();
