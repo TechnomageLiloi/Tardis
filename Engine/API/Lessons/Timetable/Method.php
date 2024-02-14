@@ -25,13 +25,12 @@ class Method extends SuperMethod
         $timetableLessons = LessonsManager::loadTimetable(array_keys($listDegreeActive));
 
         $keysLessons = [];
-        $markSum = 0;
+        $totalKarma = TicketsManager::loadKarma();
 
         /** @var LessonsEntity $entity */
         foreach ($timetableLessons as $entity)
         {
             $keysLessons[] = $entity->getKey();
-            $markSum += (int)$entity->getMark();
         }
 
         $collectionProblems = ProblemsManager::loadByDegreeKeys(array_keys($listDegreeActive));
@@ -46,7 +45,7 @@ class Method extends SuperMethod
             'statuses' => LessonsStatus::$list,
             'problemStatuses' => ProblemsStatuses::$list,
             'types' => LessonsTypes::$list,
-            'total' => $markSum
+            'total' => $totalKarma
         ]));
 
         return $response;

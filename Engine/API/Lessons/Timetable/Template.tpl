@@ -62,7 +62,7 @@
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
-        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Total karma for today: <?php echo $total; ?>
+        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Karma: <?php echo $total; ?>
     </h1>
 
     <?php $active = 0; ?>

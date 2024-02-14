@@ -125,4 +125,31 @@ class Manager extends DomainManager
 
         return $collection;
     }
+
+    /**
+     * Gets current karma.
+     *
+     * @return int
+     */
+    public static function loadKarma(): int
+    {
+        $nameTickets = self::getTableName();
+        $nameLessons = self::getTablePrefix() . 'lessons';
+        $dateStart = date('Y-m-d', strtotime('-1 week'));
+        $dateFinish = date('Y-m-d');;
+
+        $karma = self::getAdapter()->getSingle(sprintf(
+            'select sum(%s.power) from %s, %s
+             where %s.key_lesson = %s.key_lesson
+             and %s.start between "%s" and "%s"',
+            $nameTickets, $nameTickets, $nameLessons, $nameTickets, $nameLessons, $nameLessons, $dateStart, $dateFinish
+        ));
+
+        if(!$karma)
+        {
+            return 0;
+        }
+
+        return $karma;
+    }
 }
