@@ -21,8 +21,6 @@ use Liloi\Tools\Entity as AbstractEntity;
  */
 class Entity extends AbstractEntity
 {
-    private ?string $karma = null;
-
     /**
      * Get problem key.
      *
@@ -85,37 +83,12 @@ class Entity extends AbstractEntity
     /**
      * Gets ticket karma.
      *
+     * @deprecated Use {@link Entity::getPower()}.
      * @return string
      */
     public function getKarma(): string
     {
-        if($this->karma !== null)
-        {
-            return $this->karma;
-        }
-
-        $timeStart = $this->getStart();
-        $timeFinish = $this->getFinish();
-
-        if($timeStart !== Manager::TIME_TODO && $timeFinish !== Manager::TIME_TODO)
-        {
-            $delta = strtotime($timeFinish) - strtotime($timeStart);
-
-            $deltaQuaters = (int)($delta / (60 * 15));
-
-            if(!$deltaQuaters) // Time was < 15 minutes.
-            {
-                $deltaQuaters = 1;
-            }
-
-            $this->karma = $deltaQuaters ** $this->getPower();
-        }
-        else
-        {
-            $this->karma = '-';
-        }
-
-        return $this->karma;
+        return $this->getPower();
     }
 
     /**
