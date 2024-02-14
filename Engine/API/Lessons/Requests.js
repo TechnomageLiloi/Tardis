@@ -70,6 +70,10 @@ TARDIS.Lessons = {
         });
     },
 
+    /**
+     * @deprecated
+     * @param keyLesson
+     */
     calculate: function (keyLesson)
     {
         API.request('TARDIS.Lessons.Calculate', {

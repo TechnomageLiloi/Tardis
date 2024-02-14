@@ -62,7 +62,7 @@
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
-        Timestamp: <?php echo date('Y-m-d H:i:s'); ?> / Karma: <?php echo $total; ?>
+        Current Karma: <?php echo $total; ?>
     </h1>
 
     <?php $active = 0; ?>
@@ -96,12 +96,10 @@
             <?php $key = $entity->getKey(); ?>
             <h3 style="text-align: center;">
                 Lesson <?php echo $degrees[$keyDegree]; ?> /
-                Status: <?php echo $statuses[$entity->getStatus()]; ?> /
-                Karma: <?php echo $entity->getMark(); ?>
+                Status: <?php echo $statuses[$entity->getStatus()]; ?>
             </h3>
             <div style="text-align: center;">
                 <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit lesson</a>
-                <a href="javascript:void(0)" onclick="TARDIS.Lessons.calculate('<?php echo $key; ?>');" class="butn">Recalculate</a>
                 <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $keyDegree; ?>');" class="butn">Create problem</a>
                 <a href="javascript:void(0)" onclick="TARDIS.Tickets.create('<?php echo $key; ?>');" class="butn">Create ticket</a>
             </div>
