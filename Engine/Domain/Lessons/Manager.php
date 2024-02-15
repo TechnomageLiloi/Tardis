@@ -58,24 +58,29 @@ class Manager extends DomainManager
     public static function loadTimetable(array $listKeyDegreeActive): array
     {
         $dt = date('Y-m-d');
-        $keysTypes = array_keys(ProblemsTypes::$list);
 
         $timetable = [];
-        foreach($listKeyDegreeActive as $i)
-        {
-            $timetable[$i] = null;
-        }
 
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start="%s" and key_degree in (%s) order by key_degree asc;',
+            'select * from %s where start="%s" and key_degree in (%s) order by status desc;',
             $name, $dt, implode(', ', $listKeyDegreeActive)
         ));
 
         foreach($rows as $row)
         {
             $timetable[$row['key_degree']] = Entity::create($row);
+        }
+
+        foreach($listKeyDegreeActive as $i)
+        {
+            if(isset($timetable[$i]))
+            {
+                continue;
+            }
+
+            $timetable[$i] = null;
         }
 
         foreach($timetable as $key => $value)
