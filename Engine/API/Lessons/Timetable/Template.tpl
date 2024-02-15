@@ -48,6 +48,7 @@
         color: #000000;
         margin-right: 3px;
         padding: 1px;
+        border-radius: 5px;
     }
 
     #problem-group .parasite
@@ -58,6 +59,7 @@
         text-align: center;
         margin-bottom: 5px;
         font-size: x-large;
+        border-radius: 5px;
     }
 
     #problem-group .lesson.to-do
@@ -97,9 +99,8 @@
     <?php endif; ?>
 
     <?php foreach($lessons as $keyDegree => $entity): ?>
+        <?php if($entity->isCompleted()) continue; ?>
         <div class="lesson <?php echo $entity->getStatusClass(); ?>">
-
-            <?php if($entity->isCompleted()) continue; ?>
 
             <?php $key = $entity->getKey(); ?>
             <h3 style="text-align: center;">
