@@ -98,6 +98,9 @@
 
     <?php foreach($lessons as $keyDegree => $entity): ?>
         <div class="lesson <?php echo $entity->getStatusClass(); ?>">
+
+            <?php if($entity->isCompleted()) continue; ?>
+
             <?php $key = $entity->getKey(); ?>
             <h3 style="text-align: center;">
                 Lesson <?php echo $degrees[$keyDegree]; ?> /

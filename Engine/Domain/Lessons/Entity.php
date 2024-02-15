@@ -75,4 +75,14 @@ class Entity extends AbstractEntity
     {
         return Status::getClass($this->getStatus());
     }
+
+    /**
+     * `true` is lesson is completed, `false` otherwise.
+     *
+     * @return bool
+     */
+    public function isCompleted(): bool
+    {
+        return $this->getStatus() == Status::COMPLETE;
+    }
 }
