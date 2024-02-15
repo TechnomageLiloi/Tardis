@@ -33,7 +33,7 @@ class Entity extends AbstractEntity
 
     public function getKeyDegree(): string
     {
-        return $this->getField('key_lesson');
+        return $this->getField('key_degree');
     }
 
     public function getDateNumber(): int
@@ -64,5 +64,15 @@ class Entity extends AbstractEntity
     public function getTypeTitle(): string
     {
         return Types::$list[$this->getType()];
+    }
+
+    /**
+     * Gets lesson status class.
+     *
+     * @return string
+     */
+    public function getStatusClass(): string
+    {
+        return Status::getClass($this->getStatus());
     }
 }

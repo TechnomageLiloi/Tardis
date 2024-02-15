@@ -7,12 +7,20 @@ class Status
     public const TODO = 1;
     public const IN_HAND = 2;
     public const COMPLETE = 3;
-    public const FAILURE = 4;
 
     public static $list = [
         self::TODO => 'To Do',
         self::IN_HAND => 'In hand',
-        self::COMPLETE => 'Complete',
-        self::FAILURE => 'Failure'
+        self::COMPLETE => 'Complete'
     ];
+
+    /**
+     * Gets lesson status class.
+     *
+     * @return string
+     */
+    public static function getClass(string $id): string
+    {
+        return strtolower(str_replace(' ', '-', self::$list[$id]));
+    }
 }

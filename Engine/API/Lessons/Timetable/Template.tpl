@@ -59,6 +59,11 @@
         margin-bottom: 5px;
         font-size: x-large;
     }
+
+    #problem-group .lesson.to-do
+    {
+        background-color: #dcdcdc;
+    }
 </style>
 <div id="problem-group">
     <h1 style="text-align: center;">
@@ -92,7 +97,7 @@
     <?php endif; ?>
 
     <?php foreach($lessons as $keyDegree => $entity): ?>
-        <div class="lesson">
+        <div class="lesson <?php echo $entity->getStatusClass(); ?>">
             <?php $key = $entity->getKey(); ?>
             <h3 style="text-align: center;">
                 Lesson <?php echo $degrees[$keyDegree]; ?> /
