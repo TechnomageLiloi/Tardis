@@ -94,7 +94,7 @@
 
     <?php if(!$active): ?>
         <div class="parasite">
-            You have a time parasite now! What a shame!
+            You are time parasite now! What a shame!
         </div>
     <?php endif; ?>
 
