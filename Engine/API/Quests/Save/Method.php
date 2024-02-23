@@ -1,0 +1,30 @@
+<?php
+
+namespace Liloi\TARDIS\API\Quests\Save;
+
+use Liloi\API\Response;
+use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Quests\Manager;
+
+/**
+ * TARDIS API: Blueprint.Blueprints.Save
+ * @package Liloi\Blueprint\API\Blueprints\Save
+ */
+class Method extends SuperMethod
+{
+    public static function execute(): Response
+    {
+        $key_problem = self::getParameter('key_quest');
+        $entity = Manager::load($key_problem);
+
+        $entity->setTitle(self::getParameter('title'));
+        $entity->setStatus(self::getParameter('status'));
+        $entity->setStart(self::getParameter('start'));
+        $entity->setFinish(self::getParameter('finish'));
+        $entity->setSummary(self::getParameter('summary'));
+
+        $entity->save();
+
+        return new Response();
+    }
+}
