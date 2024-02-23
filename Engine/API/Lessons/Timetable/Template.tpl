@@ -86,6 +86,8 @@
         <?php echo $quest->getTitle(); ?>
         <hr/>
         <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.edit('<?php echo $quest->getKey(); ?>')">Edit</a>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.done('<?php echo $quest->getKey(); ?>', 3)">Success</a>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.done('<?php echo $quest->getKey(); ?>', 4)">Failure</a>
         <hr/>
         <div style="text-align: left;">
             <?php echo $quest->parseSummary(); ?>

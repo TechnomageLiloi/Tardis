@@ -63,6 +63,7 @@ class Tree
             $manager->add(new Method('TARDIS.Quests.Remove', '\Liloi\TARDIS\API\Quests\Remove\Method::execute'));
             $manager->add(new Method('TARDIS.Quests.Edit', '\Liloi\TARDIS\API\Quests\Edit\Method::execute'));
             $manager->add(new Method('TARDIS.Quests.Save', '\Liloi\TARDIS\API\Quests\Save\Method::execute'));
+            $manager->add(new Method('TARDIS.Quests.Done', '\Liloi\TARDIS\API\Quests\Done\Method::execute'));
 
             self::$instance = new self($manager);
         }

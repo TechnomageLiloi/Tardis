@@ -81,5 +81,23 @@ TARDIS.Quests = {
         }, function () {
 
         });
+    },
+
+    done: function (key_quest, status)
+    {
+        if(!confirm('Are you sure?'))
+        {
+            return;
+        }
+
+        const jq_block = $('#blueprint-edit');
+        API.request('TARDIS.Quests.Done', {
+            'key_quest': key_quest,
+            'status': status
+        }, function (data) {
+            TARDIS.Lessons.timetable();
+        }, function () {
+
+        });
     }
 }

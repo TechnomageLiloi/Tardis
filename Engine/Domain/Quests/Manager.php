@@ -113,7 +113,7 @@ class Manager extends DomainManager
         $data = [
             'title' => '-',
             'summary' => '-',
-            'status' => Statuses::TODO,
+            'status' => Statuses::IN_HAND,
             'start' => date('Y-m-d H:i:s')
         ];
         self::getAdapter()->insert($name, $data);
