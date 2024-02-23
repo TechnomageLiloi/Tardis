@@ -30,13 +30,13 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where status in ("%s", "%s");',
+            'select * from %s where status in ("%s", "%s") order by key_quest desc;',
             $name, Statuses::TODO, Statuses::IN_HAND
         ));
 
         if(!$row)
         {
-            throw new Exception('Unknown UID');
+            return self::create();
         }
 
         return Entity::create($row);
@@ -107,7 +107,7 @@ class Manager extends DomainManager
     /**
      * Create quest in database.
      */
-    public static function create(): void
+    public static function create(): Entity
     {
         $name = self::getTableName();
         $data = [
@@ -116,5 +116,7 @@ class Manager extends DomainManager
             'status' => Statuses::TODO
         ];
         self::getAdapter()->insert($name, $data);
+        $data['key_quest'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());
+        return Entity::create($data);
     }
 }
