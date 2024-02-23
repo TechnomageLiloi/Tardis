@@ -66,8 +66,25 @@
     {
         background-color: #dcdcdc;
     }
+
+    #problem-group .quest
+    {
+        background-color: #d0cdff;
+        color: #b80000;
+        padding: 5px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: x-large;
+        border-radius: 5px;
+    }
 </style>
 <div id="problem-group">
+
+    <div class="quest">
+        <?php echo $quest->getTitle(); ?>
+    </div>
+
     <h1 style="text-align: center;">
         Current Karma: <?php echo $total; ?>
     </h1>

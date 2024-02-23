@@ -12,6 +12,7 @@ use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
 use Liloi\TARDIS\Domain\Problems\Statuses as ProblemsStatuses;
 use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
 use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
+use Liloi\TARDIS\Domain\Quests\Manager as QuestsManager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show
@@ -21,6 +22,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        $quest = QuestsManager::loadCurrent();
         $listDegreeActive = DegreeManager::loadActiveKeyList();
         $timetableLessons = LessonsManager::loadTimetable(array_keys($listDegreeActive));
 
@@ -45,7 +47,8 @@ class Method extends SuperMethod
             'statuses' => LessonsStatus::$list,
             'problemStatuses' => ProblemsStatuses::$list,
             'types' => LessonsTypes::$list,
-            'total' => $totalKarma
+            'total' => $totalKarma,
+            'quest' => $quest
         ]));
 
         return $response;

@@ -25,6 +25,30 @@ class Manager extends DomainManager
      * @return Entity
      * @throws Exception
      */
+    public static function loadCurrent(): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where status in ("%s", "%s");',
+            $name, Statuses::TODO, Statuses::IN_HAND
+        ));
+
+        if(!$row)
+        {
+            throw new Exception('Unknown UID');
+        }
+
+        return Entity::create($row);
+    }
+
+    /**
+     * Load quest from database.
+     *
+     * @param string $key_quest
+     * @return Entity
+     * @throws Exception
+     */
     public static function load(string $key_quest): Entity
     {
         $name = self::getTableName();
