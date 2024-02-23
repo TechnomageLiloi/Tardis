@@ -69,7 +69,7 @@
 
     #problem-group .quest
     {
-        background-color: #d0cdff;
+        background-color: #fffce8;
         color: #b80000;
         padding: 5px;
         text-align: center;
@@ -77,12 +77,19 @@
         margin-bottom: 5px;
         font-size: x-large;
         border-radius: 5px;
+        border: maroon 2px solid;
     }
 </style>
 <div id="problem-group">
 
     <div class="quest">
         <?php echo $quest->getTitle(); ?>
+        <hr/>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.edit('<?php echo $quest->getKey(); ?>')">Edit</a>
+        <hr/>
+        <div style="text-align: left;">
+            <?php echo $quest->parseSummary(); ?>
+        </div>
     </div>
 
     <h1 style="text-align: center;">

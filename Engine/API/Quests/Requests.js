@@ -76,9 +76,6 @@ TARDIS.Quests = {
             'key_quest': key_quest,
             'title': jq_block.find('[name="title"]').val(),
             'summary': jq_block.find('[name="summary"]').val(),
-            'start': jq_block.find('[name="start"]').val(),
-            'finish': jq_block.find('[name="finish"]').val(),
-            'status': jq_block.find('[name="status"]').val()
         }, function (data) {
             TARDIS.Lessons.timetable();
         }, function () {

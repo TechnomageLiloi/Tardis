@@ -113,7 +113,8 @@ class Manager extends DomainManager
         $data = [
             'title' => '-',
             'summary' => '-',
-            'status' => Statuses::TODO
+            'status' => Statuses::TODO,
+            'start' => date('Y-m-d H:i:s')
         ];
         self::getAdapter()->insert($name, $data);
         $data['key_quest'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());

@@ -18,9 +18,6 @@ class Method extends SuperMethod
         $entity = Manager::load($key_problem);
 
         $entity->setTitle(self::getParameter('title'));
-        $entity->setStatus(self::getParameter('status'));
-        $entity->setStart(self::getParameter('start'));
-        $entity->setFinish(self::getParameter('finish'));
         $entity->setSummary(self::getParameter('summary'));
 
         $entity->save();
