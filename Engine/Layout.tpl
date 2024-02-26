@@ -23,7 +23,7 @@
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
-        <title>TARDIS</title>
+        <title>Tardis / <?php echo date('Y-m-d H:i:s'); ?></title>
     </head>
     <body>
         <div id="head" style="font-size: x-large;">

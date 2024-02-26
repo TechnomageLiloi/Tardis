@@ -23,6 +23,9 @@ use Liloi\Stylo\Parser;
  *
  * @method string getType()
  * @method void setType(string $value)
+ *
+ * @method string getPosition()
+ * @method void setPosition(string $value)
  */
 class Entity extends AbstractEntity
 {
