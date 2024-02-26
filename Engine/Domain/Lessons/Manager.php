@@ -73,27 +73,6 @@ class Manager extends DomainManager
             $timetable[$row['key_degree']] = Entity::create($row);
         }
 
-        foreach($listKeyDegreeActive as $i)
-        {
-            if(isset($timetable[$i]))
-            {
-                continue;
-            }
-
-            $timetable[$i] = null;
-        }
-
-        foreach($timetable as $key => $value)
-        {
-            if(!empty($value))
-            {
-                continue;
-            }
-
-            $entity = self::create($key);
-            $timetable[$key] = $entity;
-        }
-
         return $timetable;
     }
 
