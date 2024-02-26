@@ -124,8 +124,9 @@
         </div>
     <?php endif; ?>
 
-    <?php foreach($lessons as $keyDegree => $entity): ?>
+    <?php foreach($lessons as $entity): ?>
         <?php if($entity->isCompleted()) continue; ?>
+        <?php $keyDegree = $entity->getKeyDegree(); ?>
         <div class="lesson <?php echo $entity->getStatusClass(); ?>">
 
             <?php $key = $entity->getKey(); ?>

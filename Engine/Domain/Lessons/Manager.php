@@ -55,8 +55,10 @@ class Manager extends DomainManager
         return $schedule;
     }
 
-    public static function loadTimetable(array $listKeyDegreeActive): array
+    public static function loadTimetable(): array
     {
+        $listPositions = array_keys(Positions::$list);
+        array_shift($listPositions);
         $dt = date('Y-m-d');
 
         $timetable = [];
@@ -65,12 +67,33 @@ class Manager extends DomainManager
 
         $rows = self::getAdapter()->getArray(sprintf(
             'select * from %s where start="%s" and key_degree in (%s) order by status desc;',
-            $name, $dt, implode(', ', $listKeyDegreeActive)
+            $name, $dt, implode(', ', $listPositions)
         ));
 
         foreach($rows as $row)
         {
-            $timetable[$row['key_degree']] = Entity::create($row);
+            $timetable[$row['position']] = Entity::create($row);
+        }
+
+        foreach($listPositions as $i)
+        {
+            if(isset($timetable[$i]))
+            {
+                continue;
+            }
+
+            $timetable[$i] = null;
+        }
+
+        foreach($timetable as $key => $value)
+        {
+            if(!empty($value))
+            {
+                continue;
+            }
+
+            $entity = self::create($key);
+            $timetable[$key] = $entity;
         }
 
         return $timetable;
@@ -171,7 +194,7 @@ class Manager extends DomainManager
         );
     }
 
-    public static function create(string $keyDegree): Entity
+    public static function create(string $position): Entity
     {
         $name = self::getTableName();
         $data = [
@@ -181,7 +204,8 @@ class Manager extends DomainManager
             'start' => date('Y-m-d'),
             'data' => '{}',
             'type' => Types::FREEDOM, // @obsolete: Should remove in the next version.
-            'key_degree' => $keyDegree
+            'key_degree' => '1',
+            'position' => $position
         ];
         self::getAdapter()->insert($name, $data);
         $data['key_lesson'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());

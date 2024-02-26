@@ -24,7 +24,7 @@ class Method extends SuperMethod
     {
         $quest = QuestsManager::loadCurrent();
         $listDegreeActive = DegreeManager::loadActiveKeyList();
-        $timetableLessons = LessonsManager::loadTimetable(array_keys($listDegreeActive));
+        $timetableLessons = LessonsManager::loadTimetable();
 
         $keysLessons = [];
         $totalKarma = TicketsManager::loadKarma();
