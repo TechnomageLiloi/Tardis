@@ -75,3 +75,6 @@ create table tardis_quests
     constraint tardis_quests_pk
         primary key (key_quest)
 );
+
+alter table tardis_lessons
+    add position tinyint unsigned default 0 not null;
