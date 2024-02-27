@@ -134,11 +134,11 @@
         </div>
     <?php endif; ?>
 
-    <?php foreach($lessons as $entity): ?>
+    <?php foreach($lessons as $n => $entity): ?>
         <?php if($entity->isNoLesson()): ?>
             <div class="lesson <?php echo $entity->getStatusClass(); ?>">
                 <h3 style="text-align: center;">
-                    No lesson.
+                    There is no lesson #<?php echo $n;?>.
                 </h3>
                 <div style="text-align: center; padding: 10px;">
                     <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit lesson</a>
@@ -152,7 +152,7 @@
 
             <?php $key = $entity->getKey(); ?>
             <h3 style="text-align: center;">
-                Lesson <?php echo $degrees[$keyDegree]; ?> /
+                Lesson #<?php echo $n;?>: <?php echo $degrees[$keyDegree]; ?> /
                 Status: <?php echo $statuses[$entity->getStatus()]; ?>
             </h3>
             <div style="text-align: center;">
