@@ -93,4 +93,14 @@ class Entity extends AbstractEntity
     {
         return $this->getStatus() == Status::COMPLETE;
     }
+
+    /**
+     * `true` is no lesson, `false` otherwise.
+     *
+     * @return bool
+     */
+    public function isNoLesson(): bool
+    {
+        return $this->getStatus() == Status::NO_LESSON;
+    }
 }

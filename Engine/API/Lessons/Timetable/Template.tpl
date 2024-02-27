@@ -67,6 +67,16 @@
         background-color: #dcdcdc;
     }
 
+    #problem-group .lesson.in-hand
+    {
+        background-color: #fff6ce;
+    }
+
+    #problem-group .lesson.complete
+    {
+        background-color: #ceffd0;
+    }
+
     #problem-group .quest
     {
         background-color: #fffce8;
@@ -125,7 +135,18 @@
     <?php endif; ?>
 
     <?php foreach($lessons as $entity): ?>
-        <?php if($entity->isCompleted()) continue; ?>
+        <?php if($entity->isNoLesson()): ?>
+            <div class="lesson <?php echo $entity->getStatusClass(); ?>">
+                <h3 style="text-align: center;">
+                    No lesson.
+                </h3>
+                <div style="text-align: center; padding: 10px;">
+                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit lesson</a>
+                </div>
+            </div>
+            <?php continue; ?>
+        <?php endif; ?>
+
         <?php $keyDegree = $entity->getKeyDegree(); ?>
         <div class="lesson <?php echo $entity->getStatusClass(); ?>">
 

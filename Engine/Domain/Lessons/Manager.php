@@ -66,7 +66,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start="%s" and key_degree in (%s) order by status desc;',
+            'select * from %s where start="%s" and key_degree in (%s) order by position asc;',
             $name, $dt, implode(', ', $listPositions)
         ));
 
@@ -200,7 +200,7 @@ class Manager extends DomainManager
         $data = [
             'comment' => '-',
             'mark' => '0',
-            'status' => Status::TODO,
+            'status' => Status::NO_LESSON,
             'start' => date('Y-m-d'),
             'data' => '{}',
             'type' => Types::FREEDOM, // @obsolete: Should remove in the next version.
