@@ -18,6 +18,7 @@ class Method extends SuperMethod
         $key_lesson = self::getParameter('key_lesson');
         $entity = Manager::load($key_lesson);
 
+        $entity->setKeyDegree(self::getParameter('degree'));
         $entity->setComment(self::getParameter('comment'));
         $entity->setMark(self::getParameter('mark'));
         $entity->setStart(self::getParameter('start'));

@@ -39,6 +39,11 @@ class Entity extends AbstractEntity
         return $this->getField('key_degree');
     }
 
+    public function setKeyDegree(string $value): void
+    {
+        $this->setField('key_degree', $value);
+    }
+
     public function getDateNumber(): int
     {
         return (int)date('N', strtotime($this->getStart()));

@@ -19,6 +19,15 @@
             <th>Name</th>
             <th>Value</th>
         </tr>
+
+        <tr><td>Degree</td><td>
+            <select name="degree">
+                <?php foreach($degrees as $key => $value): ?>
+                <option value="<?php echo $key; ?>" <?php if($entity->getKeyDegree() == $key): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
+                <?php endforeach; ?>
+            </select>
+        </td></tr>
+
         <tr><td>Type</td><td>
             <select name="type">
                 <?php foreach($types as $key => $value): ?>
@@ -26,14 +35,15 @@
                 <?php endforeach; ?>
             </select>
         </td></tr>
+
         <tr><td>Comment</td><td><input type="text" name="comment" value="<?php echo $entity->getComment(); ?>"/></td></tr>
+
         <tr><td>Karma</td><td><input type="text" name="mark" value="<?php echo $entity->getMark(); ?>"/></td></tr>
 
         <tr><td>Start</td><td>
             <input type="text" name="start" value="<?php echo $entity->getStart(); ?>"/>
             <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('0000-00-00');">Later</a>
             <a class="butn" href="javascript:void(0)" onclick="$('#blueprint-edit [name=start]').val('<?php echo date('Y-m-d H:i:s'); ?>');">Now</a>
-
         </td></tr>
 
         <tr><td>Status</td><td>
