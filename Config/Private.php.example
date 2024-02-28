@@ -1,5 +1,7 @@
 <?php
 
+// Rename this file to Private.php
+
 use Liloi\Config\Pool;
 use Liloi\Config\Sparkle;
 
