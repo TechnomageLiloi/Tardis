@@ -38,7 +38,7 @@
 
         <tr><td>Comment</td><td><input type="text" name="comment" value="<?php echo $entity->getComment(); ?>"/></td></tr>
 
-        <tr><td>Karma</td><td><input type="text" name="mark" value="<?php echo $entity->getMark(); ?>"/></td></tr>
+        <tr><td>Mark</td><td><input type="text" name="mark" value="<?php echo $entity->getMark(); ?>"/></td></tr>
 
         <tr><td>Start</td><td>
             <input type="text" name="start" value="<?php echo $entity->getStart(); ?>"/>

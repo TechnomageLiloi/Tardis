@@ -3,6 +3,7 @@
 namespace Liloi\TARDIS\Domain\Degrees;
 
 use Liloi\TARDIS\Domain\Manager as DomainManager;
+use Liloi\TARDIS\Exceptions\NoKeyException;
 
 class Manager extends DomainManager
 {
@@ -54,6 +55,11 @@ class Manager extends DomainManager
         return $listDegrees;
     }
 
+    /**
+     * @param string $uid
+     * @return Entity
+     * @throws NoKeyException
+     */
     public static function load(string $uid): Entity
     {
         $name = self::getTableName();
@@ -66,7 +72,7 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-
+            throw new NoKeyException();
         }
 
         return Entity::create($row);
@@ -89,7 +95,7 @@ class Manager extends DomainManager
 
         if(!$row)
         {
-            // @todo: throw exception
+            throw new NoKeyException();
         }
 
         return Entity::create($row);
@@ -108,6 +114,11 @@ class Manager extends DomainManager
             'select * from %s where status=%s order by key_degree desc limit 1;',
             $name, Statuses::IN_HAND
         ));
+
+        if(!$row)
+        {
+            throw new NoKeyException();
+        }
 
         return Entity::create($row);
     }
