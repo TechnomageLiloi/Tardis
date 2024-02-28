@@ -60,7 +60,7 @@ class Manager extends DomainManager
         $key = $data['key_ticket'];
         unset($data['key_ticket']);
 
-        self::getAdapter()->update(
+        self::update(
             $name,
             $data,
             sprintf('key_ticket = "%s"', $key)

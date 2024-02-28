@@ -93,7 +93,7 @@
 <div id="problem-group">
 
     <div class="quest">
-        <?php echo $quest->getTitle(); ?>
+        <h2>Quest: <?php echo $quest->getTitle(); ?></h2>
         <hr/>
         <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.edit('<?php echo $quest->getKey(); ?>')">Edit</a>
         <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.done('<?php echo $quest->getKey(); ?>', 3)">Success</a>
@@ -148,9 +148,11 @@
         <?php endif; ?>
 
         <?php $keyDegree = $entity->getKeyDegree(); ?>
+
         <div class="lesson <?php echo $entity->getStatusClass(); ?>">
 
             <?php $key = $entity->getKey(); ?>
+
             <h3 style="text-align: center;">
                 Lesson #<?php echo $n;?>: <?php echo $degrees[$keyDegree]; ?> /
                 Status: <?php echo $statuses[$entity->getStatus()]; ?>
@@ -159,11 +161,13 @@
                     / Mark: <?php echo $mark; ?>
                 <?php endif; ?>
             </h3>
+
             <div style="text-align: center;">
                 <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit lesson</a>
                 <a href="javascript:void(0)" onclick="TARDIS.Problems.create('<?php echo $keyDegree; ?>');" class="butn">Create problem</a>
                 <a href="javascript:void(0)" onclick="TARDIS.Tickets.create('<?php echo $key; ?>');" class="butn">Create ticket</a>
             </div>
+
             <table class="inner-table">
                 <tr style="font-weight: bold;">
                     <td style="width: 80%;">
@@ -227,7 +231,6 @@
                     </tr>
                 <?php endforeach; ?>
             </table>
-
         </div>
     <?php endforeach; ?>
 </div>

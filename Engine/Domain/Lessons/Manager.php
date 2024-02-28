@@ -176,7 +176,7 @@ class Manager extends DomainManager
         $key = $data['key_lesson'];
         unset($data['key_lesson']);
 
-        self::getAdapter()->update(
+        self::update(
             $name,
             $data,
             sprintf('key_lesson = "%s"', $key)
