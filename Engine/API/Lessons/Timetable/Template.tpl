@@ -154,6 +154,10 @@
             <h3 style="text-align: center;">
                 Lesson #<?php echo $n;?>: <?php echo $degrees[$keyDegree]; ?> /
                 Status: <?php echo $statuses[$entity->getStatus()]; ?>
+                <?php $mark = $entity->getMark(); ?>
+                <?php if($mark): ?>
+                    / Mark: <?php echo $mark; ?>
+                <?php endif; ?>
             </h3>
             <div style="text-align: center;">
                 <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit lesson</a>
