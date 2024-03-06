@@ -65,6 +65,12 @@ class Tree
             $manager->add(new Method('TARDIS.Quests.Save', '\Liloi\TARDIS\API\Quests\Save\Method::execute'));
             $manager->add(new Method('TARDIS.Quests.Done', '\Liloi\TARDIS\API\Quests\Done\Method::execute'));
 
+            $manager->add(new Method('TARDIS.Horcruxes.Create', '\Liloi\TARDIS\API\Horcruxes\Create\Method::execute'));
+            $manager->add(new Method('TARDIS.Horcruxes.Remove', '\Liloi\TARDIS\API\Horcruxes\Remove\Method::execute'));
+            $manager->add(new Method('TARDIS.Horcruxes.Edit', '\Liloi\TARDIS\API\Horcruxes\Edit\Method::execute'));
+            $manager->add(new Method('TARDIS.Horcruxes.Save', '\Liloi\TARDIS\API\Horcruxes\Save\Method::execute'));
+            $manager->add(new Method('TARDIS.Horcruxes.Done', '\Liloi\TARDIS\API\Horcruxes\Done\Method::execute'));
+
             self::$instance = new self($manager);
         }
 

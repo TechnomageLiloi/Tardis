@@ -20,6 +20,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Tickets/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Quests/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Horcruxes/Requests.js"></script>
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
 
