@@ -13,6 +13,7 @@ use Liloi\TARDIS\Domain\Problems\Statuses as ProblemsStatuses;
 use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
 use Liloi\TARDIS\Domain\Degrees\Manager as DegreeManager;
 use Liloi\TARDIS\Domain\Quests\Manager as QuestsManager;
+use Liloi\TARDIS\Domain\Horcruxes\Manager as HorcruxesManager;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show
@@ -23,6 +24,7 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         $quest = QuestsManager::loadCurrent();
+        $horcrux = HorcruxesManager::loadCurrent();
         $listDegreeActive = DegreeManager::loadActiveKeyList();
         $timetableLessons = LessonsManager::loadTimetable();
 
@@ -48,7 +50,8 @@ class Method extends SuperMethod
             'problemStatuses' => ProblemsStatuses::$list,
             'types' => LessonsTypes::$list,
             'total' => $totalKarma,
-            'quest' => $quest
+            'quest' => $quest,
+            'horcrux' => $horcrux
         ]));
 
         return $response;

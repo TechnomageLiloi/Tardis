@@ -89,8 +89,33 @@
         border-radius: 5px;
         border: maroon 2px solid;
     }
+
+    #problem-group .horcrux
+    {
+        background-color: #fffce8;
+        color: #b80000;
+        padding: 5px;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: x-large;
+        border-radius: 5px;
+        border: maroon 2px solid;
+    }
 </style>
 <div id="problem-group">
+
+    <div class="horcrux">
+        <h2>Horcrux: <?php echo $horcrux->getTitle(); ?></h2>
+        <hr/>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Horcruxes.edit('<?php echo $horcrux->getKey(); ?>')">Edit</a>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Horcruxes.done('<?php echo $horcrux->getKey(); ?>', 3)">Success</a>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Horcruxes.done('<?php echo $horcrux->getKey(); ?>', 4)">Failure</a>
+        <hr/>
+        <div style="text-align: left;">
+            <?php echo $horcrux->parseSummary(); ?>
+        </div>
+    </div>
 
     <div class="quest">
         <h2>Quest: <?php echo $quest->getTitle(); ?></h2>
