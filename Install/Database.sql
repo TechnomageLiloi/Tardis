@@ -78,3 +78,15 @@ create table tardis_quests
 
 alter table tardis_lessons
     add position tinyint unsigned default 0 not null;
+
+create table tardis_horcruxes
+(
+    key_horcrux bigint unsigned auto_increment,
+    title varchar(100) not null,
+    summary text not null,
+    start timestamp null,
+    finish timestamp null,
+    status tinyint unsigned default 1 not null,
+    constraint tardis_horcruxes_pk
+        primary key (key_horcrux)
+);
