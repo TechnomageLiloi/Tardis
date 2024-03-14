@@ -43,8 +43,22 @@ class Entity extends AbstractEntity
         return $data['value'];
     }
 
+    public function setString(string $value): self
+    {
+        $data = $this->getDataList();
+        $data['value'] = $value;
+        $this->setDataList($data);
+
+        return $this;
+    }
+
     public function setDataList(array $value): void
     {
         $this->setData(json_encode($value, JSON_UNESCAPED_UNICODE));
+    }
+
+    public function save(): void
+    {
+        Manager::save($this);
     }
 }

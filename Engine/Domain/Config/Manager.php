@@ -40,13 +40,12 @@ class Manager extends DomainManager
     {
         $name = self::getTableName();
         $data = $entity->get();
-        $data['data'] = mysqli_real_escape_string(self::getAdapter()->getConnection()->get(), $data['data']);
 
         // @todo: Get param name from const.
         $key = $data['key_config'];
         unset($data['key_config']);
 
-        self::getAdapter()->update(
+        self::update(
             $name,
             $data,
             sprintf('key_config = "%s"', $key)
