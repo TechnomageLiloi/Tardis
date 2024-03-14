@@ -154,14 +154,16 @@ class Manager extends DomainManager
         $name = self::getTableName();
         $data = $entity->get();
 
-        // @todo: Get param name from const.
-        $key = $data['key_lesson'];
-        unset($data['key_lesson']);
+        $keyDate = $data['key_date'];
+        unset($data['key_date']);
+
+        $keyPosition = $data['key_position'];
+        unset($data['key_position']);
 
         self::update(
             $name,
             $data,
-            sprintf('key_lesson = "%s"', $key)
+            sprintf('key_date = "%s" and key_position = "%s"', $keyDate, $keyPosition)
         );
     }
 
@@ -186,6 +188,8 @@ class Manager extends DomainManager
             'comment' => '-',
             'mark' => '0',
             'status' => Status::NO_LESSON,
+            'start' => null,
+            'finish' => null,
             'data' => '{}',
             'type' => Types::CODEX
         ];

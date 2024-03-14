@@ -14,14 +14,16 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
+        $key_date = self::getParameter('key_date');
+        $key_position = self::getParameter('key_position');
 
-        $key_lesson = self::getParameter('key_lesson');
-        $entity = Manager::load($key_lesson);
+        $entity = Manager::load($key_date, $key_position);
 
         $entity->setKeyDegree(self::getParameter('degree'));
         $entity->setComment(self::getParameter('comment'));
         $entity->setMark(self::getParameter('mark'));
         $entity->setStart(self::getParameter('start'));
+        $entity->setFinish(self::getParameter('finish'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setData(self::getParameter('data'));
         $entity->setType(self::getParameter('type'));

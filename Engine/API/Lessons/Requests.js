@@ -114,7 +114,7 @@ TARDIS.Lessons = {
         });
     },
 
-    save: function (key_lesson)
+    save: function (key_date, key_position)
     {
         if(!confirm('Are you sure?'))
         {
@@ -123,12 +123,14 @@ TARDIS.Lessons = {
 
         const jq_block = $('#blueprint-edit');
         API.request('TARDIS.Lessons.Save', {
-            'key_lesson': key_lesson,
+            'key_date': key_date,
+            'key_position': key_position,
             'degree': jq_block.find('[name="degree"]').val(),
             'comment': jq_block.find('[name="comment"]').val(),
             'mark': jq_block.find('[name="mark"]').val(),
             'status': jq_block.find('[name="status"]').val(),
             'start': jq_block.find('[name="start"]').val(),
+            'finish': jq_block.find('[name="finish"]').val(),
             'type': jq_block.find('[name="type"]').val(),
             'data': jq_block.find('[name="data"]').val()
         }, function (data) {
