@@ -133,7 +133,7 @@
         <input type="date" name="key_date" value="<?php echo $keyDate; ?>">
         <select name="key_position">
             <?php foreach($positions as $key => $value): ?>
-                <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                <option value="<?php echo $key; ?>" <?php if($key == $keyPosition): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
             <?php endforeach; ?>
         </select>
         <a href="javascript:void(0);" onclick="TARDIS.Lessons.edit();" class="butn">Edit</a>

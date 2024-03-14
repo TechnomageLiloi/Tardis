@@ -51,7 +51,7 @@ class Entity extends AbstractEntity
 
     public function getDateNumber(): int
     {
-        return (int)date('N', strtotime($this->getStart()));
+        return (int)date('N', strtotime($this->getKey()));
     }
 
     public function getTime(): int
