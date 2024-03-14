@@ -16,9 +16,9 @@ insert into tardis_degrees(uid, title, program, status) values("protos", "Protos
 
 create table tardis_lessons
 (
-    key_date date,
-    key_position tinyint unsigned default 0 not null,
-    key_degree bigint unsigned default 1 not null,
+    key_date date not null,
+    key_position tinyint unsigned not null,
+    key_degree bigint unsigned not null,
     comment text not null,
     mark tinyint unsigned default 0 not null,
     status tinyint unsigned default 1 not null,
@@ -27,7 +27,7 @@ create table tardis_lessons
     data json not null,
     type tinyint unsigned default 1 not null,
     constraint tardis_lessons_pk
-        primary key (key_date, key_position, key_degree),
+        primary key (key_date, key_position),
     constraint tardis_lessons_tardis_degrees_key_degree_fk
         foreign key (key_degree) references tardis_degrees (key_degree)
             on update cascade on delete cascade
