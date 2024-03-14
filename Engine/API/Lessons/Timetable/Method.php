@@ -44,7 +44,7 @@ class Method extends SuperMethod
         $keyPosition = ConfigManager::load(ConfigKeys::CURRENT_POSITION)->getString();
         if(!$keyPosition)
         {
-            $keyPosition = LessonsPositions::NIL;
+            $keyPosition = LessonsPositions::FIRST;
         }
 
         $response = new Response();

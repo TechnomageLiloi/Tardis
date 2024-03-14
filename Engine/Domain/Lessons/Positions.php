@@ -9,7 +9,6 @@ namespace Liloi\TARDIS\Domain\Lessons;
  */
 class Positions
 {
-    public const NIL = 0;
     public const FIRST = 1;
     public const SECOND = 2;
     public const THIRD = 3;
@@ -19,7 +18,6 @@ class Positions
     public const SEVENTH = 7;
 
     public static $list = [
-        self::NIL => 'No lesson',
         self::FIRST => 'First',
         self::SECOND => 'Second',
         self::THIRD => 'Third',

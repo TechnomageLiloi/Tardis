@@ -74,7 +74,7 @@ class Manager extends DomainManager
         $keyPosition = ConfigManager::load(ConfigKeys::CURRENT_POSITION)->getString();
         if(!$keyPosition)
         {
-            $keyPosition = Positions::NIL;
+            $keyPosition = Positions::FIRST;
         }
 
         return self::load($keyDate, $keyPosition);
