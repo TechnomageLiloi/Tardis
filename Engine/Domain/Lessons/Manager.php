@@ -203,7 +203,7 @@ class Manager extends DomainManager
             'status' => Status::NO_LESSON,
             'start' => date('Y-m-d'),
             'data' => '{}',
-            'type' => Types::FREEDOM, // @obsolete: Should remove in the next version.
+            'type' => Types::CODEX, // @obsolete: Should remove in the next version.
             'key_degree' => '1',
             'position' => $position
         ];
