@@ -31,7 +31,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start between "%s" and "%s" order by start asc;',
+            'select * from %s where key_date between "%s" and "%s" order by start asc;',
             $name, $ts_start, $ts_finish
         ));
 
@@ -44,12 +44,17 @@ class Manager extends DomainManager
             {
                 $schedule[$day][$hour] = [];
             }
+
+            foreach (array_keys(Positions::$list) as $key)
+            {
+                $schedule[$day][$key] = [];
+            }
         }
 
         foreach($rows as $row)
         {
             $entity = Entity::create($row);
-            $schedule[$entity->getDateNumber()][$entity->getTime()][] = $entity;
+            $schedule[$entity->getDateNumber()][$entity->getKeyPosition()][] = $entity;
         }
 
         return $schedule;

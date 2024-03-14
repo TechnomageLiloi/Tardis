@@ -31,7 +31,12 @@ class Entity extends AbstractEntity
 {
     public function getKey(): string
     {
-        return $this->getField('key_lesson');
+        return $this->getField('key_date');
+    }
+
+    public function getKeyPosition(): string
+    {
+        return $this->getField('key_position');
     }
 
     public function getKeyDegree(): string

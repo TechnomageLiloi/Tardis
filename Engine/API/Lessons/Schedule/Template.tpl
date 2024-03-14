@@ -49,21 +49,22 @@
             <th><?php echo $days[$day]; ?></th>
             <?php endfor; ?>
         </tr>
-        <?php for($hour=0;$hour<24;$hour++): ?>
-        <tr>
-            <th><?php echo $hour; ?>:00</th>
-            <?php for($day=1;$day<=7;$day++): ?>
-            <td>
-                <?php foreach($schedule[$day][$hour] as $entity): ?>
-                <div class="lesson">
-                    <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">
-                        <?php echo $entity->getComment(); ?>
-                    </a>
-                </div>
-                <?php endforeach; ?>
-            </td>
-            <?php endfor; ?>
-        </tr>
-        <?php endfor; ?>
+        <?php foreach($positions as $key => $position): ?>
+            <?php if(!$key) continue; ?>
+            <tr>
+                <th><?php echo $position; ?></th>
+                <?php for($day=1;$day<=7;$day++): ?>
+                <td>
+                    <?php foreach($schedule[$day][$key] as $entity): ?>
+                    <div class="lesson">
+                        <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">
+                            <?php echo $entity->getComment(); ?>
+                        </a>
+                    </div>
+                    <?php endforeach; ?>
+                </td>
+                <?php endfor; ?>
+            </tr>
+        <?php endforeach; ?>
     </table>
 </div>
