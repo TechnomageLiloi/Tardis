@@ -6,6 +6,9 @@ use Liloi\API\Errors\Exception;
 use Liloi\TARDIS\Domain\Manager as DomainManager;
 use Liloi\TARDIS\Domain\Lessons\Types as ProblemsTypes;
 
+use Liloi\TARDIS\Domain\Config\Manager as ConfigManager;
+use Liloi\TARDIS\Domain\Config\Keys as ConfigKeys;
+
 /**
  * Lessons manager.
  *
@@ -31,7 +34,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where key_date between "%s" and "%s" order by start asc;',
+            'select * from %s where key_date between "%s" and "%s" order by key_date asc;',
             $name, $ts_start, $ts_finish
         ));
 
@@ -60,48 +63,21 @@ class Manager extends DomainManager
         return $schedule;
     }
 
-    public static function loadTimetable(): array
+    public static function loadTimetable(): ?Entity
     {
-        $listPositions = array_keys(Positions::$list);
-        array_shift($listPositions);
-        $dt = date('Y-m-d');
-
-        $timetable = [];
-
-        $name = self::getTableName();
-
-        $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start="%s" and key_degree in (%s) order by position asc;',
-            $name, $dt, implode(', ', $listPositions)
-        ));
-
-        foreach($rows as $row)
+        $keyDate = ConfigManager::load(ConfigKeys::CURRENT_DATE)->getString();
+        if(!$keyDate)
         {
-            $timetable[$row['position']] = Entity::create($row);
+            $keyDate = date('Y-m-d');
         }
 
-        foreach($listPositions as $i)
+        $keyPosition = ConfigManager::load(ConfigKeys::CURRENT_POSITION)->getString();
+        if(!$keyPosition)
         {
-            if(isset($timetable[$i]))
-            {
-                continue;
-            }
-
-            $timetable[$i] = null;
+            $keyPosition = Positions::NIL;
         }
 
-        foreach($timetable as $key => $value)
-        {
-            if(!empty($value))
-            {
-                continue;
-            }
-
-            $entity = self::create($key);
-            $timetable[$key] = $entity;
-        }
-
-        return $timetable;
+        return self::load($keyDate, $keyPosition);
     }
 
     public static function loadByDate(string $dt): Collection
@@ -133,19 +109,20 @@ class Manager extends DomainManager
         ));
     }
 
-    public static function load(string $key): Entity
+    public static function load(string $keyDate, string $keyPosition): ?Entity
     {
         $name = self::getTableName();
 
         $row = self::getAdapter()->getRow(sprintf(
-            'select * from %s where key_lesson="%s"',
+            'select * from %s where key_date="%s" and key_position="%s"',
             $name,
-            $key
+            $keyDate,
+            $keyPosition
         ));
 
         if(!$row)
         {
-            throw new Exception('Unknown key.');
+            return null;
         }
 
         return Entity::create($row);

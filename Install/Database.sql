@@ -81,3 +81,12 @@ create table tardis_horcruxes
     constraint tardis_horcruxes_pk
         primary key (key_horcrux)
 );
+
+create table tardis_config
+(
+    key_config varchar(100) not null,
+    data json not null,
+    constraint tardis_config_pk
+        primary key (key_config)
+);
+

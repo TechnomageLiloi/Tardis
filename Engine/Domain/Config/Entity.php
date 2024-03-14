@@ -31,6 +31,18 @@ class Entity extends AbstractEntity
         return json_decode($this->getData(), true);
     }
 
+    public function getString(): ?string
+    {
+        $data = $this->getDataList();
+
+        if(!array_key_exists('value', $data))
+        {
+            return null;
+        }
+
+        return $data['value'];
+    }
+
     public function setDataList(array $value): void
     {
         $this->setData(json_encode($value, JSON_UNESCAPED_UNICODE));

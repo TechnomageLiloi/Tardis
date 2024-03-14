@@ -158,4 +158,20 @@
             You are time parasite now! What a shame!
         </div>
     <?php endif; ?>
+
+    <?php if($timetable): ?>
+
+        <hr/>
+
+        <div style="text-align: center;">
+            <h3>
+                <?php echo $timetable->getComment(); ?>
+                <br/>
+                Mark: <?php echo $timetable->getMark(); ?>
+            </h3>
+
+            <?php echo $timetable->getData(); ?>
+        </div>
+
+    <?php endif; ?>
 </div>

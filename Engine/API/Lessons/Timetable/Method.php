@@ -26,25 +26,17 @@ class Method extends SuperMethod
         $quest = QuestsManager::loadCurrent();
         $horcrux = HorcruxesManager::loadCurrent();
         $listDegreeActive = DegreeManager::loadActiveKeyList();
-        $timetableLessons = LessonsManager::loadTimetable();
-
-        $keysLessons = [];
+        $timetable = LessonsManager::loadTimetable();
         $totalKarma = TicketsManager::loadKarma();
 
-        /** @var LessonsEntity $entity */
-        foreach ($timetableLessons as $entity)
-        {
-            $keysLessons[] = $entity->getKey();
-        }
-
         $collectionProblems = ProblemsManager::loadByDegreeKeys(array_keys($listDegreeActive));
-        $collectionTickets = TicketsManager::loadByLessonKeys($keysLessons);
+//        $collectionTickets = TicketsManager::loadByLessonKeys($keysLessons);
 
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'degrees' => $listDegreeActive,
-            'lessons' => $timetableLessons,
-            'tickets' => $collectionTickets,
+            'timetable' => $timetable,
+            'tickets' => [],
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
             'problemStatuses' => ProblemsStatuses::$list,
