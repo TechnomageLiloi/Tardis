@@ -176,18 +176,18 @@ class Manager extends DomainManager
         );
     }
 
-    public static function create(string $position): Entity
+    public static function create(string $keyDate, string $keyPosition): Entity
     {
         $name = self::getTableName();
         $data = [
+            'key_date' => $keyDate,
+            'key_position' => $keyPosition,
+            'key_degree' => '1', // @todo: remove magic numbers
             'comment' => '-',
             'mark' => '0',
             'status' => Status::NO_LESSON,
-            'start' => date('Y-m-d'),
             'data' => '{}',
-            'type' => Types::CODEX, // @obsolete: Should remove in the next version.
-            'key_degree' => '1',
-            'position' => $position
+            'type' => Types::CODEX
         ];
         self::getAdapter()->insert($name, $data);
         $data['key_lesson'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());

@@ -129,6 +129,16 @@
         </div>
     </div>
 
+    <div class="wrap-butn" style="text-align: center;">
+        <input type="date" name="key_date" value="<?php echo $keyDate; ?>">
+        <select name="key_position">
+            <?php foreach($positions as $key => $value): ?>
+                <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+            <?php endforeach; ?>
+        </select>
+        <a href="javascript:void(0);" onclick="TARDIS.Lessons.edit();" class="butn">Edit</a>
+    </div>
+
     <h1 style="text-align: center;">
         Current Karma: <?php echo $total; ?>
     </h1>

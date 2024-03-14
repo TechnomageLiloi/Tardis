@@ -101,10 +101,12 @@ TARDIS.Lessons = {
         });
     },
 
-    edit: function (key_lesson)
+    edit: function ()
     {
+        const jq_block = $('#problem-group');
         API.request('TARDIS.Lessons.Edit', {
-            'key_lesson': key_lesson
+            'key_date': jq_block.find('[name="key_date"]').val(),
+            'key_position': jq_block.find('[name="key_position"]').val()
         }, function (data) {
             $('#page').html(data.render);
         }, function () {

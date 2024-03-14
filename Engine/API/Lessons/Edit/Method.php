@@ -18,15 +18,13 @@ class Method extends SuperMethod
     public static function execute(): Response
     {
         $listDegreeActive = DegreeManager::loadActiveKeyList();
-        $key_lesson = self::getParameter('key_lesson');
+        $key_date = self::getParameter('key_date');
+        $key_position = self::getParameter('key_position');
 
-        if((int)$key_lesson)
+        $entity = Manager::load($key_date, $key_position);
+        if(!$entity)
         {
-            $entity = Manager::load($key_lesson);
-        }
-        else
-        {
-            $entity = Manager::loadCurrent();
+            $entity = Manager::create($key_date, $key_position);
         }
 
         $response = new Response();

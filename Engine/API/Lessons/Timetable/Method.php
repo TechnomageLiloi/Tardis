@@ -4,10 +4,13 @@ namespace Liloi\TARDIS\API\Lessons\Timetable;
 
 use Liloi\API\Response;
 use Liloi\TARDIS\API\Method as SuperMethod;
+use Liloi\TARDIS\Domain\Config\Keys as ConfigKeys;
+use Liloi\TARDIS\Domain\Config\Manager as ConfigManager;
 use Liloi\TARDIS\Domain\Lessons\Entity as LessonsEntity;
 use Liloi\TARDIS\Domain\Lessons\Manager as LessonsManager;
 use Liloi\TARDIS\Domain\Lessons\Status as LessonsStatus;
 use Liloi\TARDIS\Domain\Lessons\Types as LessonsTypes;
+use Liloi\TARDIS\Domain\Lessons\Positions as LessonsPositions;
 use Liloi\TARDIS\Domain\Problems\Manager as ProblemsManager;
 use Liloi\TARDIS\Domain\Problems\Statuses as ProblemsStatuses;
 use Liloi\TARDIS\Domain\Tickets\Manager as TicketsManager;
@@ -32,6 +35,18 @@ class Method extends SuperMethod
         $collectionProblems = ProblemsManager::loadByDegreeKeys(array_keys($listDegreeActive));
 //        $collectionTickets = TicketsManager::loadByLessonKeys($keysLessons);
 
+        $keyDate = ConfigManager::load(ConfigKeys::CURRENT_DATE)->getString();
+        if(!$keyDate)
+        {
+            $keyDate = date('Y-m-d');
+        }
+
+        $keyPosition = ConfigManager::load(ConfigKeys::CURRENT_POSITION)->getString();
+        if(!$keyPosition)
+        {
+            $keyPosition = LessonsPositions::NIL;
+        }
+
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'degrees' => $listDegreeActive,
@@ -41,9 +56,12 @@ class Method extends SuperMethod
             'statuses' => LessonsStatus::$list,
             'problemStatuses' => ProblemsStatuses::$list,
             'types' => LessonsTypes::$list,
+            'positions' => LessonsPositions::$list,
             'total' => $totalKarma,
             'quest' => $quest,
-            'horcrux' => $horcrux
+            'horcrux' => $horcrux,
+            'keyDate' => $keyDate,
+            'keyPosition' => $keyPosition,
         ]));
 
         return $response;
