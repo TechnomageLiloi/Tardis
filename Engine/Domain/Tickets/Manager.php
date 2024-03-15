@@ -85,18 +85,13 @@ class Manager extends DomainManager
 
     /**
      * Create problem in database.
-     *
-     * @param string $keyLesson
      */
-    public static function create(string $keyLesson): Entity
+    public static function create(): Entity
     {
-        Assert::notEmpty($keyLesson, 'Ticket key is empty.');
-
         $name = self::getTableName();
         $data = [
-            'key_lesson' => $keyLesson,
             'title' => '-',
-            'start' => self::TIME_TODO,
+            'start' => date('Y-m-d H:i:s'),
             'finish' => self::TIME_TODO,
             'power' => self::POWER
         ];
@@ -133,8 +128,8 @@ class Manager extends DomainManager
         $rows = self::getAdapter()->getArray(sprintf(
             'select * from %s where start between "%s" and "%s" order by start asc',
             $name,
-            date('Y-m-d 00:00:00'),
-            date('Y-m-d 23:59:59')
+            date('Y-m-d H:i:s', strtotime('-24 hours')),
+            date('Y-m-d H:i:s')
         ));
 
         $collection = new Collection();

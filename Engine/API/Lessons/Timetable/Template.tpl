@@ -138,6 +138,7 @@
         </select>
         <a href="javascript:void(0);" onclick="TARDIS.Lessons.show();" class="butn">Show</a>
         <a href="javascript:void(0);" onclick="TARDIS.Lessons.edit();" class="butn">Edit</a>
+        <a href="javascript:void(0)" onclick="TARDIS.Tickets.create();" class="butn">Create ticket</a>
     </div>
 
     <h1 style="text-align: center;">
@@ -188,6 +189,7 @@
     <?php endif; ?>
 
     <hr/>
+    <h3>Tickets for last day</h3>
     <table class="inner-table">
         <?php foreach($tickets as $ticket): ?>
         <tr>

@@ -21,7 +21,7 @@ TARDIS.Tickets = {
         });
     },
 
-    create: function (keyLesson)
+    create: function ()
     {
         if(!confirm('Are you sure?'))
         {
@@ -29,7 +29,7 @@ TARDIS.Tickets = {
         }
 
         API.request('TARDIS.Tickets.Create', {
-            'key_lesson': keyLesson
+
         }, function (data) {
             TARDIS.Lessons.timetable();
         }, function () {
