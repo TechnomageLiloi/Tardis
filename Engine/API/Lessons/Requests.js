@@ -43,12 +43,15 @@ TARDIS.Lessons = {
         });
     },
 
-    show: function (uid)
+    show: function ()
     {
-        API.request('TARDIS.Blueprints.Show', {
-            'uid': uid
+        const jq_block = $('#problem-group');
+
+        API.request('TARDIS.Lessons.Show', {
+            'key_date': jq_block.find('[name="key_date"]').val(),
+            'key_position': jq_block.find('[name="key_position"]').val()
         }, function (data) {
-            $('#page').html(data.render);
+            TARDIS.Lessons.timetable();
         }, function () {
 
         });

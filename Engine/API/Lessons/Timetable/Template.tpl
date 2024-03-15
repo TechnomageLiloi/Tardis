@@ -136,6 +136,7 @@
                 <option value="<?php echo $key; ?>" <?php if($key == $keyPosition): ?>selected="selected"<?php endif; ?>><?php echo $value; ?></option>
             <?php endforeach; ?>
         </select>
+        <a href="javascript:void(0);" onclick="TARDIS.Lessons.show();" class="butn">Show</a>
         <a href="javascript:void(0);" onclick="TARDIS.Lessons.edit();" class="butn">Edit</a>
     </div>
 
