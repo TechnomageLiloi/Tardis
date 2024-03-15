@@ -90,6 +90,16 @@ class Entity extends AbstractEntity
     }
 
     /**
+     * Gets lesson status title.
+     *
+     * @return string
+     */
+    public function getStatusTitle(): string
+    {
+        return Status::$list[$this->getStatus()];
+    }
+
+    /**
      * `true` is lesson is completed, `false` otherwise.
      *
      * @return bool

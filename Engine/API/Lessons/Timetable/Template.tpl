@@ -175,13 +175,14 @@
         <hr/>
 
         <div style="text-align: center;">
+            Status: <?php echo $timetable->getStatusTitle(); ?> /
+            Type: <?php echo $timetable->getTypeTitle(); ?> /
+            Mark: <?php echo $timetable->getMark(); ?>
+            <br/>
+            <?php echo $timetable->getData(); ?>
             <h3>
                 <?php echo $timetable->getComment(); ?>
-                <br/>
-                Mark: <?php echo $timetable->getMark(); ?>
             </h3>
-
-            <?php echo $timetable->getData(); ?>
         </div>
 
     <?php endif; ?>
