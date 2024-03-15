@@ -33,7 +33,7 @@ class Method extends SuperMethod
         $totalKarma = TicketsManager::loadKarma();
 
         $collectionProblems = ProblemsManager::loadByDegreeKeys(array_keys($listDegreeActive));
-//        $collectionTickets = TicketsManager::loadByLessonKeys($keysLessons);
+        $collectionTickets = TicketsManager::loadToday();
 
         $keyDate = ConfigManager::load(ConfigKeys::CURRENT_DATE)->getString();
         if(!$keyDate)
@@ -51,7 +51,7 @@ class Method extends SuperMethod
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'degrees' => $listDegreeActive,
             'timetable' => $timetable,
-            'tickets' => [],
+            'tickets' => $collectionTickets,
             'problems' => $collectionProblems,
             'statuses' => LessonsStatus::$list,
             'problemStatuses' => ProblemsStatuses::$list,

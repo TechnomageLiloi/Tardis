@@ -126,6 +126,27 @@ class Manager extends DomainManager
         return $collection;
     }
 
+    public static function loadToday(): Collection
+    {
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where start between "%s" and "%s" order by start asc',
+            $name,
+            date('Y-m-d 00:00:00'),
+            date('Y-m-d 23:59:59')
+        ));
+
+        $collection = new Collection();
+
+        foreach($rows as $row)
+        {
+            $collection[] = Entity::create($row);
+        }
+
+        return $collection;
+    }
+
     /**
      * Gets current karma.
      *

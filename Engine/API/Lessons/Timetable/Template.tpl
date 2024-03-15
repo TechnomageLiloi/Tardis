@@ -186,4 +186,21 @@
         </div>
 
     <?php endif; ?>
+
+    <hr/>
+    <table class="inner-table">
+        <?php foreach($tickets as $ticket): ?>
+        <tr>
+            <td style="width: 80%;">
+                <?php echo $ticket->getStart(); ?> - <?php echo $ticket->getFinish(); ?> / <?php echo $ticket->getTitleWithFlags(); ?>
+            </td>
+            <td>
+                <?php echo $ticket->getStatusTitle(); ?> / <?php echo $ticket->getKarma(); ?>
+            </td>
+            <td style="width: 5%;text-align: right;">
+                <a href="javascript:void(0)" class="butn" onclick="TARDIS.Tickets.edit('<?php echo $ticket->getKey(); ?>')">Edit</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
 </div>
