@@ -37,6 +37,26 @@
         padding: 1px;
         background-color: white;
     }
+
+    #lesson-schedule .no-lesson
+    {
+        background-color: #e2e2e2;
+    }
+
+    #lesson-schedule .to-do
+    {
+        background-color: #f8e2e2;
+    }
+
+    #lesson-schedule .in-hand
+    {
+        background-color: #fffeb3;
+    }
+
+    #lesson-schedule .complete
+    {
+        background-color: #beffb3;
+    }
 </style>
 <div id="lesson-schedule">
     <h3>
@@ -56,10 +76,8 @@
                 <?php for($day=1;$day<=7;$day++): ?>
                 <td>
                     <?php foreach($schedule[$day][$key] as $entity): ?>
-                    <div class="lesson">
-                        <a href="javascript:void(0)" onclick="TARDIS.Lessons.edit('<?php echo $entity->getKey(); ?>')">
-                            <?php echo $entity->getComment(); ?>
-                        </a>
+                    <div class="lesson <?php echo $entity->getStatusClass(); ?>">
+                        <?php echo $entity->getComment(); ?>
                     </div>
                     <?php endforeach; ?>
                 </td>
