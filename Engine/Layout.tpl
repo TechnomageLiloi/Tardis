@@ -14,23 +14,10 @@
         <link href="<?php echo ROOT_URL; ?>/Engine/API/Style.css" rel="stylesheet" />
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Atoms/Requests.js"></script>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Quests/Requests.js"></script>
 
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Security/Password/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Problems/Requests.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Search/Requests.js"></script>
-
-        <?php if($admin): ?>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Lessons/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Questions/Test/Testing.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Questions/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Tickets/Requests.js"></script>
-            <script src="<?php echo ROOT_URL; ?>/Engine/API/Quests/Requests.js"></script>
-        <?php endif; ?>
-
-        <title>Rune</title>
+        <title>Artifacts</title>
     </head>
     <body>
         <div id="head">
@@ -39,7 +26,6 @@
         </div>
         <div id="page">
             <script>
-                // Rune.Atoms.show();
                 TARDIS.Quests.collection();
             </script>
         </div>
