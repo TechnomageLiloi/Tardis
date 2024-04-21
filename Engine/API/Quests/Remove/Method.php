@@ -14,7 +14,6 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-
         $key_problem = self::getParameter('key_quest');
         $entity = Manager::load($key_problem);
         $entity->remove();

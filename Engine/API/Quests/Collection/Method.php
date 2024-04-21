@@ -10,8 +10,6 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        self::accessCheck();
-
         $quest = QuestManager::loadCurrent();
         $collection = QuestManager::loadCollection();
 
