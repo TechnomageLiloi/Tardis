@@ -14,7 +14,7 @@
         <link href="<?php echo ROOT_URL; ?>/Engine/API/Style.css" rel="stylesheet" />
 
         <script src="<?php echo ROOT_URL; ?>/Engine/Bootstrap.js"></script>
-        <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>>
+        <script src="<?php echo ROOT_URL; ?>/Engine/API/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Quests/Requests.js"></script>
 
         <title>Artifacts</title>
