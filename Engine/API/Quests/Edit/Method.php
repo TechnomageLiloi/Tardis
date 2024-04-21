@@ -6,6 +6,7 @@ use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Quests\Manager;
 use Liloi\Rune\Domain\Quests\Statuses;
+use Liloi\Rune\Domain\Quests\Types;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Edit
@@ -21,7 +22,8 @@ class Method extends SuperMethod
         $response = new Response();
         $response->set('render', static::render(__DIR__ . '/Template.tpl', [
             'entity' => $entity,
-            'statuses' => Statuses::$list
+            'statuses' => Statuses::$list,
+            'types' => Types::$list
         ]));
 
         return $response;

@@ -76,6 +76,8 @@ TARDIS.Quests = {
             'key_quest': key_quest,
             'title': jq_block.find('[name="title"]').val(),
             'summary': jq_block.find('[name="summary"]').val(),
+            'status': jq_block.find('[name="status"]').val(),
+            'type': jq_block.find('[name="type"]').val()
         }, function (data) {
             TARDIS.Quests.collection();
         }, function () {
