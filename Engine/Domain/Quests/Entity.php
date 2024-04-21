@@ -17,6 +17,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  * @method string getStatus()
  * @method void setStatus(string $value)
  *
+ * @method string getType()
+ * @method void setType(string $value)
+ *
  * @method string getFinish()
  * @method void setFinish(string $value)
  *
@@ -57,6 +60,14 @@ class Entity extends AbstractEntity
     public function getStatusTitle(): string
     {
         return Statuses::$list[$this->getStatus()];
+    }
+
+    /**
+     * Gets quest type title.
+     */
+    public function getTypeTitle(): string
+    {
+        return Types::$list[$this->getType()];
     }
 
     /**
