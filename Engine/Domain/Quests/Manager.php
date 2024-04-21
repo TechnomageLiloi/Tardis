@@ -133,7 +133,9 @@ class Manager extends DomainManager
             'title' => '-',
             'summary' => '-',
             'status' => Statuses::IN_HAND,
-            'start' => date('Y-m-d H:i:s')
+            'type' => Types::EXERCISE,
+            'start' => date('Y-m-d H:i:s'),
+            'finish' => date('Y-m-d H:i:s'),
         ];
         self::getAdapter()->insert($name, $data);
         $data['key_quest'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());

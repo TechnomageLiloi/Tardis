@@ -31,10 +31,15 @@
 <div id="problem-group">
     <div class="quest">
         <h2>Quest: <?php echo $quest->getTitle(); ?></h2>
+        <?php echo $quest->getTypeTitle(); ?> -
+        <?php echo $quest->getStatusTitle(); ?> -
+        <?php echo $quest->getStart(); ?> -
+        <?php echo $quest->getFinish(); ?>
         <hr/>
         <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.edit('<?php echo $quest->getKey(); ?>')">Edit</a>
         <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.done('<?php echo $quest->getKey(); ?>', 3)">Success</a>
         <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.done('<?php echo $quest->getKey(); ?>', 4)">Failure</a>
+        <a href="javascript:void(0)" class="butn" onclick="TARDIS.Quests.done('<?php echo $quest->getKey(); ?>', 5)">Continue</a>
         <hr/>
         <div style="text-align: left;">
             <?php echo $quest->parseSummary(); ?>
@@ -43,6 +48,7 @@
 
     <table>
         <tr>
+            <th style="text-align: left;">Date</th>
             <th style="text-align: left;">Title</th>
             <th style="text-align: left;">Type</th>
             <th style="text-align: left;">Status</th>
@@ -50,6 +56,7 @@
         </tr>
         <?php foreach($collection as $entity): ?>
         <tr>
+            <td><?php echo $entity->getStart(); ?></td>
             <td><?php echo $entity->getTitle(); ?></td>
             <td><?php echo $entity->getTypeTitle(); ?></td>
             <td><?php echo $entity->getStatusTitle(); ?></td>
