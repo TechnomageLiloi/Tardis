@@ -38,14 +38,14 @@
         background-color: white;
     }
 
-    #lesson-schedule .no-lesson
+    #lesson-schedule .failure
     {
-        background-color: #e2e2e2;
+        background-color: #ffeeee;
     }
 
     #lesson-schedule .to-do
     {
-        background-color: #f8e2e2;
+        background-color: #e2edf8;
     }
 
     #lesson-schedule .in-hand
@@ -53,9 +53,14 @@
         background-color: #fffeb3;
     }
 
-    #lesson-schedule .complete
+    #lesson-schedule .success
     {
-        background-color: #beffb3;
+        background-color: #dbffd5;
+    }
+
+    #lesson-schedule .continue
+    {
+        background-color: #f8cdfd;
     }
 </style>
 <div id="lesson-schedule">
@@ -73,7 +78,7 @@
                 <?php foreach($row as $day => $cell): ?>
                     <td>
                         <?php foreach($cell as $artifact): ?>
-                        <div class="artifact">
+                        <div class="artifact <?php echo $artifact->getStatusClass(); ?>">
                             <?php echo $artifact->getTitle(); ?>
                         </div>
                         <?php endforeach; ?>

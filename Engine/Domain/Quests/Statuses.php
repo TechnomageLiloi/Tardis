@@ -17,4 +17,14 @@ class Statuses
         self::FAILURE => 'Failure',
         self::CONTINUE => 'Continue',
     ];
+
+    /**
+     * Gets status class.
+     *
+     * @return string
+     */
+    public static function getClass(string $id): string
+    {
+        return strtolower(str_replace(' ', '-', self::$list[$id]));
+    }
 }

@@ -89,4 +89,14 @@ class Entity extends AbstractEntity
     {
         return (int)date('G', strtotime($this->getStart()));
     }
+
+    /**
+     * Gets artifact status class.
+     *
+     * @return string
+     */
+    public function getStatusClass(): string
+    {
+        return Statuses::getClass($this->getStatus());
+    }
 }
