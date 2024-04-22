@@ -37,6 +37,7 @@ class Tree
             $manager->add(new Method('TARDIS.Quests.Edit', '\Liloi\Rune\API\Quests\Edit\Method::execute'));
             $manager->add(new Method('TARDIS.Quests.Save', '\Liloi\Rune\API\Quests\Save\Method::execute'));
             $manager->add(new Method('TARDIS.Quests.Done', '\Liloi\Rune\API\Quests\Done\Method::execute'));
+            $manager->add(new Method('Artifact.Quests.Schedule', '\Liloi\Rune\API\Quests\Schedule\Method::execute'));
 
             self::$instance = new self($manager);
         }

@@ -101,5 +101,15 @@ TARDIS.Quests = {
         }, function () {
 
         });
+    },
+
+    schedule: function ()
+    {
+        API.request('Artifact.Quests.Schedule', {
+        }, function (data) {
+            $('#page').html(data.render);
+        }, function () {
+
+        });
     }
 }

@@ -22,7 +22,8 @@
     <body>
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="location.reload();">Reload</a>
-            <a href="javascript:void(0)" onclick="TARDIS.Quests.collection();" class="butn">Quests</a>
+            <a href="javascript:void(0)" onclick="TARDIS.Quests.collection();" class="butn">Artifacts</a>
+            <a href="javascript:void(0)" onclick="TARDIS.Quests.schedule();" class="butn">Schedule</a>
         </div>
         <div id="page">
             <script>

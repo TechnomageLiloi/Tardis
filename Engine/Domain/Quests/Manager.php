@@ -141,4 +141,21 @@ class Manager extends DomainManager
         $data['key_quest'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());
         return Entity::create($data);
     }
+
+    public static function schedule(): array
+    {
+        $ts_start = date('Y-m-d', strtotime('monday this week'));
+        $ts_finish = date('Y-m-d', strtotime('sunday this week'));
+
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where start between "%s" and "%s" order by start asc;',
+            $name, $ts_start, $ts_finish
+        ));
+
+        $schedule = [];
+
+        return $schedule;
+    }
 }
