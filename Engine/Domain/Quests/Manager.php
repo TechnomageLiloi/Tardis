@@ -133,7 +133,7 @@ class Manager extends DomainManager
             'title' => '-',
             'summary' => '-',
             'status' => Statuses::IN_HAND,
-            'type' => Types::EXERCISE,
+            'type' => Types::TICKET,
             'start' => date('Y-m-d H:i:s'),
             'finish' => date('Y-m-d H:i:s'),
         ];
