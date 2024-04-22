@@ -29,7 +29,7 @@
         text-align: right;
     }
 
-    #lesson-schedule .lesson
+    #lesson-schedule .artifact
     {
         border: gray 1px solid;
         margin-bottom: 1px;
@@ -66,5 +66,20 @@
             <th><?php echo $days[$day]; ?> / <?php echo $dates[$day]; ?></th>
             <?php endfor; ?>
         </tr>
+        <?php foreach($schedule as $key => $row): ?>
+            <tr>
+                <td style="width: 100px;"><?php echo $key; ?>:00</td>
+
+                <?php foreach($row as $day => $cell): ?>
+                    <td>
+                        <?php foreach($cell as $artifact): ?>
+                        <div class="artifact">
+                            <?php echo $artifact->getTitle(); ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </td>
+                <?php endforeach; ?>
+            </tr>
+        <?php endforeach; ?>
     </table>
 </div>

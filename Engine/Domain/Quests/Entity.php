@@ -79,4 +79,14 @@ class Entity extends AbstractEntity
     {
         return Parser::parseString($this->getSummary());
     }
+
+    public function getDateNumber(): int
+    {
+        return (int)date('N', strtotime($this->getStart()));
+    }
+
+    public function getTime(): int
+    {
+        return (int)date('G', strtotime($this->getStart()));
+    }
 }

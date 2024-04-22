@@ -156,6 +156,23 @@ class Manager extends DomainManager
 
         $schedule = [];
 
+        for ($hour = 0; $hour < 24; $hour++)
+        {
+            $schedule[$hour] = [];
+
+            for ($day = 1; $day <= 7; $day++)
+            {
+                $schedule[$hour][$day] = [];
+            }
+        }
+
+        foreach($rows as $row)
+        {
+            $entity = Entity::create($row);
+
+            $schedule[$entity->getTime()][$entity->getDateNumber()][] = $entity;
+        }
+
         return $schedule;
     }
 }
