@@ -80,6 +80,7 @@
                         <?php foreach($cell as $artifact): ?>
                         <div class="artifact <?php echo $artifact->getStatusClass(); ?>">
                             <a href="javascript:void(0)" onclick="TARDIS.Quests.edit('<?php echo $artifact->getKey(); ?>');" >&blacklozenge;</a>
+                            [<?php echo $artifact->getTypeTitle(); ?>]
                             <?php echo $artifact->getTitle(); ?>
                         </div>
                         <?php endforeach; ?>
