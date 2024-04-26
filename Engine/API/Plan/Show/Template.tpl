@@ -8,7 +8,6 @@
     <div class="head">
         <a href="javascript:void(0)" onclick="I60.Plan.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
         <h1><?php echo $entity->getKey(); ?></h1>
-        <?php echo $entity->getStatusTitle(); ?>
     </div>
     <hr/>
     <h3>
