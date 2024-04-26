@@ -39,6 +39,10 @@ class Tree
             $manager->add(new Method('TARDIS.Quests.Done', '\Liloi\Rune\API\Quests\Done\Method::execute'));
             $manager->add(new Method('Artifact.Quests.Schedule', '\Liloi\Rune\API\Quests\Schedule\Method::execute'));
 
+            $manager->add(new Method('Interstate60.Plan.Show', '\Liloi\Rune\API\Plan\Show\Method::execute'));
+            $manager->add(new Method('Interstate60.Plan.Edit', '\Liloi\Rune\API\Plan\Edit\Method::execute'));
+            $manager->add(new Method('Interstate60.Plan.Save', '\Liloi\Rune\API\Plan\Save\Method::execute'));
+
             self::$instance = new self($manager);
         }
 
