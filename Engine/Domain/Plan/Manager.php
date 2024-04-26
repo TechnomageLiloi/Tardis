@@ -18,6 +18,37 @@ class Manager extends DomainManager
         return self::getTablePrefix() . 'plan';
     }
 
+    public static function load(string $key_plan): Entity
+    {
+        $name = self::getTableName();
+
+        $row = self::getAdapter()->getRow(sprintf(
+            'select * from %s where key_plan="%s"',
+            $name,
+            $key_plan
+        ));
+
+        if(!$row)
+        {
+            return self::create($key_plan);
+        }
+
+        return Entity::create($row);
+    }
+
+    public static function create(string $key_plan): Entity
+    {
+        $name = self::getTableName();
+        $data = [
+            'key_plan' => $key_plan,
+            'plan' => '-',
+            'status' => Statuses::NOT_DONE
+        ];
+
+        self::getAdapter()->insert($name, $data);
+        return Entity::create($data);
+    }
+
     /**
      * Save quest to database.
      *

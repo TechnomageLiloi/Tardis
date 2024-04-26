@@ -49,4 +49,9 @@ class Entity extends AbstractEntity
     {
         return Statuses::$list[$this->getStatus()];
     }
+
+    public function parsePlan(): string
+    {
+        return Parser::parseString($this->getPlan());
+    }
 }
