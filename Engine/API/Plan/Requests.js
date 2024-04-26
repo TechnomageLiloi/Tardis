@@ -32,7 +32,8 @@ I60.Plan = {
         API.request('Interstate60.Plan.Save', {
             'key_plan': key_plan,
             'plan': jq_block.find('[name="plan"]').val(),
-            'status': jq_block.find('[name="status"]').val()
+            'status': jq_block.find('[name="status"]').val(),
+            'goal': jq_block.find('[name="goal"]').val()
         }, function (data) {
             I60.Plan.show(key_plan);
         }, function () {

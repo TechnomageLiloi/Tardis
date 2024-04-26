@@ -19,6 +19,7 @@ class Method extends SuperMethod
 
         $entity->setPlan(self::getParameter('plan'));
         $entity->setStatus(self::getParameter('status'));
+        $entity->setGoal(self::getParameter('goal'));
 
         $entity->save();
 
