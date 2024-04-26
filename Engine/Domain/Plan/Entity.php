@@ -57,4 +57,9 @@ class Entity extends AbstractEntity
     {
         return Parser::parseString($this->getPlan());
     }
+
+    public function getDone(): bool
+    {
+        return $this->getStatus() == Statuses::DONE;
+    }
 }

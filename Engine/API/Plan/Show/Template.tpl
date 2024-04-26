@@ -11,7 +11,10 @@
         <?php echo $entity->getStatusTitle(); ?>
     </div>
     <hr/>
-    <h3>Daily goal: <?php echo $entity->getGoal(); ?></h3>
+    <h3>
+        <input type="checkbox" disabled="disabled" <?php echo $entity->getDone() ? 'checked': ''; ?>>
+        Daily goal: <?php echo $entity->getGoal(); ?>
+    </h3>
     <hr/>
     <?php echo $entity->parsePlan(); ?>
 </div>
