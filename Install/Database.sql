@@ -16,6 +16,7 @@ create table i60_plan
     key_plan date not null,
     status tinyint unsigned default 1 not null,
     plan text not null,
+    title varchar(250) not null,
     constraint i60_plan_pk
         primary key (key_plan)
 );

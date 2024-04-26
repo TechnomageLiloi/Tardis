@@ -13,6 +13,9 @@ use Liloi\Tools\Entity as AbstractEntity;
  *
  * @method string getPlan()
  * @method void setPlan(string $value)
+ *
+ * @method string getGoal()
+ * @method void setGoal(string $value)
  */
 class Entity extends AbstractEntity
 {
