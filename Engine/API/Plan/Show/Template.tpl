@@ -12,5 +12,6 @@
     }
 </style>
 <div id="blueprint-edit">
-    <?php echo $entity->getSummary(); ?>
+    <a href="javascript:void(0)" onclick="I60.Plan.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
+    <?php echo $entity->parsePlan(); ?>
 </div>

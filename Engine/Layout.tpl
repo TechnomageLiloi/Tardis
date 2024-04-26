@@ -23,12 +23,14 @@
     <body>
         <div id="head">
             <a href="javascript:void(0)" class="butn" onclick="location.reload();">Reload</a>
-            <a href="javascript:void(0)" onclick="TARDIS.Quests.collection();" class="butn">Artifacts</a>
+            <a href="javascript:void(0)" onclick="I60.Plan.show('<?php echo date('Y-m-d'); ?>');" class="butn">Plan</a>
+            <a href="javascript:void(0)" onclick="TARDIS.Quests.collection();" class="butn">Quests</a>
             <a href="javascript:void(0)" onclick="TARDIS.Quests.schedule();" class="butn">Schedule</a>
         </div>
         <div id="page">
             <script>
-                TARDIS.Quests.collection();
+                //TARDIS.Quests.collection();
+                I60.Plan.show('<?php echo date('Y-m-d'); ?>');
             </script>
         </div>
     </body>
