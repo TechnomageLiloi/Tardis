@@ -1,4 +1,4 @@
-create table artifacts_quests
+create table i60_quests
 (
     key_quest bigint unsigned auto_increment,
     title varchar(100) not null,
