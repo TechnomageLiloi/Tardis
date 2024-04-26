@@ -1,17 +1,15 @@
 <style>
-    #blueprint-edit input,
-    #blueprint-edit select,
-    #blueprint-edit textarea
+    #plan-show .head
     {
-        width: 50%;
-    }
-
-    #blueprint-edit textarea
-    {
-        height: 300px;
+        text-align: center;
     }
 </style>
-<div id="blueprint-edit">
-    <a href="javascript:void(0)" onclick="I60.Plan.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
+<div id="plan-show">
+    <div class="head">
+        <a href="javascript:void(0)" onclick="I60.Plan.edit('<?php echo $entity->getKey(); ?>');" class="butn">Edit</a>
+        <h1><?php echo $entity->getKey(); ?></h1>
+        <?php echo $entity->getStatusTitle(); ?>
+        <hr/>
+    </div>
     <?php echo $entity->parsePlan(); ?>
 </div>
