@@ -30,7 +30,7 @@
 </style>
 <div id="problem-group">
     <div class="quest">
-        <h2>Artifact: <?php echo $quest->getTitle(); ?></h2>
+        <h2>Quest: <?php echo $quest->getTitle(); ?></h2>
         <?php echo $quest->getTypeTitle(); ?> -
         <?php echo $quest->getStatusTitle(); ?> -
         <?php echo $quest->getStart(); ?> -
