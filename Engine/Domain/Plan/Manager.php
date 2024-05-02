@@ -42,7 +42,8 @@ class Manager extends DomainManager
         $data = [
             'key_plan' => $key_plan,
             'plan' => '-',
-            'status' => Statuses::NOT_DONE
+            'status' => Statuses::NOT_DONE,
+            'goal' => '-'
         ];
 
         self::getAdapter()->insert($name, $data);
