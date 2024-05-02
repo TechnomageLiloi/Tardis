@@ -62,6 +62,12 @@
     {
         background-color: #f8cdfd;
     }
+
+    #lesson-schedule .lesson
+    {
+        border: gray 1px solid;
+        padding: 3px;
+    }
 </style>
 <div id="lesson-schedule">
     <table>
@@ -77,13 +83,18 @@
 
                 <?php foreach($row as $day => $cell): ?>
                     <td>
-                        <?php foreach($cell as $artifact): ?>
-                        <div class="artifact <?php echo $artifact->getStatusClass(); ?>">
-                            <a href="javascript:void(0)" onclick="TARDIS.Quests.edit('<?php echo $artifact->getKey(); ?>');" >&blacklozenge;</a>
-                            [<?php echo $artifact->getTypeTitle(); ?>]
-                            <?php echo $artifact->getTitle(); ?>
-                        </div>
-                        <?php endforeach; ?>
+                        <?php if(!empty($cell)): ?>
+                            <div class="lesson">
+                                Lesson <?php echo $key; ?>
+                                <?php foreach($cell as $artifact): ?>
+                                    <div class="artifact <?php echo $artifact->getStatusClass(); ?>">
+                                        <a href="javascript:void(0)" onclick="TARDIS.Quests.edit('<?php echo $artifact->getKey(); ?>');" >&blacklozenge;</a>
+                                        [<?php echo $artifact->getTypeTitle(); ?>]
+                                        <?php echo $artifact->getTitle(); ?>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
                     </td>
                 <?php endforeach; ?>
             </tr>
