@@ -26,6 +26,33 @@ class Method extends SuperMethod
             7 => 'Sunday',
         ];
 
+        $names = [
+            0 => 'Midnight lesson',
+            1 => 'Lesson #1',
+            2 => 'Lesson #2',
+            3 => 'Lesson #3',
+            4 => 'Lesson #4',
+            5 => 'Lesson #5',
+            6 => 'Lesson #6',
+            7 => 'Lesson #7',
+            8 => 'Lesson #8',
+            9 => 'Lesson #9',
+            10 => 'Lesson #10',
+            11 => 'Lesson #11',
+            12 => 'Midday lesson',
+            13 => 'Lesson #13',
+            14 => 'Lesson #14',
+            15 => 'Lesson #15',
+            16 => 'Lesson #16',
+            17 => 'Lesson #17',
+            18 => 'Lesson #18',
+            19 => 'Lesson #19',
+            20 => 'Lesson #20',
+            21 => 'Lesson #21',
+            22 => 'Sleeping lesson',
+            23 => 'Strong sleeping lesson',
+        ];
+
         $dates = [];
         $i = 0;
 
@@ -40,7 +67,8 @@ class Method extends SuperMethod
             'days' => $days,
             'karma' => 0,
             'schedule' => $schedule,
-            'dates' => $dates
+            'dates' => $dates,
+            'names' => $names
         ]));
 
         return $response;
