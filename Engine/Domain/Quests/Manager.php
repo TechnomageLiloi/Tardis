@@ -150,7 +150,7 @@ class Manager extends DomainManager
         $name = self::getTableName();
 
         $rows = self::getAdapter()->getArray(sprintf(
-            'select * from %s where start between "%s" and "%s" order by start asc;',
+            'select * from %s where start between "%s 00:00:00" and "%s 23:59:59" order by start asc;',
             $name, $ts_start, $ts_finish
         ));
 
