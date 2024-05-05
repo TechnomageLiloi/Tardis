@@ -4,13 +4,13 @@ namespace Liloi\Rune\Domain\Quests;
 
 class Types
 {
-    public const EXERCISE = 1;
-    public const TICKET = 2;
-    public const ARTIFACT = 3;
+    public const CODEX = 1;
+    public const ARTIFACT = 2;
+    public const ADVENTURE = 3;
 
     public static $list = [
-        self::EXERCISE => 'Exercise',
-        self::TICKET => 'Ticket',
+        self::CODEX => 'Codex',
         self::ARTIFACT => 'Artifact',
+        self::ADVENTURE => 'Adventure',
     ];
 }
