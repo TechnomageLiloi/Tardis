@@ -7,6 +7,7 @@ create table i60_quests
     finish timestamp null,
     status tinyint unsigned default 1 not null,
     type tinyint unsigned default 1 not null,
+    karma smallint signed default 0 not null,
     constraint artifacts_quests_pk
         primary key (key_quest)
 );
