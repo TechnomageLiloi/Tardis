@@ -38,6 +38,8 @@
             </select>
         </td></tr>
 
+        <tr><td>Karma</td><td><input type="text" name="karma" value="<?php echo $entity->getKarma(); ?>"/></td></tr>
+
         <tr><td>Summary</td><td><textarea name="summary"><?php echo $entity->getSummary(); ?></textarea></td></tr>
     </table>
     <hr/>

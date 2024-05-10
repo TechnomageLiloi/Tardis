@@ -21,6 +21,7 @@ class Method extends SuperMethod
         $entity->setSummary(self::getParameter('summary'));
         $entity->setStatus(self::getParameter('status'));
         $entity->setType(self::getParameter('type'));
+        $entity->setKarma(self::getParameter('karma'));
 
         $entity->save();
 
