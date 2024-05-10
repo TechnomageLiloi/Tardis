@@ -136,6 +136,7 @@ class Manager extends DomainManager
             'type' => Types::CODEX,
             'start' => date('Y-m-d H:i:s'),
             'finish' => date('Y-m-d H:i:s'),
+            'karma' => '1'
         ];
         self::getAdapter()->insert($name, $data);
         $data['key_quest'] = \mysqli_insert_id(self::getAdapter()->getConnection()->get());
