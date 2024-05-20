@@ -85,7 +85,9 @@
                     <td>
                         <?php if(!empty($cell)): ?>
                             <div class="lesson">
-                                <?php echo $names[$key]; ?>
+
+                                <?php echo reset($cell)->getTypeTitle(); ?>
+
                                 <?php foreach($cell as $artifact): ?>
                                     <div class="artifact <?php echo $artifact->getStatusClass(); ?>">
                                         <a href="javascript:void(0)" onclick="TARDIS.Quests.edit('<?php echo $artifact->getKey(); ?>');" >&blacklozenge;</a>
