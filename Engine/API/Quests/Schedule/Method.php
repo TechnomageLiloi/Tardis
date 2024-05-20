@@ -31,7 +31,7 @@ class Method extends SuperMethod
 
         foreach (array_keys($days) as $day)
         {
-            $dates[$day] = gmdate('Y-m-d', strtotime("+$i days", strtotime('monday this week')));
+            $dates[$day] = date('Y-m-d', strtotime("+$i days", strtotime('monday this week')));
             ++$i;
         }
 

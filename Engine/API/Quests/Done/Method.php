@@ -18,7 +18,7 @@ class Method extends SuperMethod
         $entity = Manager::load($key_problem);
 
         $entity->setStatus(self::getParameter('status'));
-        $entity->setFinish(gmdate('Y-m-d H:i:s'));
+        $entity->setFinish(date('Y-m-d H:i:s'));
 
         $entity->save();
 
