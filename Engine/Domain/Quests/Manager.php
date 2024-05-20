@@ -134,8 +134,8 @@ class Manager extends DomainManager
             'summary' => '-',
             'status' => Statuses::IN_HAND,
             'type' => Types::CODEX,
-            'start' => date('Y-m-d H:i:s'),
-            'finish' => date('Y-m-d H:i:s'),
+            'start' => gmdate('Y-m-d H:i:s'),
+            'finish' => gmdate('Y-m-d H:i:s'),
             'karma' => '0'
         ];
         self::getAdapter()->insert($name, $data);
@@ -145,8 +145,8 @@ class Manager extends DomainManager
 
     public static function schedule(): array
     {
-        $ts_start = date('Y-m-d', strtotime('monday this week'));
-        $ts_finish = date('Y-m-d', strtotime('sunday this week'));
+        $ts_start = gmdate('Y-m-d', strtotime('monday this week'));
+        $ts_finish = gmdate('Y-m-d', strtotime('sunday this week'));
 
         $name = self::getTableName();
 

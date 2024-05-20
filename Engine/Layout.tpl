@@ -30,7 +30,7 @@
         <div id="page">
             <script>
                 //TARDIS.Quests.collection();
-                I60.Plan.show('<?php echo date('Y-m-d'); ?>');
+                I60.Plan.show('<?php echo gmdate('Y-m-d'); ?>');
             </script>
         </div>
     </body>
