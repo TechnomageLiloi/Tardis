@@ -18,7 +18,7 @@
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Quests/Requests.js"></script>
         <script src="<?php echo ROOT_URL; ?>/Engine/API/Plan/Requests.js"></script>
 
-        <title>Artifacts</title>
+        <title>Artifacts / <?php echo date('Y-m-d H:i:s'); ?></title>
     </head>
     <body>
         <div id="head">
