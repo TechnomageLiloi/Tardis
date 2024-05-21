@@ -14,7 +14,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $schedule = LessonsManager::schedule();
+        $schedule = LessonsManager::scheduleByTimestamp();
 
         $days = [
             1 => 'Monday',

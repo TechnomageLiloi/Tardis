@@ -143,7 +143,7 @@ class Manager extends DomainManager
         return Entity::create($data);
     }
 
-    public static function schedule(): array
+    public static function scheduleByTimestamp(): array
     {
         $ts_start = date('Y-m-d', strtotime('monday this week'));
         $ts_finish = date('Y-m-d', strtotime('sunday this week'));
