@@ -21,6 +21,7 @@
         border-bottom: silver 1px dashed;
         border-right: silver 1px dashed;
         font-size: x-small;
+        vertical-align: top;
     }
 
     #lesson-schedule table th:first-child
@@ -79,15 +80,12 @@
         </tr>
         <?php foreach($schedule as $key => $row): ?>
             <tr>
-                <td style="width: 100px;"><?php echo $key; ?>:00</td>
+                <td style="width: 100px;"><?php echo $types[$key]; ?></td>
 
                 <?php foreach($row as $day => $cell): ?>
                     <td>
                         <?php if(!empty($cell)): ?>
                             <div class="lesson">
-
-                                <?php echo reset($cell)->getTypeTitle(); ?>
-
                                 <?php foreach($cell as $artifact): ?>
                                     <div class="artifact <?php echo $artifact->getStatusClass(); ?>">
                                         <a href="javascript:void(0)" onclick="TARDIS.Quests.edit('<?php echo $artifact->getKey(); ?>');" >&blacklozenge;</a>

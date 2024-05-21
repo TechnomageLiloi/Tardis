@@ -176,4 +176,38 @@ class Manager extends DomainManager
 
         return $schedule;
     }
+
+    public static function scheduleByLesson(): array
+    {
+        $ts_start = date('Y-m-d', strtotime('monday this week'));
+        $ts_finish = date('Y-m-d', strtotime('sunday this week'));
+
+        $name = self::getTableName();
+
+        $rows = self::getAdapter()->getArray(sprintf(
+            'select * from %s where start between "%s 00:00:00" and "%s 23:59:59" order by start asc;',
+            $name, $ts_start, $ts_finish
+        ));
+
+        $schedule = [];
+
+        for ($lesson = 1; $lesson <= 7; $lesson++)
+        {
+            $schedule[$lesson] = [];
+
+            for ($day = 1; $day <= 7; $day++)
+            {
+                $schedule[$lesson][$day] = [];
+            }
+        }
+
+        foreach($rows as $row)
+        {
+            $entity = Entity::create($row);
+
+            $schedule[$entity->getType()][$entity->getDateNumber()][] = $entity;
+        }
+
+        return $schedule;
+    }
 }

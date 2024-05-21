@@ -5,6 +5,7 @@ namespace Liloi\Rune\API\Quests\Schedule;
 use Liloi\API\Response;
 use Liloi\Rune\API\Method as SuperMethod;
 use Liloi\Rune\Domain\Quests\Manager as LessonsManager;
+use Liloi\Rune\Domain\Quests\Types as LessonsTypes;
 
 /**
  * TARDIS API: Blueprint.Blueprints.Show
@@ -14,7 +15,7 @@ class Method extends SuperMethod
 {
     public static function execute(): Response
     {
-        $schedule = LessonsManager::scheduleByTimestamp();
+        $schedule = LessonsManager::scheduleByLesson();
 
         $days = [
             1 => 'Monday',
@@ -40,7 +41,8 @@ class Method extends SuperMethod
             'days' => $days,
             'karma' => 0,
             'schedule' => $schedule,
-            'dates' => $dates
+            'dates' => $dates,
+            'types' => LessonsTypes::$list
         ]));
 
         return $response;
